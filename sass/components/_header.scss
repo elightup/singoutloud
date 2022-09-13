@@ -1,0 +1,108 @@
+.header {
+	font-family: var(--font-Opensans);
+	// color: var(--color-white);
+	color: black;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.2;
+	padding: 65px 145px 0;
+	background: rgb(70, 177, 192);
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		a {
+			// color: var(--color-white);
+			color: black
+		}
+
+		a:hover {
+			color: var(--color-main);
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	&__menu {
+		width: 46%;
+		margin: auto;
+
+		.menu {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__contact {
+		&-info ul {
+			display: flex;
+		}
+
+		&-info ul li {
+			display: flex;
+			align-items: center;
+		}
+
+		&-info ul li:first-child {
+			margin-right: 40px;
+		}
+
+		&-info ul li:first-child::before {
+			content: '';
+			display: block;
+			width: 15px;
+			height: 13px;
+			background-image: url('images/Asset2.png');
+			background-repeat: no-repeat;
+			margin-right: 12px;
+		}
+
+		&-info ul li:last-child::before {
+			content: '';
+			display: block;
+			width: 15px;
+			height: 15px;
+			background-image: url('images/Asset4.png');
+			background-repeat: no-repeat;
+			margin-right: 12px;
+		}
+	}
+
+	&__btn {
+		text-align: right;
+
+		.signin,
+		.signup {
+			padding: 7px 15px;
+			border-radius: 20px;
+		}
+
+		.signin {
+			background: var(--color-white);
+			color: #000;
+			margin-right: 20px;
+		}
+
+		.signin:hover {
+			background: var(--color-main);
+			color: var(--color-white);
+		}
+
+		.signup {
+			background: var(--color-main);
+			color: var(--color-white);
+		}
+
+		.signup:hover {
+			background: var(--color-white);
+			color: #000;
+		}
+	}
+
+}

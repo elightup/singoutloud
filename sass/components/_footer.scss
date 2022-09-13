@@ -1,0 +1,63 @@
+.footer {
+	padding: 72px 555px 62px 145px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 15px;
+	color: var(--color-white);
+	background: #191919;
+
+	h2,
+	p {
+		margin: 0;
+		font-size: 15px;
+	}
+
+	a {
+		color: var(--color-white);
+	}
+
+	a:hover {
+		color: var(--color-main);
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__info h2 {
+		text-transform: uppercase;
+	}
+
+	&__social {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		ul li {
+			display: flex;
+			align-items: center;
+		}
+
+		ul li:first-child::before {
+			content: '';
+			display: block;
+			width: 15px;
+			height: 15px;
+			background-image: url('images/Assetfb.png');
+			background-repeat: no-repeat;
+			margin-right: 12px;
+		}
+
+		ul li:last-child::before {
+			content: '';
+			display: block;
+			width: 15px;
+			height: 13px;
+			background-image: url('images/Asset2.png');
+			background-repeat: no-repeat;
+			margin-right: 12px;
+		}
+	}
+}
