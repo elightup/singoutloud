@@ -5,3 +5,14 @@ new Loader();
 
 require __DIR__ . '/inc/customizer.php';
 require __DIR__ . '/inc/class-singoutloud-icons.php';
+
+if ( ! function_exists( 'rwmb_meta' ) ) {
+	/**
+	 * Fallback function metabox.
+	 *
+	 * @return mixed
+	 */
+	function rwmb_meta( $key, $args = [], $post_id = null ) {
+		return null;
+	}
+}

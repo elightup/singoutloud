@@ -8,7 +8,7 @@
 <main id="primary" class="site-main ">
 
 	<?php
-	// get_template_part('template-parts/home/banner');
+	get_template_part( 'template-parts/home/banner' );
 	?>
 
 </main>

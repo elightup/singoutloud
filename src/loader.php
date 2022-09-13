@@ -94,6 +94,7 @@ class Loader {
 	function init() {
 		new Template_function();
 		new Fields();
+		new Custom_Field();
 		new Handle();
 	}
 }
