@@ -33,3 +33,21 @@
 	font-weight: 700;
 	src: url("./fonts/Barlow-Bold.ttf") format("truetype");
 }
+
+@font-face {
+	font-family: "SimplonNorm";
+	font-weight: 300;
+	src: url("./fonts/SimplonNorm-Light.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "SimplonNorm";
+	font-weight: 500;
+	src: url("./fonts/SimplonNorm-Medium.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "SimplonNorm";
+	font-weight: 400;
+	src: url("./fonts/SimplonNorm-Regular.otf") format("opentype");
+}
