@@ -27,6 +27,9 @@ class Custom_Field {
 				'number' => [
 					'label' => 'Con số',
 				],
+				'judges' => [
+					'label' => 'Ban giám khảo',
+				],
 			],
 			'fields'     => [
 				// Banner
@@ -73,6 +76,46 @@ class Custom_Field {
 							'name' => esc_html__( 'Title', 'singoutloud' ),
 						],
 
+					],
+				],
+				// Ban giám khảo
+				[
+					'id'                => 'title_judges',
+					'name'              => esc_html__( 'Title', 'singoutloud' ),
+					'tab'               => 'judges',
+					'sanitize_callback' => 'none',
+				],
+				[
+					'id'   => 'video_judges',
+					'name' => esc_html__( 'Video', 'singoutloud' ),
+					'tab'  => 'judges',
+				],
+				[
+					'id'          => 'judges_group',
+					'name'        => '',
+					'type'        => 'group',
+					'clone'       => true,
+					'collapsible' => true,
+					'group_title' => '{name}',
+					'tab'         => 'judges',
+					'fields'      => [
+						[
+							'id'   => 'title',
+							'name' => esc_html__( 'Title', 'singoutloud' ),
+						],
+						[
+							'id'   => 'sub_name',
+							'name' => esc_html__( 'Chức vụ', 'singoutloud' ),
+						],
+						[
+							'id'   => 'name',
+							'name' => esc_html__( 'Tên giám khảo', 'singoutloud' ),
+						],
+						[
+							'id'   => 'image_judges',
+							'name' => esc_html__( 'Image', 'singoutloud' ),
+							'type' => 'single_image',
+						],
 					],
 				],
 			],
