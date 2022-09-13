@@ -9,6 +9,7 @@
 
 	<?php
 	get_template_part( 'template-parts/home/banner' );
+	get_template_part( 'template-parts/home/number' );
 	?>
 
 </main>

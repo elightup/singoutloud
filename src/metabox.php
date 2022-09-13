@@ -24,6 +24,9 @@ class Custom_Field {
 				'banner' => [
 					'label' => 'Banner',
 				],
+				'number' => [
+					'label' => 'Con số',
+				],
 			],
 			'fields'     => [
 				// Banner
@@ -45,6 +48,32 @@ class Custom_Field {
 					'type'              => 'textarea',
 					'sanitize_callback' => 'none',
 					'tab'               => 'banner',
+				],
+				// Number
+				[
+					'id'          => 'number_group',
+					'name'        => '',
+					'type'        => 'group',
+					'clone'       => true,
+					'collapsible' => true,
+					'group_title' => '{title}',
+					'tab'         => 'number',
+					'fields'      => [
+						[
+							'id'   => 'number',
+							'name' => esc_html__( 'Con số', 'singoutloud' ),
+						],
+						[
+							'id'                => 'sub_title',
+							'name'              => esc_html__( 'Sub Title', 'singoutloud' ),
+							'sanitize_callback' => 'none',
+						],
+						[
+							'id'   => 'title',
+							'name' => esc_html__( 'Title', 'singoutloud' ),
+						],
+
+					],
 				],
 			],
 		];

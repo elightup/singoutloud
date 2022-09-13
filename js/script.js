@@ -28,9 +28,9 @@ jQuery( function ( $ ) {
 	};
 	function counter_number() {
 		var a = 0;
-		if ( $( 'body' ).hasClass( 'page-template-front-page' ) ) {
+		if ( $( 'body' ).hasClass( 'page-template-home-page' ) ) {
 			$( window ).scroll( function () {
-				var oTop = $( '.about-us' ).offset().top - window.innerHeight;
+				var oTop = $( '.number-home' ).offset().top - window.innerHeight;
 				if ( a == 0 && $( window ).scrollTop() > oTop ) {
 					$( '.count' ).each( function () {
 						$( this ).prop( 'Counter', 0 ).animate( {
