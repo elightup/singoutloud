@@ -1,12 +1,44 @@
 .header {
 	font-family: var(--font-Opensans);
-	// color: var(--color-white);
 	color: black;
 	font-weight: 400;
 	font-size: 15px;
 	line-height: 1.2;
-	padding: 65px 145px 0;
+	padding: 40px 0;
 	background: rgb(70, 177, 192);
+
+	&.white-header {
+		.navbar-logo {
+			display: none;
+
+			&.white-logo {
+				display: block;
+			}
+		}
+
+	}
+
+	.header-email {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-top: 30px;
+
+		a {
+			text-decoration: none;
+			margin-left: 10px;
+			color: #fff;
+		}
+
+		svg {
+			width: 15px;
+			fill: #fff;
+		}
+	}
+
+	.white-logo {
+		display: none;
+	}
 
 	&__inner {
 		display: flex;
@@ -14,8 +46,10 @@
 		align-items: center;
 
 		a {
-			// color: var(--color-white);
-			color: black
+			color: var(--color-white);
+			font-size: 15px;
+			line-height: 1.2;
+			padding: 0 27.5px;
 		}
 
 		a:hover {
@@ -26,12 +60,13 @@
 			list-style: none;
 			padding: 0;
 			margin: 0;
+			margin-top: 22px;
 		}
 	}
 
 	&__menu {
-		width: 46%;
 		margin: auto;
+		margin-left: 100px;
 
 		.menu {
 			display: flex;
@@ -75,11 +110,17 @@
 	}
 
 	&__btn {
-		text-align: right;
+		.header-login {
+			position: relative;
+			overflow: hidden;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: end;
+		}
 
 		.signin,
 		.signup {
-			padding: 7px 15px;
+			padding: 7px 11px;
 			border-radius: 20px;
 		}
 
@@ -87,6 +128,7 @@
 			background: var(--color-white);
 			color: #000;
 			margin-right: 20px;
+			line-height: 1.2;
 		}
 
 		.signin:hover {

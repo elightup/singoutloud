@@ -1,5 +1,4 @@
 </main>
-</div>
 <footer class="footer " role="contentinfo">
 
 	<!-- nội dung footer -->
@@ -10,16 +9,17 @@
 		Thông tin liên hệ:
 	</div>
 	<div class="footer__info">
-		<?php dynamic_sidebar('footer') ?>
+		<?php dynamic_sidebar( 'footer' ) ?>
 	</div>
 	<div class="footer__social">
 		<div>
-			<?php dynamic_sidebar('footer-social'); ?>
+			<?php dynamic_sidebar( 'footer-social' ); ?>
 		</div>
 		<p>Bản quyền thuộc Swinburne Việt Nam</p>
 	</div>
 
 </footer>
+
 <?php wp_footer(); ?>
 </body>
 

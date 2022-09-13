@@ -3,7 +3,7 @@
 		"css": "sass sass:css  sass/style.scss:style.css",
 		"watchs": "node-sass sass -o . --output-style compressed -w",
 		"watch": "sass sass:css  sass/style.scss:style.css --style=compressed --watch",
-		"sync": "browser-sync start --proxy \"localhost/singoutloud\" --files \"style.css\" --files \"css/*.css\"",
+		"sync": "browser-sync start --proxy \"localhost:8080/sing-out-loud\" --files \"style.css\" --files \"css/*.css\"",
 		"start": "npm run watch & npm run watch:home"
 	},
 	"devDependencies": {
