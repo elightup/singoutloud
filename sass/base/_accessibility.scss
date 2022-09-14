@@ -30,6 +30,12 @@
 
 @font-face {
 	font-family: "Barlow";
+	font-weight: 600;
+	src: url("./fonts/Barlow-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Barlow";
 	font-weight: 700;
 	src: url("./fonts/Barlow-Bold.ttf") format("truetype");
 }

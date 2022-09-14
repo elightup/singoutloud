@@ -21,14 +21,20 @@ class Custom_Field {
 				],
 			],
 			'tabs'       => [
-				'banner' => [
+				'banner'  => [
 					'label' => 'Banner',
 				],
-				'number' => [
+				'number'  => [
 					'label' => 'Con số',
 				],
-				'judges' => [
+				'judges'  => [
 					'label' => 'Ban giám khảo',
+				],
+				'moment'  => [
+					'label' => 'Khoảnh khắc',
+				],
+				'top_win' => [
+					'label' => 'Top Chiến thắng',
 				],
 			],
 			'fields'     => [
@@ -113,6 +119,56 @@ class Custom_Field {
 						],
 						[
 							'id'   => 'image_judges',
+							'name' => esc_html__( 'Image', 'singoutloud' ),
+							'type' => 'single_image',
+						],
+					],
+				],
+				// Khoảng khắc
+				[
+					'id'                => 'title_moment',
+					'name'              => esc_html__( 'Title', 'singoutloud' ),
+					'tab'               => 'moment',
+					'sanitize_callback' => 'none',
+				],
+				[
+					'id'                => 'title_moment',
+					'name'              => esc_html__( 'Title', 'singoutloud' ),
+					'type'              => 'image_advanced',
+					'tab'               => 'moment',
+					'sanitize_callback' => 'none',
+				],
+				// Top Chiến thắng
+				[
+					'id'                => 'title_top_win',
+					'name'              => esc_html__( 'Title', 'singoutloud' ),
+					'tab'               => 'top_win',
+					'sanitize_callback' => 'none',
+				],
+				[
+					'id'          => 'win_group',
+					'name'        => '',
+					'type'        => 'group',
+					'clone'       => true,
+					'collapsible' => true,
+					'group_title' => '{name}',
+					'tab'         => 'top_win',
+					'fields'      => [
+						[
+							'id'   => 'title',
+							'name' => esc_html__( 'Title', 'singoutloud' ),
+							'sanitize_callback' => 'none',
+						],
+						[
+							'id'   => 'sub_name',
+							'name' => esc_html__( 'Chức vụ', 'singoutloud' ),
+						],
+						[
+							'id'   => 'name',
+							'name' => esc_html__( 'Tên thí sinh', 'singoutloud' ),
+						],
+						[
+							'id'   => 'image',
 							'name' => esc_html__( 'Image', 'singoutloud' ),
 							'type' => 'single_image',
 						],

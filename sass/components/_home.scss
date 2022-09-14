@@ -130,7 +130,8 @@
 	}
 }
 
-.judges-home {
+.judges-home,
+.winner-home {
 	position: relative;
 	background-color: var(--color-black);
 	padding: 219px 0 100px;
@@ -167,11 +168,17 @@
 	}
 
 	&__inner {
-		width: 58%;
+		width: 62%;
 		position: relative;
 		display: grid;
-		gap: 80px;
+		gap: 31px 80px;
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	&__image {
+		img {
+			width: 100%;
+		}
 	}
 
 	&__title {
@@ -179,8 +186,7 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
-
-		width: 89%;
+		width: 83%;
 
 		.number {
 			font-family: var(--font-SimplonNorm);
@@ -200,7 +206,7 @@
 	}
 
 	&__content {
-		margin-top: 51px;
+		margin-top: 47px;
 
 		h3 {
 			font-family: var(--font-Barlow);
@@ -219,5 +225,19 @@
 			margin: 0;
 			text-transform: uppercase;
 		}
+	}
+}
+
+.judges-home {
+	&::before {
+		content: '';
+		display: block;
+		width: 264px;
+		height: 527px;
+		background-image: url('images/bg_judges.png');
+		background-size: cover;
+		position: absolute;
+		top: 15%;
+		left: -37px;
 	}
 }
