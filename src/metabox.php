@@ -36,6 +36,9 @@ class Custom_Field {
 				'top_win' => [
 					'label' => 'Top Chiến thắng',
 				],
+				'top_ten' => [
+					'label' => 'Top 10 thí sinh',
+				],
 			],
 			'fields'     => [
 				// Banner
@@ -155,8 +158,8 @@ class Custom_Field {
 					'tab'         => 'top_win',
 					'fields'      => [
 						[
-							'id'   => 'title',
-							'name' => esc_html__( 'Title', 'singoutloud' ),
+							'id'                => 'title',
+							'name'              => esc_html__( 'Title', 'singoutloud' ),
 							'sanitize_callback' => 'none',
 						],
 						[
@@ -171,6 +174,32 @@ class Custom_Field {
 							'id'   => 'image',
 							'name' => esc_html__( 'Image', 'singoutloud' ),
 							'type' => 'single_image',
+						],
+					],
+				],
+				// Top 10
+				[
+					'id'                => 'title_top_ten',
+					'name'              => esc_html__( 'Title', 'singoutloud' ),
+					'tab'               => 'top_ten',
+					'sanitize_callback' => 'none',
+				],
+				[
+					'id'          => 'top_ten_group',
+					'name'        => '',
+					'type'        => 'group',
+					'clone'       => true,
+					'collapsible' => true,
+					'group_title' => '{name}',
+					'tab'         => 'top_ten',
+					'fields'      => [
+						[
+							'id'   => 'name',
+							'name' => esc_html__( 'Tên thí sinh', 'singoutloud' ),
+						],
+						[
+							'id'   => 'video',
+							'name' => esc_html__( 'Video thí sinh', 'singoutloud' ),
 						],
 					],
 				],

@@ -12,6 +12,7 @@
 	get_template_part( 'template-parts/home/number' );
 	get_template_part( 'template-parts/home/judges' );
 	get_template_part( 'template-parts/home/winner' );
+	get_template_part( 'template-parts/home/top-ten' );
 	?>
 
 </main>
