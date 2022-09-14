@@ -18,12 +18,12 @@ $right_content = rwmb_meta('right-content');
 			</div>
 		</div>
 	</div>
-	<div class="about__right" style="background-image: url(<?= $right_imagebg['url'] ?>">
+	<div class="about__right" style="background-image: url(<?= $right_imagebg['full_url'] ?>">
 		<div class="about__right-image">
 			<div class="about__right-logo">
 				<?php the_custom_logo(); ?>
 			</div>
-			<div class="about__right-image">
+			<div class="about__right-bg">
 				<?php Template_function::sol_get_image_path('bg_vuong.png'); ?>
 			</div>
 		</div>

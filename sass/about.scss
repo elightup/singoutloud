@@ -1,0 +1,11 @@
+.about {
+	width: 87%;
+	margin-left: auto;
+	display: flex;
+
+	&__left-bg1,
+	&__left-bg2,
+	&__left-bg3 {
+		width: 40px;
+	}
+}
