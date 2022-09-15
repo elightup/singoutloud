@@ -20,7 +20,7 @@ jQuery( function ( $ ) {
 					breakpoint: 600,
 					settings: {
 						dots: true,
-						slidesToShow: 2
+						slidesToShow: 1
 					}
 				}
 			]

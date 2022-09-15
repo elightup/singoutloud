@@ -1,0 +1,181 @@
+@media only screen and(max-width: 767px) {
+	.footer {
+		padding: 30px 15px;
+		flex-wrap: wrap;
+
+		&__title {
+			width: 100%;
+			margin-top: 30px;
+		}
+
+		&__info {
+			margin-bottom: 30px;
+		}
+	}
+
+	.partner-home {
+		&__wrap {
+			gap: 0;
+		}
+
+		&__image {
+			width: 100%;
+			padding-bottom: 50px;
+			justify-content: center;
+			gap: 20px;
+		}
+
+		&__login {
+			min-height: auto;
+			background: none;
+		}
+
+		&__content {
+			width: 100%;
+		}
+	}
+
+	.new-home {
+		h2.title {
+			&::after {
+				width: 100%;
+				margin-top: 15px;
+			}
+		}
+
+		.img {
+			margin-top: 50px;
+		}
+
+		&__inner {
+			.slick-prev {
+				left: 20px;
+				width: 20px;
+				height: 35px;
+				background-size: cover;
+			}
+
+			.slick-next {
+				right: 20px;
+				width: 20px;
+				height: 35px;
+				background-size: cover;
+			}
+		}
+	}
+
+	.top-ten {
+		&__wrap {
+			h2.title {
+				&::after {
+					width: 100%;
+					margin-top: 15px;
+				}
+			}
+		}
+
+		&__inner {
+			width: 100%;
+			padding-left: 20px;
+			height: 350px;
+
+			summary {
+				font-size: 16px;
+			}
+		}
+	}
+
+	.winner-home {
+		padding-top: 50px;
+
+		&__wrap {
+			h2.title {
+				font-size: 28px;
+
+				&::after {
+					margin-top: 15px;
+					width: 100%;
+				}
+			}
+		}
+
+		&__inner {
+			width: 100%;
+			gap: 15px;
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		&__title {
+			width: 100%;
+
+			.title {
+				font-size: 20px;
+			}
+		}
+
+		&__content {
+			h3 {
+				font-size: 18px;
+			}
+
+			h2 {
+				font-size: 26px;
+			}
+		}
+	}
+
+	.judges-home {
+		padding-top: 50px;
+
+		&::before {
+			display: none;
+		}
+
+		&__title {
+			width: 100%;
+		}
+
+		&__content {
+			h3 {
+				font-size: 20px;
+			}
+
+			h2 {
+				font-size: 26px;
+			}
+		}
+
+		&__wrap {
+			margin-bottom: 50px;
+
+			h2.title {
+				&::after {
+					width: 100%;
+					margin-top: 15px;
+				}
+			}
+		}
+
+		&__inner {
+			width: 100%;
+			gap: 20px;
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	.moment-home {
+		&__wrap {
+			li {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+
+		&__item {
+			grid-area: inherit !important;
+		}
+	}
+
+	.number-home {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
