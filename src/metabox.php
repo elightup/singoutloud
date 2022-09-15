@@ -42,6 +42,9 @@ class Custom_Field {
 				'news'    => [
 					'label' => 'Tin tức',
 				],
+				'partner' => [
+					'label' => 'Đối tác',
+				],
 			],
 			'fields'     => [
 				// Banner
@@ -220,6 +223,31 @@ class Custom_Field {
 					'taxonomy'   => [ 'category' ],
 					'field_type' => 'select_advanced',
 					'tab'        => 'news',
+				],
+				// Đối tác
+				[
+					'id'                => 'titless_partner',
+					'name'              => esc_html__( 'Title Đối tác', 'singoutloud' ),
+					'tab'               => 'partner',
+					'sanitize_callback' => 'none',
+				],
+				[
+					'id'   => 'image_partner',
+					'name' => esc_html__( 'Image', 'singoutloud' ),
+					'type' => 'image_advanced',
+					'tab'  => 'partner',
+				],
+				[
+					'id'                => 'title_newspapers',
+					'name'              => esc_html__( 'Title Báo chí', 'singoutloud' ),
+					'tab'               => 'partner',
+					'sanitize_callback' => 'none',
+				],
+				[
+					'id'   => 'image_newspapers',
+					'name' => esc_html__( 'Image Báo chí', 'singoutloud' ),
+					'type' => 'image_advanced',
+					'tab'  => 'partner',
 				],
 			],
 		];

@@ -21,6 +21,7 @@ $query      = new WP_Query( $args );
 					singoutloud_post_new();
 				endwhile;
 			endif;
+			wp_reset_postdata();
 			?>
 			</div>
 		</div>

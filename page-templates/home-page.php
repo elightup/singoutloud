@@ -14,6 +14,7 @@
 	get_template_part( 'template-parts/home/winner' );
 	get_template_part( 'template-parts/home/top-ten' );
 	get_template_part( 'template-parts/home/news' );
+	get_template_part( 'template-parts/home/doi-tac' );
 	?>
 
 </main>
