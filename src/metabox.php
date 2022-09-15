@@ -141,11 +141,21 @@ class Custom_Field {
 					'sanitize_callback' => 'none',
 				],
 				[
-					'id'                => 'title_moment',
-					'name'              => esc_html__( 'Title', 'singoutloud' ),
-					'type'              => 'image_advanced',
-					'tab'               => 'moment',
-					'sanitize_callback' => 'none',
+					'id'          => 'image_gallery',
+					'name'        => '',
+					'type'        => 'group',
+					'clone'       => true,
+					'collapsible' => true,
+					'group_title' => 'Gallery {#}',
+					'tab'         => 'moment',
+					'fields'      => [
+						[
+							'name'             => __( 'Image', 'singoutloud' ),
+							'id'               => 'image_moment',
+							'type'             => 'image_advanced',
+							'max_file_uploads' => 7,
+						],
+					],
 				],
 				// Top Chiến thắng
 				[

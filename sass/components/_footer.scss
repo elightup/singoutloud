@@ -40,6 +40,10 @@
 			align-items: center;
 		}
 
+		img {
+			margin-right: 10px;
+		}
+
 		ul li:first-child::before {
 			content: '';
 			display: block;
