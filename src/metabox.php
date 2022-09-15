@@ -39,6 +39,9 @@ class Custom_Field {
 				'top_ten' => [
 					'label' => 'Top 10 thí sinh',
 				],
+				'news'    => [
+					'label' => 'Tin tức',
+				],
 			],
 			'fields'     => [
 				// Banner
@@ -202,6 +205,21 @@ class Custom_Field {
 							'name' => esc_html__( 'Video thí sinh', 'singoutloud' ),
 						],
 					],
+				],
+				// news
+				[
+					'id'                => 'title_news',
+					'name'              => esc_html__( 'Title', 'singoutloud' ),
+					'tab'               => 'news',
+					'sanitize_callback' => 'none',
+				],
+				[
+					'name'       => __( 'Tin tức', 'singoutloud' ),
+					'id'         => 'news_advanced',
+					'type'       => 'taxonomy_advanced',
+					'taxonomy'   => [ 'category' ],
+					'field_type' => 'select_advanced',
+					'tab'        => 'news',
 				],
 			],
 		];

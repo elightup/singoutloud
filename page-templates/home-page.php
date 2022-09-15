@@ -13,6 +13,7 @@
 	get_template_part( 'template-parts/home/judges' );
 	get_template_part( 'template-parts/home/winner' );
 	get_template_part( 'template-parts/home/top-ten' );
+	get_template_part( 'template-parts/home/news' );
 	?>
 
 </main>

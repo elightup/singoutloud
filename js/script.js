@@ -8,23 +8,23 @@ jQuery( function ( $ ) {
 			rows: 0,
 			autoplaySpeed: 3000,
 		} );
-		// $( '.brand__wrap' ).slick( {
-		// 	slidesToShow: 4,
-		// 	dots: false,
-		// 	arrows: false,
-		// 	autoplay: true,
-		// 	rows: 0,
-		// 	autoplaySpeed: 4000,
-		// 	responsive: [
-		// 		{
-		// 			breakpoint: 600,
-		// 			settings: {
-		// 				dots: true,
-		// 				slidesToShow: 2
-		// 			}
-		// 		}
-		// 	]
-		// } );
+		$( '.new-home__inner' ).slick( {
+			slidesToShow: 4,
+			dots: false,
+			arrows: true,
+			autoplay: false,
+			rows: 0,
+			autoplaySpeed: 4000,
+			responsive: [
+				{
+					breakpoint: 600,
+					settings: {
+						dots: true,
+						slidesToShow: 2
+					}
+				}
+			]
+		} );
 	};
 	function counter_number() {
 		var a = 0;
