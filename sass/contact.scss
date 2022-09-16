@@ -61,6 +61,19 @@
 		&__inner {
 			width: 90%;
 			margin: auto;
+			margin-top: 40px;
+		}
+
+		&__title {
+			margin-bottom: 10px;
+		}
+
+		&__social {
+			margin-bottom: 30px;
+		}
+
+		&__tochuc-item {
+			margin-bottom: 15px;
 		}
 
 		&__bg {
@@ -74,10 +87,7 @@
 @media (max-width: 767px) {
 	.contact {
 		&__bg {
-			position: relative;
-			width: 90%;
-			margin: auto;
-			bottom: 0;
+			display: none;
 		}
 	}
 }

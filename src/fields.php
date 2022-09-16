@@ -12,6 +12,9 @@ class Fields
 		$meta_boxes[] = $this->contact();
 		$meta_boxes[] = $this->about();
 		$meta_boxes[] = $this->rules();
+		$meta_boxes[] = $this->prize();
+		$meta_boxes[] = $this->news();
+		$meta_boxes[] = $this->featured_post();
 
 		return $meta_boxes;
 	}
@@ -20,7 +23,7 @@ class Fields
 	function contact()
 	{
 		return [
-			'title'      => __('Cài đặt trang', 'sol'),
+			'title'      => __('Cài đặt trang', 'singoutloud'),
 			'post_types' => ['page'],
 			'tab_style'  => 'left',
 			'include'    => [
@@ -40,21 +43,21 @@ class Fields
 			],
 			'fields' => [
 				[
-					'name' => esc_html__('Kích thước', 'sol'),
+					'name' => esc_html__('Kích thước', 'singoutloud'),
 					'id' => 'image',
 					'type' => 'single_image',
-					'label_description' => __('1024*570', 'sol'),
+					'label_description' => __('1024*570', 'singoutloud'),
 					'tab' => 'image',
 				],
 				//Theo dõi chúng tôi
 				[
-					'name' => esc_html__('Tiêu đề', 'sol'),
+					'name' => esc_html__('Tiêu đề', 'singoutloud'),
 					'id' => 'socialmedia',
 					'type' => 'text',
 					'tab' => 'social',
 				],
 				[
-					'name' => esc_html__('', 'sol'),
+					'name' => esc_html__('', 'singoutloud'),
 					'id' => 'social-group',
 					'type' => 'group',
 					'clone' => true,
@@ -66,17 +69,17 @@ class Fields
 					'fields' => [
 						[
 							'id' => 'social-icon',
-							'name' => esc_html__('icon', 'sol'),
+							'name' => esc_html__('icon', 'singoutloud'),
 							'type' => 'single_image',
 						],
 						[
 							'id' => 'social-title',
-							'name' => esc_html__('Nội dung', 'sol'),
+							'name' => esc_html__('Nội dung', 'singoutloud'),
 							'type' => 'text'
 						],
 						[
 							'id' => 'social-link',
-							'name' => esc_html__('Link', 'sol'),
+							'name' => esc_html__('Link', 'singoutloud'),
 							'type' => 'text'
 						],
 					],
@@ -84,13 +87,13 @@ class Fields
 
 				// Ban tổ chức
 				[
-					'name' => __('Tiêu đề', 'sol'),
+					'name' => __('Tiêu đề', 'singoutloud'),
 					'id' => 'to-chuc',
 					'type' => 'text',
 					'tab' => 'to_chuc',
 				],
 				[
-					'name' => __('', 'sol'),
+					'name' => __('', 'singoutloud'),
 					'id' => 'tochuc-group',
 					'type' => 'group',
 					'clone' => true,
@@ -102,22 +105,22 @@ class Fields
 					'fields' => [
 						[
 							'id' => 'tochuc-mien',
-							'name' => esc_html__('Miền', 'sol'),
+							'name' => esc_html__('Miền', 'singoutloud'),
 							'type' => 'text',
 						],
 						[
 							'id' => 'tochuc-ten',
-							'name' => esc_html__('Họ Tên', 'sol'),
+							'name' => esc_html__('Họ Tên', 'singoutloud'),
 							'type' => 'text'
 						],
 						[
 							'id' => 'tochuc-mail',
-							'name' => esc_html__('Email', 'sol'),
+							'name' => esc_html__('Email', 'singoutloud'),
 							'type' => 'text'
 						],
 						[
 							'id' => 'tochuc-tel',
-							'name' => esc_html__('Số điện thoại', 'sol'),
+							'name' => esc_html__('Số điện thoại', 'singoutloud'),
 							'type' => 'text',
 						],
 					],
@@ -130,7 +133,7 @@ class Fields
 	function about()
 	{
 		return [
-			'title'      => __('Cài đặt trang', 'sol'),
+			'title'      => __('Cài đặt trang', 'singoutloud'),
 			'post_types' => ['page'],
 			'tab_style'  => 'left',
 			'include'    => [
@@ -148,28 +151,28 @@ class Fields
 			'fields' => [
 				//left
 				[
-					'name' => esc_html__('Ảnh', 'sol'),
+					'name' => esc_html__('Ảnh', 'singoutloud'),
 					'id' => 'left-image',
 					'type' => 'single_image',
-					'label_description' => __('170*85', 'sol'),
+					'label_description' => __('170*85', 'singoutloud'),
 					'tab' => 'left',
 				],
 				[
-					'name' => esc_html__('Nội dung', 'sol'),
+					'name' => esc_html__('Nội dung', 'singoutloud'),
 					'id' => 'left-content',
 					'type' => 'wysiwyg',
 					'tab' => 'left',
 				],
 				//right
 				[
-					'name' => esc_html__('Ảnh Background', 'sol'),
+					'name' => esc_html__('Ảnh Background', 'singoutloud'),
 					'id' => 'right-image',
 					'type' => 'single_image',
-					'label_description' => __('1024*1024', 'sol'),
+					'label_description' => __('1024*1024', 'singoutloud'),
 					'tab' => 'right',
 				],
 				[
-					'name' => esc_html__('Nội dung', 'sol'),
+					'name' => esc_html__('Nội dung', 'singoutloud'),
 					'id' => 'right-content',
 					'type' => 'wysiwyg',
 					'tab' => 'right',
@@ -182,7 +185,7 @@ class Fields
 	function rules()
 	{
 		return [
-			'title'      => __('Cài đặt trang', 'sol'),
+			'title'      => __('Cài đặt trang', 'singoutloud'),
 			'post_types' => ['page'],
 			'include'    => [
 				'relation' => 'OR',
@@ -190,17 +193,17 @@ class Fields
 			],
 			'fields' => [
 				[
-					'name' => esc_html__('Tiêu Đề', 'sol'),
+					'name' => esc_html__('Tiêu Đề', 'singoutloud'),
 					'id' => 'rule-title',
 					'type' => 'text',
 				],
 				[
-					'name' => esc_html__('Ảnh', 'sol'),
+					'name' => esc_html__('Ảnh', 'singoutloud'),
 					'id' => 'rule-image',
 					'type' => 'single_image',
 				],
 				[
-					'name' => esc_html__('Các Vòng', 'sol'),
+					'name' => esc_html__('Các Vòng', 'singoutloud'),
 					'id' => 'rule-group',
 					'type' => 'group',
 					'clone' => true,
@@ -211,20 +214,108 @@ class Fields
 					'fields' => [
 						[
 							'id' => 'rule-steps',
-							'name' => esc_html__('Tên Vòng', 'sol'),
+							'name' => esc_html__('Tên Vòng', 'singoutloud'),
 							'type' => 'text',
 						],
 						[
 							'id' => 'rule-time',
-							'name' => esc_html__('Thời Gian', 'sol'),
+							'name' => esc_html__('Thời Gian', 'singoutloud'),
 							'type' => 'text'
 						],
 						[
 							'id' => 'rule-content',
-							'name' => esc_html__('Nội Dung', 'sol'),
+							'name' => esc_html__('Nội Dung', 'singoutloud'),
 							'type' => 'wysiwyg',
 						],
 					],
+				],
+			],
+		];
+	}
+
+	//Prize
+	function prize()
+	{
+		return [
+			'title'      => __('Cài đặt trang', 'singoutloud'),
+			'post_types' => ['page'],
+			'include'    => [
+				'relation' => 'OR',
+				'template' => ['page-templates/prize-page.php'],
+			],
+			'fields' => [
+				[
+					'name' => esc_html__('Tiêu Đề', 'singoutloud'),
+					'id' => 'prize-title',
+					'type' => 'textarea',
+				],
+				[
+					'name' => esc_html__('Ảnh', 'singoutloud'),
+					'id' => 'prize-image',
+					'type' => 'single_image',
+				],
+				[
+					'name' => esc_html__('Giải Thưởng', 'singoutloud'),
+					'id' => 'prize-group',
+					'type' => 'group',
+					'clone' => true,
+					'collapsible' => true,
+					'default_state' => 'collapsed',
+					'group_title' => '{prize-name}',
+					'save_state' => true,
+					'fields' => [
+						[
+							'id' => 'prize-name',
+							'name' => esc_html__('Tên Giải', 'singoutloud'),
+							'type' => 'text',
+						],
+						[
+							'id' => 'prize-number',
+							'name' => esc_html__('Phần Thưởng', 'singoutloud'),
+							'type' => 'text',
+						],
+						[
+							'id' => 'prize-desc',
+							'name' => esc_html__('Chi tiết', 'singoutloud'),
+							'type' => 'wysiwyg',
+						],
+					],
+				],
+			],
+		];
+	}
+
+	//News
+	function news()
+	{
+		return [
+			'title'      => __('Cài đặt trang', 'singoutloud'),
+			'post_types' => ['page'],
+			'include'    => [
+				'relation' => 'OR',
+				'template' => ['page-templates/new-page.php'],
+			],
+			'fields' => [
+				[
+					'name' => __('Tiêu đề', 'singoutloud'),
+					'id'   => 'new-title',
+					'type' => 'text',
+				],
+			],
+		];
+	}
+	//News Featured
+	function featured_post()
+	{
+		return [
+			'title'  => __('Cài đặt trang', 'singoutloud'),
+			'id'     => 'featured',
+			'fields' => [
+				[
+					'name' => __('Chọn Bài Viết Nổi Bật', 'singoutloud'),
+					'id'   => 'post-check',
+					'type' => 'checkbox',
+					'std'  => 0,
 				],
 			],
 		];
