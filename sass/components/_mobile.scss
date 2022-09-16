@@ -79,6 +79,10 @@
 			padding-left: 20px;
 			height: 350px;
 
+			details {
+				padding: 0;
+			}
+
 			summary {
 				font-size: 16px;
 			}
@@ -86,7 +90,7 @@
 	}
 
 	.winner-home {
-		padding-top: 50px;
+		padding-top: 20px;
 
 		&__wrap {
 			h2.title {
@@ -126,6 +130,7 @@
 
 	.judges-home {
 		padding-top: 50px;
+		padding-bottom: 0;
 
 		&::before {
 			display: none;
@@ -146,7 +151,7 @@
 		}
 
 		&__wrap {
-			margin-bottom: 50px;
+			margin-bottom: 0px;
 
 			h2.title {
 				&::after {
@@ -172,10 +177,98 @@
 
 		&__item {
 			grid-area: inherit !important;
+
+			&::after {
+				padding-bottom: 100%;
+			}
 		}
 	}
 
 	.number-home {
 		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.header {
+		padding: 20px 0;
+
+		&.white-header {
+			position: relative;
+
+			.navbar-logo {
+				display: block;
+
+				&.white-logo {
+					display: none;
+				}
+			}
+		}
+
+		&__inner {
+			width: 100%;
+			justify-content: space-between;
+		}
+
+		&__menu {
+			margin: 0;
+
+			.menu {
+				display: none;
+			}
+
+			&.is-open {
+				.menu {
+					display: block;
+					position: absolute;
+					background-color: var(--color-black);
+					z-index: 2;
+					width: 300px;
+					right: 0;
+					padding: 15px;
+					margin-top: 30px;
+				}
+
+				li {
+					padding: 10px 0;
+				}
+
+				a {
+					padding: 10px 0;
+				}
+			}
+
+			.menu-toggle {
+				display: block;
+			}
+		}
+
+		&__btn {
+			width: 100%;
+
+			.signin {
+				background: var(--color-main);
+				color: var(--color-white);
+			}
+		}
+
+		.header-email {
+			display: none;
+
+			a {
+				color: var(--color-black);
+				margin: 0;
+			}
+
+			svg {
+				fill: var(--color-black);
+			}
+		}
+	}
+
+	.home-banner {
+		&__content {
+			h1 {
+				font-size: 55px;
+			}
+		}
 	}
 }

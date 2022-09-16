@@ -94,7 +94,7 @@ jQuery( function ( $ ) {
 		} );
 	}
 
-	//toggleMenu();
+	toggleMenu();
 	slickSlide();
 	counter_number();
 	scrollDown();

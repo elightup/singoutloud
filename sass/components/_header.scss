@@ -74,10 +74,27 @@
 	&__menu {
 		margin: auto;
 		margin-left: 100px;
+		display: flex;
+		flex-wrap: wrap;
 
 		.menu {
 			display: flex;
 			justify-content: space-between;
+		}
+
+		.menu-toggle {
+			background: transparent;
+			border: none;
+			color: var(--color-black);
+			line-height: 1;
+			cursor: pointer;
+			padding: 0 5px;
+			display: none;
+
+			svg {
+				width: 24px;
+				height: 24px;
+			}
 		}
 	}
 

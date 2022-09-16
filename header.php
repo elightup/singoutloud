@@ -39,6 +39,9 @@
 							)
 						);
 						?>
+						<button class="menu-toggle header-icon" aria-controls="primary-menu" aria-expanded="false">
+							<?php SingOutLoud_Icons::render( 'menu' ) ?>
+						</button>
 					</div>
 				</div>
 				<div class="header__btn">
