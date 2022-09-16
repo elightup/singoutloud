@@ -9,6 +9,7 @@ class Custom_Field {
 		$meta_boxes[] = $this->home();
 		$meta_boxes[] = $this->regis();
 		$meta_boxes[] = $this->regis_user();
+		$meta_boxes[] = $this->login_user();
 
 		return $meta_boxes;
 	}
@@ -300,6 +301,26 @@ class Custom_Field {
 					'name' => __( 'Tôi muốn nhận thông tin về chương trình <br>Sing Out Loud qua email', 'singoutloud' ),
 					'id'   => 'check_user',
 					'type' => 'checkbox',
+				],
+			],
+		];
+	}
+
+	function login_user() {
+		return [
+			'title'      => esc_html__( 'Setting Resgister', 'singoutloud' ),
+			'id'         => 'resgister-setting',
+			'post_types' => [ 'page' ],
+			'include'    => [
+				'template' => [
+					'page-templates/login-page.php',
+				],
+			],
+			'fields'     => [
+				[
+					'id'   => 'image_register',
+					'name' => esc_html__( 'Image', 'singoutloud' ),
+					'type' => 'image_advanced',
 				],
 			],
 		];
