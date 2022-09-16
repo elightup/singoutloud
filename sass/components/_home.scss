@@ -396,22 +396,29 @@
 	}
 
 	&__inner {
+
+		.slick-next,
 		.slick-prev {
 			width: 48px;
 			height: 82px;
 			background-image: url('images/prev.png');
 			background-color: transparent;
-			left: 170px;
+			background-size: cover;
 			z-index: 2;
 		}
 
+		.slick-prev {
+			background-image: url('images/prev.png');
+			left: 170px;
+		}
+
 		.slick-next {
-			width: 48px;
-			height: 82px;
 			background-image: url('images/next.png');
-			background-color: transparent;
 			right: 170px;
-			z-index: 2;
+
+			@media(max-width: 1023px) {
+				right: 20px;
+			}
 		}
 	}
 

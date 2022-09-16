@@ -80,7 +80,18 @@
 }
 
 @media(max-width: 767px) {
-	.footer__inner {
-		padding: 40px 0;
+	.footer {
+		&__inner {
+			padding: 30px 15px;
+		}
+
+		&__title {
+			width: 100%;
+			margin-top: 30px;
+		}
+
+		&__info {
+			margin-bottom: 30px;
+		}
 	}
 }

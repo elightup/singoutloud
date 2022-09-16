@@ -1,5 +1,5 @@
 .new {
-	padding: 95px 0 125px 0;
+	padding: 55px 0 125px 0;
 
 	.new-home {
 		background: var(--color-white);
@@ -24,13 +24,13 @@
 .list-post {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 1fr 1fr;
 	grid-gap: 10px;
+	padding-top: 148px;
 
 	&__image {
 		position: relative;
 		transition: all 0.35s ease;
-
+		height: 100%;
 		filter: grayscale(1);
 
 		&::after {
@@ -51,6 +51,7 @@
 
 	&__item {
 		position: relative;
+		max-height: 435px;
 
 		&:hover {
 			.list-post__title {
@@ -61,6 +62,10 @@
 			.list-post__image {
 				filter: grayscale(0);
 			}
+		}
+
+		&:last-child {
+			grid-column: 2/4;
 		}
 	}
 
@@ -91,6 +96,27 @@
 
 		a {
 			color: var(--color-white);
+		}
+	}
+}
+
+@media(max-width:1024px) {
+	.list-post {
+		padding-top: 100px;
+	}
+}
+
+@media (max-width: 767px) {
+	.new {
+		padding: 50px 0;
+	}
+
+	.list-post {
+		display: block;
+		padding-top: 50px;
+
+		&__item {
+			margin-bottom: 20px;
 		}
 	}
 }
