@@ -24,7 +24,11 @@
 		}
 
 		.description {
-			display: none;
+			margin-bottom: 0;
+		}
+
+		input {
+			color: var(--color-black) !important;
 		}
 
 		form {
@@ -33,6 +37,10 @@
 
 			h2 {
 				display: none;
+			}
+
+			.rwmb-text-wrapper {
+				margin-top: 10px;
 			}
 
 			.rwmb-checkbox-wrapper {
@@ -107,5 +115,23 @@
 .page-template-register {
 	.footer {
 		display: none;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.register-page {
+		&__wrap {
+			gap: 20px;
+			margin-right: 0;
+		}
+
+		&__form {
+			width: 100%;
+			padding: 0;
+		}
+
+		&__image {
+			width: 100%;
+		}
 	}
 }

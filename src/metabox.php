@@ -293,6 +293,10 @@ class Custom_Field {
 			'type'   => 'user',
 			'fields' => [
 				[
+					'name' => __( 'Phone', 'singoutloud' ),
+					'id'   => 'phone_use',
+				],
+				[
 					'name' => __( 'Tôi muốn nhận thông tin về chương trình <br>Sing Out Loud qua email', 'singoutloud' ),
 					'id'   => 'check_user',
 					'type' => 'checkbox',
