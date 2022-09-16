@@ -1,10 +1,16 @@
 .footer {
-	padding: 72px 555px 62px 145px;
-	display: flex;
-	justify-content: space-between;
 	font-size: 15px;
 	color: var(--color-white);
 	background: #191919;
+
+	&__inner {
+		width: 64%;
+		margin-left: 145px;
+		padding: 72px 0 62px 0;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
 
 	h2,
 	p {
@@ -49,7 +55,7 @@
 			display: block;
 			width: 15px;
 			height: 15px;
-			background-image: url('images/Assetfb.png');
+			background-image: url('images/Assetfb.svg');
 			background-repeat: no-repeat;
 			margin-right: 12px;
 		}
@@ -59,9 +65,22 @@
 			display: block;
 			width: 15px;
 			height: 13px;
-			background-image: url('images/Asset2.png');
+			background-image: url('images/mail.png');
 			background-repeat: no-repeat;
 			margin-right: 12px;
 		}
+	}
+}
+
+@media(max-width:1024px) {
+	.footer__inner {
+		width: 97%;
+		margin: auto;
+	}
+}
+
+@media(max-width: 767px) {
+	.footer__inner {
+		padding: 40px 0;
 	}
 }

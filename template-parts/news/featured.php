@@ -1,33 +1,29 @@
 <?php
-$argr = [
-	'post_type'      => ['post'],
-	'posts_per_page' => -1,
+$title_news = rwmb_meta('new-title');
+$news       = rwmb_meta('news_select');
+$id_new     = $news->term_id;
+$args       = [
+	'post_type'      => 'post',
+	'posts_per_page' => 10,
+	'cat'            => $id_new,
 ];
-$posts = get_posts($argr);
-
+$query      = new WP_Query($args);
 ?>
-<section class="featured">
-	<?php
-	foreach ($posts as $key => $post) :
-		$checkbox = rwmb_meta('post-check', '', $post->ID);
-		if ($checkbox != '1') {
-			continue;
-		}
-	?>
-		<div class="featured__item">
-			<div class="featured__item-image">
-				<?= get_the_post_thumbnail($post->ID, 'full'); ?>
-			</div>
-			<div class="featured__item-content">
-				<div class="featured__item-time">
-					<?= get_the_date('d/m') ?>
-				</div>
-				<div class="featured__item-title">
-					<?php echo get_the_title($post->ID); ?>
-				</div>
+<section class="new-home">
+	<div class="container">
+		<h2 class="new__title"><?= esc_html($title_news); ?></h2>
+		<div class="new-home__wrap">
+			<div class="new-home__inner">
+				<?php
+				if ($query->have_posts()) :
+					while ($query->have_posts()) :
+						$query->the_post();
+						singoutloud_post_new();
+					endwhile;
+				endif;
+				wp_reset_postdata();
+				?>
 			</div>
 		</div>
-	<?php
-	endforeach;
-	?>
+	</div>
 </section>

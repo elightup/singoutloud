@@ -14,7 +14,6 @@ class Fields
 		$meta_boxes[] = $this->rules();
 		$meta_boxes[] = $this->prize();
 		$meta_boxes[] = $this->news();
-		$meta_boxes[] = $this->featured_post();
 
 		return $meta_boxes;
 	}
@@ -289,7 +288,7 @@ class Fields
 	function news()
 	{
 		return [
-			'title'      => __('Cài đặt trang', 'singoutloud'),
+			'title'      => __('Cài Đặt Trang', 'singoutloud'),
 			'post_types' => ['page'],
 			'include'    => [
 				'relation' => 'OR',
@@ -297,27 +296,35 @@ class Fields
 			],
 			'fields' => [
 				[
-					'name' => __('Tiêu đề', 'singoutloud'),
-					'id'   => 'new-title',
-					'type' => 'text',
+					'name'              => esc_html__('Tiêu Đề', 'singoutloud'),
+					'id'                => 'new-title',
+					'sanitize_callback' => 'none',
 				],
+				[
+					'name'       => __('Chọn Chuyên Mục', 'singoutloud'),
+					'id'         => 'news_select',
+					'type'       => 'taxonomy_advanced',
+					'taxonomy'   => ['category'],
+					'field_type' => 'select_advanced',
+				],
+
 			],
 		];
 	}
 	//News Featured
-	function featured_post()
-	{
-		return [
-			'title'  => __('Cài đặt trang', 'singoutloud'),
-			'id'     => 'featured',
-			'fields' => [
-				[
-					'name' => __('Chọn Bài Viết Nổi Bật', 'singoutloud'),
-					'id'   => 'post-check',
-					'type' => 'checkbox',
-					'std'  => 0,
-				],
-			],
-		];
-	}
+	// function featured_post()
+	// {
+	// 	return [
+	// 		'title'  => __('Cài đặt trang', 'singoutloud'),
+	// 		'id'     => 'featured',
+	// 		'fields' => [
+	// 			[
+	// 				'name' => __('Chọn Bài Viết Nổi Bật', 'singoutloud'),
+	// 				'id'   => 'post-check',
+	// 				'type' => 'checkbox',
+	// 				'std'  => 0,
+	// 			],
+	// 		],
+	// 	];
+	// }
 }
