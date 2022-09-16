@@ -8,6 +8,14 @@ jQuery( function ( $ ) {
 			rows: 0,
 			autoplaySpeed: 3000,
 		} );
+		$( '.register-page__image' ).slick( {
+			slidesToShow: 1,
+			dots: true,
+			arrows: false,
+			autoplay: true,
+			rows: 0,
+			autoplaySpeed: 3000,
+		} );
 		$( '.new-home__inner' ).slick( {
 			slidesToShow: 4,
 			dots: false,
@@ -80,6 +88,11 @@ jQuery( function ( $ ) {
 			}
 		} );
 	}
+	function headerPage() {
+		if ( $( 'body' ).hasClass( 'page-template-home-page' ) ) {
+			$( '.header ' ).addClass( 'white-header' );
+		}
+	}
 	function toggleMenu() {
 		const nav = document.querySelector( '.header__menu' );
 		if ( !nav ) {
@@ -99,4 +112,5 @@ jQuery( function ( $ ) {
 	counter_number();
 	scrollDown();
 	scrollMenu();
+	headerPage();
 } );

@@ -7,9 +7,12 @@ class Custom_Field {
 	}
 	function register( $meta_boxes ) {
 		$meta_boxes[] = $this->home();
+		$meta_boxes[] = $this->regis();
+		$meta_boxes[] = $this->regis_user();
 
 		return $meta_boxes;
 	}
+
 	function home() {
 		return [
 			'title'      => esc_html__( 'Setting Home', 'singoutloud' ),
@@ -258,6 +261,41 @@ class Custom_Field {
 					'name' => esc_html__( 'Image Báo chí', 'singoutloud' ),
 					'type' => 'image_advanced',
 					'tab'  => 'partner',
+				],
+			],
+		];
+	}
+
+	function regis() {
+		return [
+			'title'      => esc_html__( 'Setting Resgister', 'singoutloud' ),
+			'id'         => 'resgister-setting',
+			'post_types' => [ 'page' ],
+			'include'    => [
+				'template' => [
+					'page-templates/register.php',
+				],
+			],
+			'fields'     => [
+				[
+					'id'   => 'image_register',
+					'name' => esc_html__( 'Image', 'singoutloud' ),
+					'type' => 'image_advanced',
+				],
+			],
+		];
+	}
+
+	function regis_user() {
+		return [
+			'title'  => __( 'Đăng ký', 'singoutloud' ),
+			'id'     => 'dang-ky',
+			'type'   => 'user',
+			'fields' => [
+				[
+					'name' => __( 'Tôi muốn nhận thông tin về chương trình <br>Sing Out Loud qua email', 'singoutloud' ),
+					'id'   => 'check_user',
+					'type' => 'checkbox',
 				],
 			],
 		];

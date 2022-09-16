@@ -14,7 +14,7 @@
 	<?php wp_body_open(); ?>
 
 	<!-- nội dung header -->
-	<div class="header white-header">
+	<div class="header">
 		<div class="container">
 			<div class="d-flex space-between">
 				<div class="header__inner space-between">
@@ -50,7 +50,7 @@
 				<div class="header__btn">
 					<div class="header-login">
 						<a href="#" class="signin">Đăng nhập</a>
-						<a href="#" class="signup">Đăng ký</a>
+						<a href="<?= esc_url( home_url() . '/dang-ky' );?>" class="signup">Đăng ký</a>
 					</div>
 					<div class="header-email">
 						<?php

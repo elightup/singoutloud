@@ -21,6 +21,28 @@
 			}
 		}
 
+		.header__inner {
+			ul {
+				margin-top: 22px;
+			}
+
+			a {
+				color: var(--color-white);
+				padding: 0 27.5px;
+			}
+		}
+
+		.header-email {
+
+			a {
+				color: var(--color-white);
+			}
+
+			svg {
+				fill: var(--color-white);
+			}
+		}
+
 	}
 
 	.header-email {
@@ -33,12 +55,12 @@
 		a {
 			text-decoration: none;
 			margin-left: 40px;
-			color: #fff;
+			color: var(--color-black);
 		}
 
 		svg {
 			width: 15px;
-			fill: #fff;
+			fill: var(--color-black);
 			margin-right: 10px;
 		}
 	}
@@ -53,10 +75,9 @@
 		align-items: center;
 
 		a {
-			color: var(--color-white);
+			color: var(--color-black);
 			font-size: 15px;
 			line-height: 1.2;
-			padding: 0 27.5px;
 		}
 
 		a:hover {
@@ -67,7 +88,7 @@
 			list-style: none;
 			padding: 0;
 			margin: 0;
-			margin-top: 22px;
+			margin-top: 50px;
 		}
 	}
 
@@ -80,6 +101,10 @@
 		.menu {
 			display: flex;
 			justify-content: space-between;
+		}
+
+		a {
+			padding: 0 27.5px;
 		}
 
 		.menu-toggle {
@@ -98,41 +123,6 @@
 		}
 	}
 
-	// &__contact {
-	// 	&-info ul {
-	// 		display: flex;
-	// 	}
-
-	// 	&-info ul li {
-	// 		display: flex;
-	// 		align-items: center;
-	// 	}
-
-	// 	&-info ul li:first-child {
-	// 		margin-right: 40px;
-	// 	}
-
-	// 	&-info ul li:first-child::before {
-	// 		content: '';
-	// 		display: block;
-	// 		width: 15px;
-	// 		height: 13px;
-	// 		background-image: url('images/Asset2.png');
-	// 		background-repeat: no-repeat;
-	// 		margin-right: 12px;
-	// 	}
-
-	// 	&-info ul li:last-child::before {
-	// 		content: '';
-	// 		display: block;
-	// 		width: 15px;
-	// 		height: 15px;
-	// 		background-image: url('images/Asset4.png');
-	// 		background-repeat: no-repeat;
-	// 		margin-right: 12px;
-	// 	}
-	// }
-
 	&__btn {
 		.header-login {
 			position: relative;
@@ -150,6 +140,7 @@
 
 		.signin {
 			background: var(--color-white);
+			border: 1px solid var(--color-main);
 			color: #000;
 			margin-right: 20px;
 			line-height: 1.2;
@@ -158,6 +149,7 @@
 		.signin:hover {
 			background: var(--color-main);
 			color: var(--color-white);
+			border: 1px solid var(--color-main);
 		}
 
 		.signup {
@@ -168,6 +160,7 @@
 		.signup:hover {
 			background: var(--color-white);
 			color: #000;
+			border: 1px solid var(--color-main);
 		}
 	}
 
