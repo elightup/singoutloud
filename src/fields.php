@@ -56,7 +56,7 @@ class Fields
 					'tab' => 'social',
 				],
 				[
-					'name' => esc_html__('', 'singoutloud'),
+					'name' => esc_html__('Link Social', 'singoutloud'),
 					'id' => 'social-group',
 					'type' => 'group',
 					'clone' => true,
@@ -92,7 +92,7 @@ class Fields
 					'tab' => 'to_chuc',
 				],
 				[
-					'name' => __('', 'singoutloud'),
+					'name' => __('Thành viên ban tổ chức', 'singoutloud'),
 					'id' => 'tochuc-group',
 					'type' => 'group',
 					'clone' => true,
@@ -252,6 +252,7 @@ class Fields
 					'name' => esc_html__('Ảnh', 'singoutloud'),
 					'id' => 'prize-image',
 					'type' => 'single_image',
+					'label_description' => __('735*1025', 'singoutloud'),
 				],
 				[
 					'name' => esc_html__('Giải Thưởng', 'singoutloud'),
