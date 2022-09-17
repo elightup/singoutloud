@@ -11,7 +11,7 @@ function register_post_type_voted_zanchi() {
 		'has_archive' => true,
 		'menu_icon'   => 'dashicons-admin-users',
 	];
-	register_post_type( 'vote_sing_out_loud', $args );
+	register_post_type( 'votes', $args );
 
 	$labels2 = [
 		'name'          => __( 'Cuộc thi', 'elu-shop' ),
@@ -23,7 +23,7 @@ function register_post_type_voted_zanchi() {
 		'public'            => true,
 		'show_admin_column' => true,
 	];
-	register_taxonomy( 'kind-zanchi', 'vote_sing_out_loud', $args2 );
+	register_taxonomy( 'kind-zanchi', 'votes', $args2 );
 }
 add_action( 'init', 'register_post_type_voted_zanchi' );
 

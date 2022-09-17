@@ -11,6 +11,7 @@ class Custom_Field {
 		$meta_boxes[] = $this->regis_user();
 		$meta_boxes[] = $this->login_user();
 		$meta_boxes[] = $this->binh_chon();
+		$meta_boxes[] = $this->vote();
 
 		return $meta_boxes;
 	}
@@ -295,10 +296,6 @@ class Custom_Field {
 			'type'   => 'user',
 			'fields' => [
 				[
-					'name' => __( 'Phone', 'singoutloud' ),
-					'id'   => 'phone_use',
-				],
-				[
 					'name' => __( 'Tôi muốn nhận thông tin về chương trình <br>Sing Out Loud qua email', 'singoutloud' ),
 					'id'   => 'check_user',
 					'type' => 'checkbox',
@@ -361,6 +358,50 @@ class Custom_Field {
 								'media_buttons' => false,
 							],
 						],
+					],
+				],
+			],
+		];
+	}
+
+	function vote() {
+		return [
+			'title'      => __( 'Bình chọn', 'singoutloud' ),
+			'id'         => 'binh_chon',
+			'post_types' => [ 'vote_sing_out_loud' ],
+			'fields'     => [
+				[
+					'name' => __( 'Họ và tên', 'singoutloud' ),
+					'id'   => 'post_title',
+					'type' => 'text',
+				],
+				[
+					'name' => __( 'Số báo danh', 'singoutloud' ),
+					'id'   => 'sbd',
+					'type' => 'text',
+				],
+				[
+					'name' => __( 'Số điện thoại', 'singoutloud' ),
+					'id'   => 'phone',
+					'type' => 'text',
+				],
+				[
+					'name' => __( 'Email', 'singoutloud' ),
+					'id'   => 'email',
+					'type' => 'text',
+				],
+				[
+					'name'              => __( 'Video', 'singoutloud' ),
+					'id'                => 'video',
+					'type'              => 'text',
+					'label_description' => __( 'Vui lòng up video lên youtube và gửi link cho chúng tôi', 'singoutloud' ),
+				],
+				[
+					'name'    => __( 'Mô tả', 'singoutloud' ),
+					'id'      => 'post_content',
+					'type'    => 'wysiwyg',
+					'options' => [
+						'textarea_rows' => 10,
 					],
 				],
 			],
