@@ -49,7 +49,7 @@
 				</div>
 				<div class="header__btn">
 					<div class="header-login">
-						<a href="#" class="signin">Đăng nhập</a>
+						<a href="<?= esc_url( home_url() . '/dang-nhap' );?>" class="signin">Đăng nhập</a>
 						<a href="<?= esc_url( home_url() . '/dang-ky' );?>" class="signup">Đăng ký</a>
 					</div>
 					<div class="header-email">

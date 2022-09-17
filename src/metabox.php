@@ -10,6 +10,7 @@ class Custom_Field {
 		$meta_boxes[] = $this->regis();
 		$meta_boxes[] = $this->regis_user();
 		$meta_boxes[] = $this->login_user();
+		$meta_boxes[] = $this->binh_chon();
 
 		return $meta_boxes;
 	}
@@ -321,6 +322,46 @@ class Custom_Field {
 					'id'   => 'image_register',
 					'name' => esc_html__( 'Image', 'singoutloud' ),
 					'type' => 'image_advanced',
+				],
+			],
+		];
+	}
+
+	function binh_chon() {
+		return [
+			'title'      => esc_html__( 'Setting Bình chọn', 'singoutloud' ),
+			'id'         => 'binh-chon-setting',
+			'post_types' => [ 'page' ],
+			'include'    => [
+				'template' => [
+					'page-templates/binh-chon.php',
+				],
+			],
+			'fields'     => [
+				[
+					'id'          => 'step_group',
+					'name'        => '',
+					'type'        => 'group',
+					'clone'       => true,
+					'collapsible' => true,
+					'group_title' => 'Bước {#}',
+					// 'tab'         => 'top_ten',
+					'fields'      => [
+						[
+							'id'   => 'image',
+							'name' => esc_html__( 'Image', 'singoutloud' ),
+							'type' => 'single_image',
+						],
+						[
+							'name'    => __( 'Description', 'singoutloud' ),
+							'id'      => 'content',
+							'type'    => 'wysiwyg',
+							'options' => [
+								'textarea_rows' => 5,
+								'media_buttons' => false,
+							],
+						],
+					],
 				],
 			],
 		];
