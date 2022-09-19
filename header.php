@@ -76,6 +76,10 @@
 							<div class="menu-account__wrapper">
 								<ul>
 									<li>
+										<?php SingOutLoud_Icons::render( 'upload' ); ?>
+										<a class="" href="<?php echo esc_html( home_url() ) ?>/up-bai-du-thi/">Up bài dự thi</a>
+									</li>
+									<li>
 										<?php SingOutLoud_Icons::render( 'logout' ); ?>
 										<a class="popup-modal" href="#popup-logout">Đăng xuất</a>
 									</li>
