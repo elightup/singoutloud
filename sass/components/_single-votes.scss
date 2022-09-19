@@ -1,0 +1,21 @@
+.post__content {
+	iframe {
+		width: 100%;
+		height: 550px;
+	}
+}
+
+.click-voted-post {
+	text-align: center;
+	padding-top: 40px;
+
+	.click-voted {
+		display: inline-block;
+		background: #333;
+		color: #fff !important;
+		padding: 20px 40px;
+		font-weight: 700;
+		text-decoration: none;
+		font-size: 22px;
+	}
+}

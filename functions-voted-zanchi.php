@@ -329,3 +329,148 @@ if ( ! function_exists( 'content_vote' ) ) {
 	add_filter( 'the_content', 'content_vote' );
 
 }
+
+// xu ly  voted
+function process_vote() {
+	verify_vote();
+	check_timeout_vote();
+	check_repeat_vote();
+	update_vote();
+}
+
+function verify_vote() {
+	$id    = filter_input( INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT );
+	$nonce = filter_input( INPUT_POST, 'nonce', FILTER_SANITIZE_STRING );
+	$token = filter_input( INPUT_POST, 'access_token', FILTER_SANITIZE_STRING );
+	$uid   = filter_input( INPUT_POST, 'user_id', FILTER_SANITIZE_STRING );
+
+		// Check ID.
+	if ( ! $id || ! is_numeric( $id ) ) {
+		wp_die( 'Yêu cầu id không hợp lệ.' );
+	}
+
+		// Check nonce.
+	if ( ! wp_verify_nonce( $nonce, "vote-$id" ) ) {
+		wp_die( 'Yêu cầu none voted không hợp lệ.' );
+	}
+
+		// Check unique ID.
+	if ( ! $uid && ! $token ) {
+		wp_die( 'Yêu cầu uid token không hợp lệ.' );
+	}
+		$response = wp_remote_retrieve_body( wp_remote_get( 'https://graph.facebook.com/oauth/access_token_info', array(
+			'body' => array(
+				'client_id'    => '400133594983721',
+				'access_token' => $token,
+			),
+		) ) );
+
+		$response = json_decode( $response, true );
+	if ( ! empty( $response['error'] ) ) {
+		wp_die( 'Xác thực tài khoản qua Facebook không hợp lệ.' );
+	}
+
+}
+
+function check_repeat_vote() {
+
+	$date_vote = get_option( 'date_vote' );
+
+	if ( $uid == '400133594983721' ) {
+		return;
+	}
+
+	$date = (string) date( 'Y/m/d' );
+
+	if ( $date_vote !== $date ) {
+
+		update_option( 'vote_log_member', [] );
+		update_option( 'date_vote', $date );
+	}
+	$option = get_option( 'vote_log_member', [] );
+	$uid    = filter_input( INPUT_POST, 'user_id', FILTER_SANITIZE_STRING );
+
+	if ( ! isset( $option[ $uid ] ) ) {
+		$option[ $uid ] = array();
+	}
+	// var_dump($option[ $uid ]);
+
+	foreach ( $option[ $uid ] as $key => $id ) {
+		if ( $id === $date_vote && $key >= 4 ) {
+			wp_die( 'Bạn <strong>đã hết số lần bình chọn trong ngày </strong>. <a class="back-voted" href="' . $_SERVER['REQUEST_URI'] . '">Nhấn vào đây</a> để về trang trước.' );
+
+		}
+	};
+
+	$option[ $uid ][] = $date;
+	update_option( 'vote_log_member', $option );
+
+}
+
+function check_timeout_vote() {
+	$option = get_option( 'vote_timeout_member', array() );
+	$uid    = filter_input( INPUT_POST, 'user_id', FILTER_SANITIZE_STRING );
+
+	$current_time  = time();
+	$previous_time = isset( $option[ $uid ] ) ? $option[ $uid ] : 0;
+	$previous_time = (int) $previous_time;
+
+	if ( $current_time - $previous_time < 10 ) {
+		wp_die( 'Bạn <strong>đã vote quá nhanh</strong>. <a class="back-voted" href="' . $_SERVER['REQUEST_URI'] . '">Nhấn vào đây</a> để về trang trước.' );
+	}
+
+	$option[ $uid ] = $current_time;
+	update_option( 'vote_timeout_member', $option );
+}
+
+function update_vote() {
+	$uid = filter_input( INPUT_POST, 'user_id', FILTER_SANITIZE_STRING );
+	if ( $uid == '400133594983721' ) {
+		return;
+	}
+
+	$id    = filter_input( INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT );
+	$voted = (int) get_post_meta( $id, 'voted_number', true );
+	$voted = $voted + 1;
+	update_post_meta( $id, 'voted_number', $voted );
+	wp_die( 'Cảm ơn bạn đã bình chọn. Bạn vui lòng <a class="back-voted" href="' . $_SERVER['REQUEST_URI'] . '">CLICK VÀO ĐÂY</a> để về trang trước.' );
+}
+
+function add_check_voted_number() {
+	if ( ! is_singular( 'votes' ) ) {
+		return;
+	}
+	if ( ! empty( $_POST['id'] ) ) {
+		process_vote();
+	}
+}
+add_action( 'get_header', 'add_check_voted_number' );
+
+// hiển thi số voted
+
+function set_custom_votes_columns( $columns ) {
+	$columns['voted'] = __( 'Voted', 'poly' );
+	return $columns;
+}
+add_filter( 'manage_votes_posts_columns', 'set_custom_votes_columns' );
+
+function custom_column_vote( $column ) {
+
+	if ( $column === 'voted' ) {
+		$post_id = get_the_ID();
+		$count   = get_post_meta( $post_id, 'voted_number', true );
+		echo $count == 0 ? '0 voted' : "$count voted";
+	}
+
+}
+add_action( 'manage_votes_posts_custom_column', 'custom_column_vote' );
+
+add_action( 'rwmb_frontend_after_save_post', function( $object ) {
+
+	$city = rwmb_meta( 'city', '', $object->post_id );
+	$kind = rwmb_meta( 'cuoc_thi', '', get_the_ID() );
+
+	wp_set_object_terms( $object->post_id, $city->name, $city->taxonomy );
+	wp_set_object_terms( $object->post_id, $kind->name, 'kind-votes' );
+
+}, 10, 2 );
