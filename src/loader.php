@@ -77,6 +77,8 @@ class Loader {
 
 	public function enqueue_assets() {
 		wp_enqueue_style( 'sol-theme', get_stylesheet_uri(), [], filemtime( get_template_directory() . '/style.css' ) );
+		wp_enqueue_script( 'magnific-popup', 'https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js', [], '1.1.0', true );
+		wp_enqueue_style( 'magnific-popup', 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css', [], '1.1.0' );
 		Handle::set_script( 'script', [ 'jquery' ] );
 		// Thêm style cho template
 

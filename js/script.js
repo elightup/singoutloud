@@ -1,4 +1,5 @@
 jQuery( function ( $ ) {
+	var clickEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 	let slickSlide = () => {
 		$( '.banner' ).slick( {
 			slidesToShow: 1,
@@ -84,6 +85,24 @@ jQuery( function ( $ ) {
 			} );
 		}
 	}
+	function popupLogout() {
+		$( '.popup-modal' ).magnificPopup( {
+			type: 'inline',
+			preloader: false,
+			modal: true
+		} );
+		$( document ).on( 'click', '.popup-modal-dismiss', function ( e ) {
+			e.preventDefault();
+			$.magnificPopup.close();
+		} );
+	}
+	function toggleAccount() {
+		$( '.menu-account a ' ).on( clickEvent, function ( e ) {
+			console.log( 'ádf' );
+			e.stopPropagation(); // do not trigger event on .site
+			$( '.menu-account__wrapper' ).toggleClass( 'menu-account-open' );
+		} );
+	}
 	function scrollMenu() {
 		$( window ).scroll( function () {
 			if ( $( this ).scrollTop() > 50 ) {
@@ -114,6 +133,8 @@ jQuery( function ( $ ) {
 	}
 
 	toggleMenu();
+	toggleAccount();
+	popupLogout();
 	slickSlide();
 	counter_number();
 	scrollDown();
