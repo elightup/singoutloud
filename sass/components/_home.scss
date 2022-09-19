@@ -167,7 +167,7 @@ h2.title {
 .judges-home,
 .winner-home {
 	position: relative;
-	background-color: var(--color-black);
+	background: rgba(0, 0, 0, 0.92);
 
 	&__wrap {
 		position: relative;
@@ -258,7 +258,7 @@ h2.title {
 
 .top-ten {
 	position: relative;
-	background-color: var(--color-black);
+	background-color: var(--color-bg);
 	padding: 50px 0;
 
 	&__wrap {
@@ -334,7 +334,7 @@ h2.title {
 
 .new-home {
 	position: relative;
-	background-color: var(--color-black);
+	background-color: var(--color-bg);
 	padding: 50px 0;
 
 	h2.title::after {
@@ -484,7 +484,7 @@ h2.title {
 
 .partner-home {
 	position: relative;
-	background-color: var(--color-black);
+	background-color: var(--color-bg);
 	padding: 50px 0;
 
 	h2.title::after {
@@ -622,7 +622,7 @@ h2.title {
 
 .moment-home {
 	position: relative;
-	background-color: var(--color-black);
+	background-color: var(--color-bg);
 	padding: 50px 0;
 
 	h2.title {
@@ -659,39 +659,6 @@ h2.title {
 			width: 80%;
 		}
 
-		ul {
-			margin: 0;
-			padding: 0;
-
-			width: 100%;
-			display: -webkit-inline-box;
-			list-style: none;
-
-		}
-
-		li {
-			display: grid;
-			gap: 12px;
-			grid-template-columns: repeat(5, 1fr);
-			width: 100%;
-			margin-right: 12px;
-
-			img {
-				filter: grayscale(100%);
-				-webkit-filter: grayscale(100%);
-				-moz-filter: grayscale(100%);
-				-ms-filter: grayscale(100%);
-				-o-filter: grayscale(100%);
-
-				&:hover {
-					filter: grayscale(0%);
-					-webkit-filter: grayscale(0%);
-					-moz-filter: grayscale(0%);
-					-ms-filter: grayscale(0%);
-					-o-filter: grayscale(0%);
-				}
-			}
-		}
 	}
 
 	&__item {
