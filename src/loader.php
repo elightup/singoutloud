@@ -20,7 +20,10 @@ class Loader {
 	public function setup() {
 		load_theme_textdomain( 'sol', get_template_directory() . '/languages' );
 
-		register_nav_menu( 'primary', __( 'Primary Menu', 'sol' ) );
+		register_nav_menus( array(
+			'primary' => esc_html__( 'Primary', 'sol' ),
+			'menu-1'  => esc_html__( 'Menu id login', 'sol' ),
+		) );
 
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
