@@ -23,11 +23,309 @@ function register_post_type_voted_zanchi() {
 		'public'            => true,
 		'show_admin_column' => true,
 	];
-	register_taxonomy( 'kind-zanchi', 'votes', $args2 );
+	register_taxonomy( 'kind-votes', 'votes', $args2 );
 }
 add_action( 'init', 'register_post_type_voted_zanchi' );
 
 // add shortcode
-add_filter( 'widget_text', 'do_shortcode' );
+if ( ! function_exists( 'general_voted_html' ) ) {  // start if function
+	function general_voted_html( $atts ) {
+		extract(shortcode_atts([
+			'post_type'  => 'votes',
+			'cuocthi'    => 'kind-votes',
+			'tencuocthi' => '',
+		], $atts));
 
+		$html = '';
 
+		if ( $_GET['order'] ) {
+			$arg = [
+				'post_type'              => $post_type,
+				'paged'                  => max( 1, get_query_var( 'paged' ) ),
+				'posts_per_page'         => 15,
+				'meta_key'               => 'voted_number',
+				'orderby'                => 'meta_value_num',
+				'order'                  => 'DESC',
+				'tax_query'              => array(
+					'relation' => 'AND',
+					array(
+						'taxonomy' => $cuocthi,
+						'field'    => 'slug',
+						'terms'    => $tencuocthi,
+					),
+				),
+				'update_post_term_cache' => false,
+			];
+		} else {
+			$arg = [
+				'post_type'              => $post_type,
+				'paged'                  => max( 1, get_query_var( 'paged' ) ),
+				'posts_per_page'         => 15,
+				'tax_query'              => array(
+					'relation' => 'AND',
+					array(
+						'taxonomy' => $cuocthi,
+						'field'    => 'slug',
+						'terms'    => $tencuocthi,
+					),
+				),
+				// 'no_found_rows'          => true,
+				'update_post_term_cache' => false,
+			];
+		}
+		$query = new WP_Query( $arg );
+
+		while ( $query->have_posts() ) :
+			$query->the_post();
+			$html .= vote_post();
+			endwhile;
+		$html     .= '</div>';
+			$html .= '<div class="nav-links">';
+			$pages = paginate_links(
+				array(
+					'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+					'format'       => '?paged=%#%',
+					'current'      => max( 1, get_query_var( 'paged' ) ),
+					'total'        => $query->max_num_pages,
+					'show_all'     => false,
+					'end_size'     => 2,
+					'mid_size'     => 1,
+					'prev_next'    => true,
+					'prev_text'    => '<',
+					'next_text'    => '>',
+					'add_args'     => false,
+					'add_fragment' => '',
+				)
+			);
+		$html     .= $pages;
+		wp_reset_postdata();
+
+		return $html;
+
+	}
+	add_shortcode( 'votes_event', 'general_voted_html' );
+} // end if function
+
+function vote_post() {
+	$voted_number = (int) get_post_meta( get_the_ID(), 'voted_number', true );
+	ob_start();
+	?>
+	<article id="voted-<?= get_the_ID() ?>" class="meta-voted ">
+		<div class="voted-inner">
+			<div class="entry-thumb">
+				<a class="voted-item voted-<?= get_the_ID() ?>" href="<?php the_permalink() ?>">
+					<?php the_post_thumbnail( 'full' ) ?>
+				</a>
+			</div>
+			<div class="voted-content">
+				<div class="entry-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></div>
+
+				<div class="entry-voted-number"><span><a href="<?php the_permalink() ?>">VOTE</a></span><div class="number-voted"><?= $voted_number ?></div></div>
+			</div>
+		</div>
+	</article>
+	<?php
+	return ob_get_clean();
+}
+
+if ( ! function_exists( 'general_tab_vote_area_html' ) ) {
+	function general_tab_vote_area_html( $atts ) {
+		extract(shortcode_atts([
+			'tencuocthi' => '',
+		], $atts));
+
+		if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
+			if ( $_GET['voted-search'] ) {
+				return query_search_vote_text();
+			}
+		}
+		ob_start();
+		?>
+		<div class="competition__inner">
+			<?= do_shortcode( "[votes_event tencuocthi='" . $tencuocthi . "']" ); ?>
+		</div>
+		<?php
+		$page = ob_get_contents();
+		ob_end_clean();
+		return $page;
+	};
+	add_shortcode( 'cuoc_thi', 'general_tab_vote_area_html' );
+}
+
+// Kết quả tìm kiếm
+function query_search_vote_text() {
+	$html  = '';
+	$html .= '<div class="title-heading-search"><span>Từ Khóa tìm kiếm: ' . $_GET['voted-search'] . '</span></div>';
+	$query = new WP_Query(array(
+		'post_type'              => 'votes',
+		'paged'                  => get_query_var( 'paged' ),
+		'posts_per_page'         => 6,
+		's'                      => $_GET['voted-search'],
+		'tax_query'              => array(
+			'relation' => 'AND',
+			array(
+				'taxonomy' => 'kind-votes',
+				'field'    => 'slug',
+				'terms'    => $_GET['tencuocthi'],
+			),
+		),
+		'no_found_rows'          => true,
+		'update_post_term_cache' => false,
+	));
+	$html .= '<div  class="votes_event container" >';
+	$html .= '<div class="voted-candidates">';
+	while ( $query->have_posts() ) :
+		$query->the_post();
+		$html .= vote_post();
+		endwhile;
+		$html .= '<div class="nav-links">';
+		$pages = paginate_links(
+			array(
+				'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+				'format'       => '?paged=%#%',
+				'current'      => max( 1, get_query_var( 'paged' ) ),
+				'total'        => $query->max_num_pages,
+				'show_all'     => false,
+				'end_size'     => 2,
+				'mid_size'     => 1,
+				'prev_next'    => true,
+				'prev_text'    => '<',
+				'next_text'    => '>',
+				'add_args'     => false,
+				'add_fragment' => '',
+			)
+		);
+		$html .= $pages;
+		$html .= '</div>';
+		wp_reset_postdata();
+		$html .= '</div>';
+		$html .= '</div>';
+		$html .= '<style>.voted-candidates{display: grid;grid-template-columns: repeat(3,1fr);grid-gap: 25px;}.meta-voted{border-radius: 10px;box-shadow: 1px 1px 10px  #333;padding: 30px 5px;padding-top: 0;}.voted-content{position: relative;}.entry-title{text-align: left;justify-content: left;width: 74%;margin: 0;padding: 0;}.entry-title a{color: #898989;font-size: 18px;font-weight: 700;}.entry-voted-number{position: absolute;top: -25px;right: 0;z-index: 1;text-align: right;width: 100px;color: #898989;font-size: 13px;font-weight: 700;}.entry-voted-number span{display: block;background:#ffd014;color: #ec008c;font-size: 21px;font-weight: 700;clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);padding: 5px 15px;margin-bottom: 3px !important;position: relative;}.entry-thumb{overflow: hidden;}.entry-thumb img{transition: .5s;}.meta-voted:hover img{transform: scale(1.3);} .nav-links {display: flex;justify-content: center;margin: 50px 0}.page-numbers.current {background: #f7df6b;}.page-numbers{min-width: 30px;padding: 5px;height: 30px;margin: 0 3px;border: 1px  solid   #f7df6b;display: flex;justify-content: center;align-items: center;font-weight: 600;}</style>';
+
+	return $html;
+}
+
+// shortcode filter search
+if ( ! function_exists( 'general_voted_filter' ) ) {
+	function general_voted_filter( $atts ) {
+		extract( shortcode_atts([
+			'tencuocthi' => '',
+		], $atts));
+
+		ob_start();
+		?>
+		<div class="voted-filter">
+			<div class="box-search">
+				<form id="searchform-voted" method="get" action="<?php echo get_the_permalink(); ?>">
+					<div class="input-text-search">
+						<input type="text" name="voted-search" id="s" size="15"  placeholder="Tìm kiếm bài thi" />
+						<input type="hidden" name="tencuocthi"  value="<?= $tencuocthi ?>" />
+					</div>
+					<div class="input-button">
+						<input type="submit" value="Kiểm tra" />
+					</div>
+				</form>
+			</div>
+			<div class="voted-filter__form">
+				<a class="click-voted voted-most" href="?order=votes">VOTE nhiều nhất </a>
+				<a class="click-voted voted-new" href="?voted-new=1">Mới nhất </a>
+			</div>
+		</div>
+
+		<?php
+		return ob_get_clean();
+	};
+	add_shortcode( 'cuoc_thi_filter_voted', 'general_voted_filter' );
+}
+
+// content single vote
+if ( ! function_exists( 'content_vote' ) ) {
+	function content_vote( $content ) {
+		if ( ! is_singular( 'votes' ) ) {
+			return $content;
+		}
+		ob_start();
+		$voted_number = (int) get_post_meta( get_the_ID(), 'voted_number', true );
+		?>
+
+		<div class="click-voted-post">
+			<a class="click-voted" data-toggle="modal" data-target="#modal-<?php echo get_the_ID(); ?>" href="#" data-id="<?php echo get_the_ID(); ?>">Vote cho thí sinh</a>
+		</div>
+		<div class="number-voted" style="text-align: center; margin: 10px 0;">Số lượt vote: <?= $voted_number ?></div>
+
+		<div class="modal myModal-voted-post fade" id="modal-<?php echo get_the_ID(); ?>" role="dialog">
+			<div class="modal-dialog">
+				<form action="?" method="POST" class="modal-content">
+					<?php echo wp_nonce_field( 'vote-' . get_the_ID(), 'nonce', true, false ); ?>
+					<input type="hidden" name="user_id" value="" class="user_id">
+					<input type="hidden" name="access_token" value="" class="access_token">
+					<input type="hidden" name="id" value="<?php echo get_the_ID(); ?>">
+					<div class="statufb text-center">Bạn cần đăng nhập Facebook để vote</div>
+					<div class="text-center button-fb">
+					<!-- <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
+						<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"></div>
+					</div>
+					<div style="display: none;" class="modal-footer">
+
+						<button class="btn btn-primary float-right">Vote</button>
+					</div>
+				</form>
+			</div><!-- -->
+		</div>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" async></script>
+		<script>
+		// This is called with the results from from FB.getLoginStatus().
+		function statusChangeCallback(response) {
+			var token = response.authResponse.accessToken,
+				userID = response.authResponse.userID;
+				console.log(response);
+			if (response.status !== 'connected') {
+
+				return;
+			}
+			FB.api('/me', function(response) {
+				jQuery('.statufb').html('Bạn đã đăng nhập Facebook với tên <strong>' + response.name + '</strong>.<br/>Hiện bạn có thể tiến hành vote cho thí sinh.');
+			});
+			jQuery( '.user_id' ).attr( 'value', userID );
+			jQuery( '.access_token' ).attr( 'value', token );
+			jQuery( '.button-fb' ).hide();
+			jQuery( '.modal-footer' ).show();
+		}
+
+		function checkLoginState() {               // Called when a person is finished with the Login Button.
+			FB.getLoginStatus(function(response) {   // See the onlogin handler
+				statusChangeCallback(response);
+			});
+		}
+
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '1517470845021488',
+				cookie     : true,  // enable cookies to allow the server to access the session
+				xfbml      : true,  // parse social plugins on this page
+				version    : 'v13.0' // use graph api version 2.8
+			});
+			FB.getLoginStatus( function(response) {
+				statusChangeCallback(response);
+			} );
+		};
+
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "https://connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+
+		<?php
+		$page = ob_get_contents();
+		ob_end_clean();
+		$content .= $page;
+		return $content;
+	}
+	add_filter( 'the_content', 'content_vote' );
+
+}
