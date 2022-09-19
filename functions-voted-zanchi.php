@@ -301,14 +301,17 @@ if ( ! function_exists( 'content_vote' ) ) {
 
 		window.fbAsyncInit = function() {
 			FB.init({
-				appId      : '1517470845021488',
-				cookie     : true,  // enable cookies to allow the server to access the session
-				xfbml      : true,  // parse social plugins on this page
-				version    : 'v13.0' // use graph api version 2.8
+			appId      : '606172131214972',
+			cookie     : true,
+			xfbml      : true,
+			version    : 'v13.0'
 			});
-			FB.getLoginStatus( function(response) {
+
+			//FB.AppEvents.logPageView();
+			FB.getLoginStatus(function(response) {
 				statusChangeCallback(response);
-			} );
+			});
+
 		};
 
 		(function(d, s, id){
