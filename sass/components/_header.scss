@@ -10,7 +10,6 @@
 
 	&.white-header {
 		position: absolute;
-		top: 30px;
 		left: 145px;
 		z-index: 2;
 		width: 85%;
@@ -28,13 +27,8 @@
 		}
 
 		.header__inner {
-			ul {
-				margin-top: 22px;
-			}
-
 			a {
 				color: var(--color-white);
-				padding: 0 27.5px;
 			}
 		}
 
@@ -65,7 +59,6 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
-		margin-top: 30px;
 
 		a {
 			text-decoration: none;
@@ -103,7 +96,6 @@
 			list-style: none;
 			padding: 0;
 			margin: 0;
-			margin-top: 50px;
 		}
 	}
 
@@ -136,49 +128,56 @@
 				height: 24px;
 			}
 		}
+
+		.current-menu-item a {
+			color: var(--color-main);
+		}
 	}
 
 	&__btn {
-		.header-login {
-			position: relative;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: end;
-		}
-
-		.signin,
-		.signup {
-			padding: 7px 11px;
-			border-radius: 20px;
-		}
-
-		.signin {
-			background: var(--color-white);
-			border: 1px solid var(--color-main);
-			color: #000;
-			margin-right: 20px;
-			line-height: 1.2;
-		}
-
-		.signin:hover {
-			background: var(--color-main);
-			color: var(--color-white);
-			border: 1px solid var(--color-main);
-		}
-
-		.signup {
-			background: var(--color-main);
-			color: var(--color-white);
-			border: 1px solid var(--color-main);
-		}
-
-		.signup:hover {
-			background: var(--color-white);
-			color: #000;
-			border: 1px solid var(--color-main);
-		}
+		display: flex;
+		align-items: center;
 	}
 
+}
+
+.header-login {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: end;
+}
+
+.signin,
+.signup {
+	padding: 7px 11px;
+	border-radius: 20px;
+}
+
+.signin {
+	background: var(--color-white);
+	border: 1px solid var(--color-main);
+	color: #000;
+	margin-right: 20px;
+	line-height: 1.2;
+}
+
+.signin:hover {
+	background: var(--color-main);
+	color: var(--color-white);
+	border: 1px solid var(--color-main);
+}
+
+.signup {
+	background: var(--color-main);
+	color: var(--color-white);
+	border: 1px solid var(--color-main);
+}
+
+.signup:hover {
+	background: var(--color-white);
+	color: #000;
+	border: 1px solid var(--color-main);
 }
 
 .menu-account {
