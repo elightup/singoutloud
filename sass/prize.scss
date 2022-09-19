@@ -28,7 +28,7 @@
 
 	&__item {
 		padding: 40px 70px;
-		border-bottom: 1px solid var(--color-main);
+		border-bottom: 3px solid var(--color-main);
 
 		&-title {
 			font-size: 31px;
@@ -48,7 +48,12 @@
 		&-desc {
 			font-size: 21px;
 			line-height: 1.5;
+			font-weight: 500;
 		}
+	}
+
+	.item1 .prize__item-title {
+		color: var(--color-main);
 	}
 
 	.item0 {
@@ -84,7 +89,7 @@
 
 	.item3 {
 		position: absolute;
-		bottom: 27.6%;
+		bottom: 25%;
 		right: 0;
 		border-bottom: none;
 

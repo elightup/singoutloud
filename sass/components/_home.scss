@@ -156,11 +156,18 @@ h2.title {
 	}
 }
 
+.winner-home {
+	padding: 125px 0 135px;
+}
+
+.judges-home {
+	padding: 190px 0 100px;
+}
+
 .judges-home,
 .winner-home {
 	position: relative;
 	background-color: var(--color-black);
-	padding: 219px 0 100px;
 
 	&__wrap {
 		position: relative;
@@ -289,6 +296,9 @@ h2.title {
 			border: 0;
 			border-bottom: 1px solid var(--color-white);
 			border-radius: 0;
+			padding: 30px 0;
+			margin: 0;
+			line-height: 1.6;
 		}
 
 		details[open] summary::before {
@@ -527,16 +537,19 @@ h2.title {
 		position: relative;
 		background-image: url('images/bg_login.png');
 		background-size: cover;
-		background-size: contain;
 		min-height: 568px;
 		background-repeat: no-repeat;
 		display: flex;
 		align-items: center;
+		width: 68%;
+		margin: 0 auto;
+		transform: translateX(-75px);
 	}
 
 	&__content {
 		width: 60%;
 		margin: 0 auto;
+		margin-bottom: 50px;
 
 		h3 {
 			font-size: var(--font-Opensans);
@@ -559,7 +572,7 @@ h2.title {
 			flex-wrap: wrap;
 			padding: 0;
 			margin: 0;
-			gap: 10px;
+			gap: 28px;
 
 			li {
 				list-style: none;
@@ -580,6 +593,23 @@ h2.title {
 					a {
 						color: var(--color-white);
 					}
+				}
+
+				&:first-child {
+					background-color: transparent;
+
+					a {
+						color: var(--color-white);
+					}
+
+					&:hover {
+						background-color: var(--color-white);
+
+						a {
+							color: var(--color-main);
+						}
+					}
+
 				}
 			}
 

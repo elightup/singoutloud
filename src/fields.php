@@ -14,7 +14,7 @@ class Fields
 		$meta_boxes[] = $this->rules();
 		$meta_boxes[] = $this->prize();
 		$meta_boxes[] = $this->news();
-		// $meta_boxes[] = $this->home_moment();
+		$meta_boxes[] = $this->home_moment();
 
 		return $meta_boxes;
 	}
