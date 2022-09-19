@@ -1,3 +1,23 @@
+h2.title {
+	font-family: var(--font-Barlow);
+	color: var(--color-white);
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 35px;
+	line-height: 1.6;
+	text-shadow: 2px 2px 8px rgba(255, 255, 255, 1);
+	letter-spacing: 3px;
+
+	&::after {
+		content: '';
+		display: block;
+		width: 375px;
+		height: 1px;
+		background-color: var(--color-white);
+		margin-top: 97px;
+	}
+}
+
 .home-banner {
 	position: relative;
 	min-height: 100vh;
@@ -11,6 +31,8 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
+		width: 75%;
+		margin: 0 auto;
 
 		&::before {
 			content: '';
@@ -24,21 +46,24 @@
 
 	&__content {
 		h1 {
-			font-family: var(--font-SimplonNorm);
 			color: var(--color-white);
+			text-shadow: 1px 1px 8px #fff;
 			text-transform: uppercase;
 			font-size: 80px;
+			line-height: 1.1;
 			margin: 0;
-			font-weight: 600;
+			font-weight: 500;
 		}
 
 		.entry-content {
+			font-family: var(--font-Opensans);
 			background-color: var(--color-main);
 			color: var(--color-white);
 			font-size: 24px;
 			font-weight: 700;
 			padding: 15px 35px 15px 25px;
 			line-height: 1.2;
+			margin-top: 36px;
 
 			p {
 				margin: 0;
@@ -49,10 +74,10 @@
 
 .number-home {
 	position: relative;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	display: flex;
 
 	&__item {
+		width: 666px;
 		position: relative;
 		background-color: var(--color-main);
 		display: flex;
@@ -60,7 +85,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: 75px 0;
+		padding: 45px 0 65px;
 
 		h2 {
 			margin: 0;
@@ -82,6 +107,7 @@
 
 		&:nth-child(2) {
 			background-color: #CACACA;
+			width: 585px;
 
 			h2 {
 				color: var(--color-black);
@@ -146,25 +172,6 @@
 		&:last-child {
 			margin-bottom: 0;
 		}
-
-		h2.title {
-			font-family: var(--font-Barlow);
-			color: var(--color-white);
-			text-transform: uppercase;
-			font-weight: 500;
-			font-size: 35px;
-			text-shadow: 2px 2px 8px rgba(255, 255, 255, 1);
-			letter-spacing: 3px;
-
-			&::after {
-				content: '';
-				display: block;
-				width: 375px;
-				height: 1px;
-				background-color: var(--color-white);
-				margin-top: 97px;
-			}
-		}
 	}
 
 	&__inner {
@@ -186,7 +193,6 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
-		width: 83%;
 
 		.number {
 			font-family: var(--font-SimplonNorm);
@@ -199,9 +205,10 @@
 		.title {
 			font-family: var(--font-Barlow);
 			text-transform: uppercase;
+			text-align: end;
 			color: var(--color-main);
 			font-size: 28px;
-			font-weight: 500;
+			font-weight: 600;
 		}
 	}
 
@@ -252,25 +259,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-
-		h2.title {
-			font-family: var(--font-Barlow);
-			color: var(--color-white);
-			text-transform: uppercase;
-			font-weight: 500;
-			font-size: 35px;
-			text-shadow: 2px 2px 8px rgba(255, 255, 255, 1);
-			letter-spacing: 3px;
-
-			&::after {
-				content: '';
-				display: block;
-				width: 375px;
-				height: 1px;
-				background-color: var(--color-white);
-				margin-top: 97px;
-			}
-		}
 	}
 
 	&__inner {
@@ -339,23 +327,8 @@
 	background-color: var(--color-black);
 	padding: 50px 0;
 
-	h2.title {
-		font-family: var(--font-Barlow);
-		color: var(--color-white);
-		text-transform: uppercase;
-		font-weight: 500;
-		font-size: 35px;
-		text-shadow: 2px 2px 8px rgba(255, 255, 255, 1);
-		letter-spacing: 3px;
-
-		&::after {
-			content: '';
-			display: block;
-			width: 375px;
-			height: 1px;
-			background-color: var(--color-white);
-			margin-top: 75px;
-		}
+	h2.title::after {
+		margin-top: 75px;
 	}
 
 	&__wrap {
@@ -504,14 +477,8 @@
 	background-color: var(--color-black);
 	padding: 50px 0;
 
-	h2.title {
-		font-family: var(--font-Barlow);
-		color: var(--color-white);
-		text-transform: uppercase;
-		font-weight: 500;
-		font-size: 35px;
-		text-shadow: 2px 2px 8px rgba(255, 255, 255, 1);
-		letter-spacing: 3px;
+	h2.title::after {
+		display: none;
 	}
 
 	&__image {
@@ -629,13 +596,12 @@
 	padding: 50px 0;
 
 	h2.title {
-		font-family: var(--font-Barlow);
-		color: var(--color-white);
-		text-transform: uppercase;
-		font-weight: 500;
-		font-size: 35px;
-		text-shadow: 2px 2px 8px rgba(255, 255, 255, 1);
-		letter-spacing: 3px;
+		margin: 0;
+		margin-bottom: 115px;
+
+		&::after {
+			margin-top: 78px;
+		}
 	}
 
 	&__wrap {

@@ -1,4 +1,6 @@
 .header {
+	width: 85%;
+	margin: 0 auto;
 	font-family: var(--font-Opensans);
 	color: black;
 	font-weight: 400;
@@ -8,10 +10,10 @@
 
 	&.white-header {
 		position: absolute;
-		top: 0;
-		left: 0;
+		top: 30px;
+		left: 145px;
 		z-index: 2;
-		width: 100%;
+		width: 85%;
 
 		.navbar-logo {
 			display: none;
@@ -41,6 +43,15 @@
 			svg {
 				fill: var(--color-white);
 			}
+		}
+
+		.signin,
+		.signup:hover {
+			border: 1px solid var(--color-white);
+		}
+
+		.signup {
+			border: 1px solid var(--color-main);
 		}
 
 	}
@@ -155,6 +166,7 @@
 		.signup {
 			background: var(--color-main);
 			color: var(--color-white);
+			border: 1px solid var(--color-main);
 		}
 
 		.signup:hover {

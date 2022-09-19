@@ -14,6 +14,7 @@ class Fields
 		$meta_boxes[] = $this->rules();
 		$meta_boxes[] = $this->prize();
 		$meta_boxes[] = $this->news();
+		// $meta_boxes[] = $this->home_moment();
 
 		return $meta_boxes;
 	}
@@ -312,20 +313,49 @@ class Fields
 			],
 		];
 	}
-	//News Featured
-	// function featured_post()
-	// {
-	// 	return [
-	// 		'title'  => __('Cài đặt trang', 'singoutloud'),
-	// 		'id'     => 'featured',
-	// 		'fields' => [
-	// 			[
-	// 				'name' => __('Chọn Bài Viết Nổi Bật', 'singoutloud'),
-	// 				'id'   => 'post-check',
-	// 				'type' => 'checkbox',
-	// 				'std'  => 0,
-	// 			],
-	// 		],
-	// 	];
-	// }
+
+
+	//Khoảnh khắc
+	function home_moment()
+	{
+		return [
+			'title'      => esc_html__('Cài đặt', 'singoutloud'),
+			'id'         => 'moment-setting',
+			'post_types' => ['page'],
+			'include'    => [
+				'template' => [
+					'page-templates/home-page.php',
+				],
+			],
+			'fields' => [
+				[
+					'id'          => 'moment_group',
+					'name'        => '',
+					'type'        => 'group',
+					'group_title' => 'Khối {#}',
+					'clone'       => true,
+					'collapsible' => true,
+					'fields'      => [
+						[
+							'name'             => __('Cột 1', 'singoutloud'),
+							'id'               => 'image_col1',
+							'type'             => 'image_advanced',
+							'max_file_uploads' => 3,
+						],
+						[
+							'name'             => __('Cột 2', 'singoutloud'),
+							'id'               => 'image_col2',
+							'type'             => 'image_advanced',
+							'max_file_uploads' => 3,
+						],
+						[
+							'name'             => __('Cột 3', 'singoutloud'),
+							'id'               => 'image_col3',
+							'type'             => 'single_image',
+						],
+					],
+				],
+			],
+		];
+	}
 }

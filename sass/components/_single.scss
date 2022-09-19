@@ -1,11 +1,16 @@
+.p-container {
+	width: 56%;
+	margin: 0 auto;
+}
+
 .post {
 	padding-top: 30px;
+	font-size: 21px;
+	line-height: 1.3;
 
 	&__banner {
-		--width: 100vw;
-		margin-right: calc(51% - var(--width)/2);
-		margin-left: calc(50% - var(--width)/2);
 		height: 620px;
+		position: relative;
 
 		img {
 			width: 100%;
@@ -14,30 +19,39 @@
 		}
 	}
 
-	&__wrap {
-		display: flex;
-		padding: 55px 50px 0 45px;
-		background: var(--color-white);
-		transform: translateY(-25%);
-		font-size: 21px;
-		line-height: 1.3;
+	&__inner {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
 
-		strong {
-			font-weight: 600;
-		}
+	&__top {
+		padding: 45px 50px 0 45px;
+		background: var(--color-white);
+	}
+
+	&__detail {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
 	}
 
 	&__social {
-		margin-right: 32px;
+		margin-top: 10px;
 
 		a img {
 			margin-bottom: 10px;
+			width: 30px;
+			height: 30px;
+			max-width: fit-content;
 		}
 	}
 
 	&__head {
 		display: flex;
 		justify-content: space-between;
+		width: 100%;
 
 		&-title {
 			width: 70%;
@@ -49,6 +63,7 @@
 		&-view {
 			display: flex;
 			align-items: flex-start;
+			margin-top: 17px;
 		}
 
 		&-view-eye,
@@ -60,18 +75,23 @@
 
 			img {
 				margin-right: 10px;
+				width: auto;
 			}
 		}
 
-		&-view-eye {
-			margin-right: 35px;
+		&-view-share {
+			margin-left: 35px;
+
+			span {
+				margin-bottom: 7px;
+			}
 		}
 	}
 
 	&__info {
 		display: flex;
 		align-items: flex-end;
-		padding: 33px 0;
+		padding: 33px 0 0;
 
 		&-time {
 			margin-left: 25px;
@@ -80,17 +100,75 @@
 		}
 	}
 
+	&__wrap {
+		padding: 30px 50px 115px 45px;
+		background: var(--color-white);
+
+		strong {
+			font-weight: 600;
+		}
+	}
+
+	&__content {
+		width: 94%;
+		margin-left: auto;
+		text-align: justify;
+	}
+
 	&__nav {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-top: 70px;
+		margin-top: 65px;
 		font-weight: 600;
 
 		&-back,
 		&-next {
 			display: flex;
 			align-items: center;
+
+			a {
+				position: relative;
+			}
+
+			a::after {
+				content: '';
+				display: block;
+				width: 15px;
+				height: 20px;
+				background-repeat: no-repeat;
+				position: absolute;
+				top: 6px;
+			}
+		}
+
+		&-back {
+			transform: translateX(30px);
+
+			a::after {
+				background-image: url('images/back.png');
+				left: -30px;
+			}
+		}
+
+		&-next {
+			transform: translateX(-15px);
+
+			a::before {
+				content: '';
+				display: block;
+				width: 15px;
+				height: 20px;
+				background: var(--color-white);
+				position: absolute;
+				right: -15px;
+				bottom: 0;
+			}
+
+			a::after {
+				background-image: url('images/next.png');
+				right: -30px;
+			}
 		}
 	}
 }
