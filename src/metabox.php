@@ -148,23 +148,6 @@ class Custom_Field {
 					'tab'               => 'moment',
 					'sanitize_callback' => 'none',
 				],
-				// [
-				// 'id'          => 'image_gallery',
-				// 'name'        => '',
-				// 'type'        => 'group',
-				// 'clone'       => true,
-				// 'collapsible' => true,
-				// 'group_title' => 'Gallery {#}',
-				// 'tab'         => 'moment',
-				// 'fields'      => [
-				// [
-				// 'name'             => __( 'Image', 'singoutloud' ),
-				// 'id'               => 'image_moment',
-				// 'type'             => 'image_advanced',
-				// 'max_file_uploads' => 7,
-				// ],
-				// ],
-				// ],
 				[
 					'id'          => 'moment_group',
 					'name'        => '',
@@ -325,15 +308,15 @@ class Custom_Field {
 			 'id'     => 'dang-ky',
 			 'type'   => 'user',
 			 'fields' => [
-				 [
-					 'name' => __( 'Phone', 'singoutloud' ),
-					 'id'   => 'phone_use',
-				 ],
-				 [
-					 'name' => __( 'Tôi muốn nhận thông tin về chương trình <br>Sing Out Loud qua email', 'singoutloud' ),
-					 'id'   => 'check_user',
-					 'type' => 'checkbox',
-				 ],
+				 // [
+				 // 'name' => __( 'Phone', 'singoutloud' ),
+				 // 'id'   => 'phone_use',
+				 // ],
+				  [
+					  'name' => __( 'Tôi muốn nhận thông tin về chương trình <br>Sing Out Loud qua email', 'singoutloud' ),
+					  'id'   => 'check_user',
+					  'type' => 'checkbox',
+				  ],
 			 ],
 		 ];
 	}
