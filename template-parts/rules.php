@@ -23,7 +23,12 @@ $steps = rwmb_meta('rule-group');
 						<?= '0' . $number ?>
 					</div>
 					<div class="rule__item-bg">
-						<?php Template_function::sol_get_image_path('rl.svg') ?>
+						<div class="bg1">
+							<?php Template_function::sol_get_image_path('rl.svg') ?>
+						</div>
+						<div class="bg2">
+							<?php Template_function::sol_get_image_path('rlred2.svg') ?>
+						</div>
 					</div>
 					<div class="rule__item-content">
 						<div class="rule__item-title">

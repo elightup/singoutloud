@@ -20,12 +20,19 @@
 		z-index: 2;
 		display: flex;
 		align-items: center;
+		filter: grayscale(1);
+		width: 47%;
+
+		.entry-thumbnail,
+		img {
+			height: 100%;
+		}
 	}
 
 	&__item {
 		display: flex;
 		justify-content: space-between;
-		transform: translateX(-32px);
+		transform: translateX(-27px);
 
 		&-number {
 			width: 11%;
@@ -42,7 +49,7 @@
 
 		&-content {
 			width: 68%;
-			padding-bottom: 21px;
+			padding-bottom: 45px;
 
 			p {
 				margin: 0;
@@ -71,12 +78,25 @@
 
 	&__item-bg {
 		width: 25px;
-		display: flex;
 
-		svg {
-			.cls-1 {
-				fill: #bababa;
-			}
+		.bg1,
+		.bg2,
+		img {
+			height: 100%;
+		}
+
+		.bg2 {
+			display: none;
+		}
+	}
+
+	&__item:last-child {
+		.bg1 {
+			display: none;
+		}
+
+		.bg2 {
+			display: block;
 		}
 	}
 }
