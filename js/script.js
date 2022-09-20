@@ -17,6 +17,14 @@ jQuery( function ( $ ) {
 			rows: 0,
 			autoplaySpeed: 3000,
 		} );
+		$( '.moment-slider' ).slick( {
+			slidesToShow: 1,
+			dots: true,
+			arrows: false,
+			autoplay: false,
+			rows: 0,
+			autoplaySpeed: 3000,
+		} );
 		$( '.new-home__inner' ).slick( {
 			slidesToShow: 4,
 			dots: false,
