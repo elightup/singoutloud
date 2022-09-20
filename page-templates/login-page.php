@@ -12,7 +12,7 @@
 				<div class="register-page__form">
 					<h1>Welcome Back</h1>
 					<?php the_content(); ?>
-					<a class="login_google" href="https://singoutloud.wpengine.com/wp-login.php?loginSocial=google"
+					<a class="login_google" href="<?= esc_url( home_url() );?>/wp-login.php?loginSocial=google"
 						rel="nofollow"
 						aria-label="Sing in width <b>Google</b>"
 						data-plugin="nsl"
@@ -28,7 +28,7 @@
 						</div>
 					</a>
 					<a class="login-face"
-						href="https://singoutloud.wpengine.com/wp-login.php?loginSocial=facebook"
+						href="<?= esc_url( home_url() );?>/wp-login.php?loginSocial=facebook"
 						rel="nofollow"
 						aria-label="Sing in with <b>Facebook</b>"
 						data-plugin="nsl"
