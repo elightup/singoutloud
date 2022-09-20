@@ -14,6 +14,66 @@
 			}
 		}
 	}
+
+	.judges-home {
+		&__inner {
+			width: 100%;
+		}
+	}
+
+	.winner-home {
+		&__inner {
+			width: 100%;
+		}
+	}
+
+	.top-ten {
+		&__inner {
+			width: 100%;
+		}
+	}
+
+	.moment-slider {
+		&__col1 {
+			width: 100%;
+		}
+
+		&__col2 {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		&__col3 {
+			width: 100%;
+			margin-top: 10px;
+			height: 850px;
+
+			.item_slider {
+				height: 100%;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	.partner-home {
+		&__wrap {
+			gap: 10px;
+		}
+
+		&__image {
+			width: 100%;
+		}
+
+		&__login {
+			width: 100%;
+			transform: translateX(0px);
+			background: none;
+			min-height: auto;
+		}
+	}
 }
 
 @media only screen and(max-width: 767px) {
