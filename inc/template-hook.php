@@ -17,7 +17,7 @@ function singoutloud_comment_form_args( $defaults ) {
 		'</p>';
 
 	$comment_field = '<p class="comment-form-comment">' .
-					'<textarea id="comment" name="comment" required="true" placeholder="Write Your Comment Here ..." cols="45" rows="8" class="form" tabindex="4" required="true"></textarea>' .
+					'<textarea id="comment" name="comment" required="true" placeholder="Viết bình luận ..." cols="45" rows="8" class="form" tabindex="4" required="true"></textarea>' .
 					'</p>';
 	$args          = array(
 		'fields'               => array(
