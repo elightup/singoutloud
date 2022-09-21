@@ -93,17 +93,8 @@
 	}
 }
 
-@media only screen and (max-width:767px) {
+@media (max-width: 1023px) {
 	.vote-page {
-		&__wrap {
-			h1 {
-				font-size: 28px;
-			}
-
-			p {
-				font-size: 16px;
-			}
-		}
 
 		&__inner {
 			grid-template-columns: repeat(1, 1fr);
@@ -124,6 +115,20 @@
 
 			p {
 				padding: 0;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width:767px) {
+	.vote-page {
+		&__wrap {
+			h1 {
+				font-size: 28px;
+			}
+
+			p {
+				font-size: 16px;
 			}
 		}
 	}
