@@ -26,7 +26,7 @@ function singoutloud_comment_form_args( $defaults ) {
 			'url'    => $url,
 		),
 		'comment_field'        => $comment_field,
-		'title_reply'          => __( 'Leave a Reply', 'singoutloud' ),
+		'title_reply'          => __( 'Bình luận', 'singoutloud' ),
 		'comment_notes_before' => '',
 		'comment_notes_after'  => '',
 	);

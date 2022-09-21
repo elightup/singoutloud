@@ -19,9 +19,7 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-sdfsfgdfgdsf
 <div id="comments" class="comments-area">
-
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
@@ -29,9 +27,7 @@ sdfsfgdfgdsf
 		<h2 class="comments-title">
 			<?php esc_html_e( 'Comments', 'singoutloud' ); ?>
 		</h2><!-- .comments-title -->
-
 		<?php the_comments_navigation(); ?>
-
 		<ol class="comment-list">
 			<?php
 			wp_list_comments(
@@ -44,24 +40,16 @@ sdfsfgdfgdsf
 			);
 			?>
 		</ol><!-- .comment-list -->
-
 		<?php
 		the_comments_navigation();
-
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'singoutloud' ); ?></p>
 			<?php
 		endif;
-
 	endif; // Check for have_comments().
-
-	comment_form( array(
-		[
-			'title_reply' => esc_html__( 'Leave a reply', 'singoutloud' ),
-		],
-	) );
+	comment_form();
 	?>
 
 </div><!-- #comments -->

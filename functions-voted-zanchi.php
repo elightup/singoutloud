@@ -6,7 +6,7 @@ function register_post_type_voted_zanchi() {
 	];
 	$args   = [
 		'labels'      => $labels,
-		'supports'    => [ 'title', 'thumbnail', 'editor' ],
+		'supports'    => [ 'title', 'thumbnail', 'editor', 'comments' ],
 		'public'      => true,
 		'has_archive' => true,
 		'menu_icon'   => 'dashicons-admin-users',
