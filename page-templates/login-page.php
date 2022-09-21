@@ -17,7 +17,7 @@
 							<div class="nsl-button-svg-container">
 								<?php SingOutLoud_Icons::render('google'); ?>
 							</div>
-							<div class="nsl-button-label-container">Sign in width <b>Google</b></div>
+							<div class="nsl-button-label-container">Sign in with <b>Google</b></div>
 						</div>
 					</a>
 					<a class="login-face" href="<?= esc_url(home_url()); ?>/wp-login.php?loginSocial=facebook" rel="nofollow" aria-label="Sign in with <b>Facebook</b>" data-plugin="nsl" data-action="connect" data-provider="facebook" data-popupwidth="600" data-popupheight="679">
