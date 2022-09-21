@@ -88,6 +88,26 @@
 		}
 	}
 
+	.home-banner {
+		min-height: 50vh;
+
+		&__wrap::before {
+			position: absolute;
+			top: 20px;
+			right: 0;
+		}
+	}
+
+	.number-home {
+		h2 {
+			font-size: 86px;
+		}
+
+		p {
+			font-size: 20px;
+		}
+	}
+
 	.new-home {
 		&__inner {
 			.slick-prev {
@@ -105,12 +125,16 @@
 	}
 
 	.judges-home {
+		padding-top: 100px;
+
 		&__inner {
 			width: 100%;
 		}
 	}
 
 	.winner-home {
+		padding-bottom: 50px;
+
 		&__inner {
 			width: 100%;
 		}
