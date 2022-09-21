@@ -38,8 +38,8 @@ if (empty($images_newspaper) || !is_array($images_newspaper)) {
 			<h3>Bình chọn ngay cho</h3>
 			<h2>Top 50</h2>
 			<ul>
-				<li><a href="#">Đăng nhập</a></li>
-				<li><a href="#">Đăng ký</a></li>
+				<li><a href="<?php echo esc_url(home_url()); ?>/dang-nhap">Đăng nhập</a></li>
+				<li><a href="<?php echo esc_url(home_url()); ?>/dang-ky">Đăng ký</a></li>
 			</ul>
 		</div>
 	</div>

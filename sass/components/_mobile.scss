@@ -1,4 +1,93 @@
 @media(max-width:1023px) {
+	.header {
+		width: 100%;
+		padding: 15px;
+
+		&__inner {
+			width: 100%;
+			padding-top: 10px;
+
+			a {
+				color: var(--color-white);
+				font-size: 22px;
+			}
+		}
+
+		&__btn {
+			width: 100%;
+		}
+
+		&__menu {
+			margin: 0;
+
+			.menu {
+				display: none;
+			}
+
+			&.is-open {
+				.menu {
+					display: block;
+					position: absolute;
+					background-color: var(--color-black);
+					z-index: 99;
+					width: 350px;
+					right: 0;
+					padding: 15px;
+					margin-top: 40px;
+				}
+
+				li {
+					padding: 10px 0;
+				}
+
+				a {
+					padding: 10px 0;
+
+				}
+			}
+
+			.menu-toggle {
+				display: block;
+			}
+		}
+
+		&.white-header {
+			position: relative;
+			width: 100%;
+			left: 0;
+			top: 0;
+			background-color: var(--color-white);
+			z-index: auto;
+
+			.navbar-logo {
+				display: block;
+
+				&.white-logo {
+					display: none;
+				}
+			}
+
+			span {
+				color: var(--color-black);
+			}
+		}
+
+		.signin,
+		&.white-header .signin {
+			border: 1px solid var(--color-main);
+		}
+
+		&-login {
+			justify-content: space-between;
+			padding-bottom: 10px;
+			border-bottom: 1px solid var(--color-bg);
+		}
+
+		.header-email {
+			display: none;
+		}
+	}
+
 	.new-home {
 		&__inner {
 			.slick-prev {
@@ -73,6 +162,13 @@
 			background: none;
 			min-height: auto;
 		}
+
+		&__content {
+			width: 100%;
+			margin-bottom: 0;
+			padding: 50px 15px;
+			background-color: var(--color-main);
+		}
 	}
 }
 
@@ -89,14 +185,8 @@
 			gap: 20px;
 		}
 
-		&__login {
-			min-height: auto;
-			background: none;
-			transform: translateX(0px);
-		}
-
-		&__content {
-			width: 100%;
+		&__content ul {
+			justify-content: space-between;
 		}
 	}
 
@@ -270,90 +360,21 @@
 	}
 
 	.header {
-		padding: 20px 0;
 
-		&.white-header {
-			position: relative;
-			width: 100%;
-			padding: 0 15px;
-			left: 0;
-			top: 0;
-			background-color: var(--color-white);
-
-			.navbar-logo {
-				display: block;
-
-				&.white-logo {
-					display: none;
-				}
-			}
-
-			span {
-				color: var(--color-black);
-			}
+		&__logo {
+			width: 120px;
 		}
 
-		&__inner {
-			width: 100%;
-			justify-content: space-between;
+		&__inner a {
+			font-size: 16px;
 		}
 
 		&__menu {
-			margin: 0;
-
-			.menu {
-				display: none;
-			}
 
 			&.is-open {
 				.menu {
-					display: block;
-					position: absolute;
-					background-color: var(--color-black);
-					z-index: 2;
-					width: 300px;
-					right: 0;
-					padding: 15px;
-					margin-top: 30px;
+					width: 200px;
 				}
-
-				li {
-					padding: 10px 0;
-				}
-
-				a {
-					padding: 10px 0;
-				}
-			}
-
-			.menu-toggle {
-				display: block;
-			}
-		}
-
-		&__btn {
-			width: 100%;
-
-			.signin {
-				background: var(--color-main);
-				color: var(--color-white);
-			}
-
-			.header-login {
-				margin-bottom: 20px;
-			}
-		}
-
-		.header-email {
-			display: none;
-
-			a {
-				color: var(--color-black);
-				margin: 0;
-			}
-
-			svg {
-				fill: var(--color-black);
 			}
 		}
 	}

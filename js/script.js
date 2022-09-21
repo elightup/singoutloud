@@ -128,6 +128,7 @@ jQuery( function ( $ ) {
 	}
 	function toggleMenu() {
 		const nav = document.querySelector( '.header__menu' );
+		const bg = document.querySelector( '.bgDart' );
 		if ( !nav ) {
 			return;
 		}
@@ -137,6 +138,11 @@ jQuery( function ( $ ) {
 		menu.setAttribute( 'aria-expanded', 'false' );
 		button.addEventListener( 'click', () => {
 			nav.classList.toggle( 'is-open' );
+			bg.classList.toggle( 'open' );
+		} );
+		bg.addEventListener( 'click', () => {
+			nav.classList.remove( 'is-open' );
+			bg.classList.remove( 'open' );
 		} );
 	}
 

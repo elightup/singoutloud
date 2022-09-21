@@ -106,6 +106,7 @@
 			-moz-filter: grayscale(100%);
 			-ms-filter: grayscale(100%);
 			-o-filter: grayscale(100%);
+			transition: all .2s linear;
 
 			&:hover {
 				filter: grayscale(0%);

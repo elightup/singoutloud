@@ -107,6 +107,7 @@
 
 		&__inner {
 			grid-template-columns: repeat(1, 1fr);
+			transform: translateX(0);
 		}
 
 		&__item {
@@ -115,6 +116,10 @@
 
 			&::before {
 				display: none;
+			}
+
+			h2 {
+				margin: 10px 0;
 			}
 
 			p {

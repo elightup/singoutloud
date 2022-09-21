@@ -81,6 +81,10 @@
 
 @media(max-width: 767px) {
 	.footer {
+		&__logo {
+			width: 120px;
+		}
+
 		&__inner {
 			padding: 30px 15px;
 		}
