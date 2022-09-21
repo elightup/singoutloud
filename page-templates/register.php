@@ -12,42 +12,27 @@
 				<div class="register-page__form">
 					<h1>Welcome</h1>
 					<?php the_content(); ?>
-					<a class="login_google" href="<?= esc_url(home_url())?>/wp-login.php?loginSocial=google"
-						rel="nofollow"
-						aria-label="Sing in width <b>Google</b>"
-						data-plugin="nsl"
-						data-action="connect"
-						data-provider="google"
-						data-popupwidth="600"
-						data-popupheight="600">
+					<a class="login_google" href="<?= esc_url(home_url()) ?>/wp-login.php?loginSocial=google" rel="nofollow" aria-label="Sign in width <b>Google</b>" data-plugin="nsl" data-action="connect" data-provider="google" data-popupwidth="600" data-popupheight="600">
 						<div class="nsl-button nsl-button-default nsl-button-google" data-skin="light">
 							<div class="nsl-button-svg-container">
-								<?php SingOutLoud_Icons::render( 'google' ); ?>
+								<?php SingOutLoud_Icons::render('google'); ?>
 							</div>
-							<div class="nsl-button-label-container">Sing in width <b>Google</b></div>
+							<div class="nsl-button-label-container">Sign in width <b>Google</b></div>
 						</div>
 					</a>
-					<a class="login-face"
-						href="<?= esc_url(home_url())?>/wp-login.php?loginSocial=facebook"
-						rel="nofollow"
-						aria-label="Sing in with <b>Facebook</b>"
-						data-plugin="nsl"
-						data-action="connect"
-						data-provider="facebook"
-						data-popupwidth="600"
-						data-popupheight="679">
-							<div class="nsl-button nsl-button-default nsl-button-facebook" data-skin="light">
-								<div class="nsl-button-svg-container">
-									<?php SingOutLoud_Icons::render( 'faceboook' ); ?>
-								</div>
-								<div class="nsl-button-label-container">Sing in with <b>Facebook</b></div>
+					<a class="login-face" href="<?= esc_url(home_url()) ?>/wp-login.php?loginSocial=facebook" rel="nofollow" aria-label="Sign in with <b>Facebook</b>" data-plugin="nsl" data-action="connect" data-provider="facebook" data-popupwidth="600" data-popupheight="679">
+						<div class="nsl-button nsl-button-default nsl-button-facebook" data-skin="light">
+							<div class="nsl-button-svg-container">
+								<?php SingOutLoud_Icons::render('faceboook'); ?>
 							</div>
+							<div class="nsl-button-label-container">Sign in with <b>Facebook</b></div>
+						</div>
 					</a>
 				</div>
 				<div class="register-page__image">
 					<?php
-					$images = rwmb_meta( 'image_register' );
-					foreach ( $images as $image ) :
+					$images = rwmb_meta('image_register');
+					foreach ($images as $image) :
 						echo '<div class="image_item">';
 						echo '<img src="' . $image['full_url'] . '" alt="">';
 						echo '</div>';
