@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 	if ( have_comments() ) :
 		?>
 		<h2 class="comments-title">
-			<?php esc_html_e( 'Comments', 'singoutloud' ); ?>
+			<?php esc_html_e( 'Các bình luận', 'singoutloud' ); ?>
 		</h2><!-- .comments-title -->
 		<?php the_comments_navigation(); ?>
 		<ol class="comment-list">

@@ -26,11 +26,11 @@ if ( ! function_exists( 'singoutloud_comment_template' ) ) {
 		?>
 		<li id="comment-<?php comment_ID(); ?>" <?php comment_class( $comment->has_children ? 'parent' : '', $comment ); ?>>
 			<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-				<div class="comment-avatar">
-					<?php echo wp_kses_post( get_avatar( $comment, $args['avatar_size'] ) ); ?>
-				</div>
-				<div class="comment-text">
-					<div class="comment-header">
+				<div class="comment-header">
+					<div class="comment-avatar">
+						<?php echo wp_kses_post( get_avatar( $comment, $args['avatar_size'] ) ); ?>
+					</div>
+					<div class="comment-title">
 						<div class="comment-meta">
 							<span class="comment-author vcard">
 								<?php
@@ -68,6 +68,8 @@ if ( ! function_exists( 'singoutloud_comment_template' ) ) {
 						);
 						?>
 					</div>
+				</div>
+				<div class="comment-text">
 					<div class="comment-content entry-content">
 
 						<?php
