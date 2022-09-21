@@ -82,6 +82,11 @@ class Loader {
 		wp_enqueue_style( 'sol-theme', get_stylesheet_uri(), [], filemtime( get_template_directory() . '/style.css' ) );
 		wp_enqueue_script( 'magnific-popup', 'https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js', [], '1.1.0', true );
 		wp_enqueue_style( 'magnific-popup', 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css', [], '1.1.0' );
+		wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.js', array( 'jquery' ), '1.8', true );
+		wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css' );
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 		Handle::set_script( 'script', [ 'jquery' ] );
 		// Thêm style cho template
 
@@ -91,20 +96,20 @@ class Loader {
 		Handle::set_style_tempalte( 'page-templates/rules-page.php', 'rules' );
 		Handle::set_style_tempalte( 'page-templates/prize-page.php', 'prize' );
 
-		Handle::set_style_tempalte([
-			'page-templates/home-page.php',
-			'page-templates/register.php',
-			'page-templates/login-page.php',
-			'page-templates/new-page.php',
-		], 'slick');
+		// Handle::set_style_tempalte([
+		// 'page-templates/home-page.php',
+		// 'page-templates/register.php',
+		// 'page-templates/login-page.php',
+		// 'page-templates/new-page.php',
+		// ], 'slick');
 
 		// Thêm Script cho template
-		Handle::set_script_template([
-			'page-templates/home-page.php',
-			'page-templates/register.php',
-			'page-templates/login-page.php',
-			'page-templates/new-page.php',
-		], 'slick', [ 'jquery' ]);
+		// Handle::set_script_template([
+		// 'page-templates/home-page.php',
+		// 'page-templates/register.php',
+		// 'page-templates/login-page.php',
+		// 'page-templates/new-page.php',
+		// ], 'slick', [ 'jquery' ]);
 	}
 
 
