@@ -1,7 +1,12 @@
 <?php
 define( 'SINGOUTLOUD_VERSION', '1.0.0' );
-require __DIR__ . '/src/loader.php';
-new Loader();
+
+require __DIR__ . '/vendor/autoload.php';
+
+new Sol\Loader;
+// new Sol\Template_function();
+// new Sol\Fields();
+// new Sol\Custom_Field();
 
 require __DIR__ . '/inc/template-tags.php';
 require __DIR__ . '/inc/template-hook.php';

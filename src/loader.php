@@ -1,29 +1,20 @@
 <?php
+namespace Sol;
 
-require __DIR__ . '/fields.php';
-require __DIR__ . '/metabox.php';
-require __DIR__ . '/template_function.php';
-require __DIR__ . '/handle.php';
 class Loader {
-
-
-
-
-
 	public function __construct() {
-		 add_action( 'after_setup_theme', [ $this, 'setup' ] );
-		add_action( 'widgets_init', [ $this, 'tmt_widgets_init' ] );
+		add_action( 'after_setup_theme', [ $this, 'setup' ] );
+		add_action( 'widgets_init', [ $this, 'widgets_init' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_assets' ] );
-
-		$this->init();
 	}
+
 	public function setup() {
 		load_theme_textdomain( 'sol', get_template_directory() . '/languages' );
 
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'sol' ),
-			'menu-1'  => esc_html__( 'Menu id login', 'sol' ),
-		) );
+		register_nav_menus( [
+			'header-guest' => esc_html__( 'Primary', 'sol' ),
+			'header-user'  => esc_html__( 'Menu id login', 'sol' ),
+		] );
 
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
@@ -31,22 +22,13 @@ class Loader {
 
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'custom-logo' );
-
-		/**
-		 * Add support for the block editor.
-		 *
-		 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/
-		 */
-		add_theme_support( 'wp-block-styles' );
-		add_theme_support( 'align-wide' );
-		add_theme_support( 'editor-styles' );
 		add_theme_support( 'responsive-embeds' );
 	}
 
-	function tmt_widgets_init() {
+	public function widgets_init() {
 		register_sidebar(
 			[
-				'name'          => esc_html__( 'Widget-Header', 'sol' ),
+				'name'          => esc_html__( 'Header', 'sol' ),
 				'id'            => 'header',
 				'before_widget' => '<aside class="widget %2$s">',
 				'after_widget'  => '</aside>',
@@ -57,66 +39,47 @@ class Loader {
 
 		register_sidebar(
 			[
-				'name'          => esc_html__( 'Widget-Footer-Ban tổ chức', 'sol' ),
+				'name'          => esc_html__( 'Footer - Ban tổ chức', 'sol' ),
 				'id'            => 'footer',
 				'before_widget' => '<aside class="widget %2$s">',
 				'after_widget'  => '</aside>',
-				'before_title'  => '<h2 class="widget-title">',
-				'after_title'   => '</h2>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
 			]
 		);
 
 		register_sidebar(
 			[
-				'name'          => esc_html__( 'Widget-Footer-SocialMedia', 'sol' ),
+				'name'          => esc_html__( 'Footer - Social Media', 'sol' ),
 				'id'            => 'footer-social',
 				'before_widget' => '<aside class="widget %2$s">',
 				'after_widget'  => '</aside>',
-				'before_title'  => '<h2 class="widget-title">',
-				'after_title'   => '</h2>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
 			]
 		);
 	}
 
 	public function enqueue_assets() {
-		wp_enqueue_style( 'sol-theme', get_stylesheet_uri(), [], filemtime( get_template_directory() . '/style.css' ) );
-		wp_enqueue_script( 'magnific-popup', 'https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js', [], '1.1.0', true );
+		wp_enqueue_style( 'sol', get_stylesheet_uri(), [], filemtime( get_template_directory() . '/style.css' ) );
+
+		// All pages: for login/logout popup.
 		wp_enqueue_style( 'magnific-popup', 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css', [], '1.1.0' );
-		wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.js', array( 'jquery' ), '1.8', true );
-		wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css' );
+		wp_enqueue_script( 'magnific-popup', 'https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js', [ 'jquery' ], '1.1.0', true );
+
+		wp_enqueue_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.scss', [], '1.8.1' );
+		wp_enqueue_style( 'slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css', [], '1.8.1' );
+		wp_enqueue_script( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', [ 'jquery' ], '1.8.1', true );
+
+		Assets::js( 'script', [ 'jquery' ] );
+
+		Assets::template_css( 'page-templates/contact-page.php', 'contact' );
+		Assets::template_css( 'page-templates/about-page.php', 'about' );
+		Assets::template_css( 'page-templates/rules-page.php', 'rules' );
+		Assets::template_css( 'page-templates/prize-page.php', 'prize' );
+
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-		Handle::set_script( 'script', [ 'jquery' ] );
-		// Thêm style cho template
-
-		// Handle::set_style_tempalte('page-templates/home-template.php', 'home');
-		Handle::set_style_tempalte( 'page-templates/contact-page.php', 'contact' );
-		Handle::set_style_tempalte( 'page-templates/about-page.php', 'about' );
-		Handle::set_style_tempalte( 'page-templates/rules-page.php', 'rules' );
-		Handle::set_style_tempalte( 'page-templates/prize-page.php', 'prize' );
-
-		// Handle::set_style_tempalte([
-		// 'page-templates/home-page.php',
-		// 'page-templates/register.php',
-		// 'page-templates/login-page.php',
-		// 'page-templates/new-page.php',
-		// ], 'slick');
-
-		// Thêm Script cho template
-		// Handle::set_script_template([
-		// 'page-templates/home-page.php',
-		// 'page-templates/register.php',
-		// 'page-templates/login-page.php',
-		// 'page-templates/new-page.php',
-		// ], 'slick', [ 'jquery' ]);
-	}
-
-
-	function init() {
-		new Template_function();
-		new Fields();
-		new Custom_Field();
-		new Handle();
 	}
 }

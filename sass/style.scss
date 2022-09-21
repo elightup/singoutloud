@@ -1,22 +1,19 @@
 /*!
- * Theme Name:   singoutloud
- * Theme URI:    https://elightup.com
- * Author:       eLightUp
- * Author URI:   https://elightup.com
- * Description:  The theme for independentlink.com.au website.
+ * Theme Name:   SingOutLoud
+ * Theme URI:    https://titanweb.vn
+ * Author:       TitanWeb
+ * Author URI:   https://titanweb.vn
+ * Description:  The theme for Sing Out Loud website.
  * Version:      1.0.0
  * Text Domain:  singoutloud
- *
  */
 
 @import "variables";
-@import "mixins";
 
 @import "base/element";
 @import "base/accessibility";
-@import "base/bootstrap-grid";
+@import "base/bootstrap-grid"; // TODO
 
-@import "components/layout";
 @import "components/header";
 @import "components/footer";
 @import "components/archive";

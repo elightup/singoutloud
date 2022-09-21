@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 	<?php wp_head() ?>
 </head>
 
@@ -62,7 +62,7 @@
 							bloginfo('name');
 						else :
 						?>
-							<img class="navbar-logo" src="<?= esc_url($logo_black); ?>" alt="Logo">
+							<img class="navbar-logo" src="<?= esc_url( $logo_black ); ?>" alt="Logo">
 							<img class="navbar-logo white-logo" src="<?= esc_url($logo_white); ?>" alt="Logo">
 						<?php endif; ?>
 					</a>
@@ -72,7 +72,7 @@
 					if (!is_user_logged_in()) :
 						wp_nav_menu(
 							array(
-								'theme_location' => 'primary',
+								'theme_location' => 'header',
 								'menu_id'        => 'primary-menu',
 								'container'      => false,
 							)

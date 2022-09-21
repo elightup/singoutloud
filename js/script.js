@@ -1,6 +1,10 @@
 jQuery( function ( $ ) {
 	var clickEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
-	let slickSlide = () => {
+
+	let $window = $(window),
+		$body = $( 'body' );
+
+	function slickSlide() {
 		$( '.banner' ).slick( {
 			slidesToShow: 1,
 			dots: false,
@@ -49,50 +53,36 @@ jQuery( function ( $ ) {
 			]
 		} );
 	};
-	function counter_number() {
-		var a = 0;
-		if ( $( 'body' ).hasClass( 'page-template-home-page' ) ) {
-			$( window ).scroll( function () {
-				var oTop = $( '.number-home' ).offset().top - window.innerHeight;
-				if ( a == 0 && $( window ).scrollTop() > oTop ) {
-					$( '.count' ).each( function () {
-						$( this ).prop( 'Counter', 0 ).animate( {
-							Counter: $( this ).text()
-						}, {
-							duration: 4000,
-							easing: 'swing',
-							step: function ( now ) {
-								$( this ).text( Math.ceil( now ) );
-							}
-						} );
-					} );
-					a = 1;
-				}
-			} );
-		};
-	}
-	function scrollDown() {
-		if ( $( 'body' ).hasClass( 'page-template-front-page' ) ) {
-			$( '.scrooldow a' ).each( function () {
-				var id = $( this ).attr( 'href' );
-				if ( id.includes( 'tel' ) ) {
-					return;
-				}
-				$( this ).click( function ( e ) {
-					e.preventDefault();
 
-					if ( !id || '#' === id ) {
-						return false;
+	function counterNumber() {
+		var run = false;
+		if ( ! $body.hasClass( 'page-template-home-page' ) ) {
+			return;
+		}
+
+		$window.scroll( function () {
+			var top = $( '.number-home' ).offset().top - window.innerHeight;
+
+			if ( run || $window.scrollTop() <= top ) {
+				return;
+			}
+
+			$( '.count' ).each( function () {
+				$( this ).prop( 'Counter', 0 ).animate( {
+					Counter: $( this ).text()
+				}, {
+					duration: 4000,
+					easing: 'swing',
+					step: function ( now ) {
+						$( this ).text( Math.ceil( now ) );
 					}
-
-					$( 'html, body' ).animate( {
-						scrollTop: $( id ).offset().top - 100
-					}, 50 );
-					return false;
 				} );
 			} );
-		}
+
+			run = true;
+		} );
 	}
+
 	function popupLogout() {
 		$( '.popup-modal' ).magnificPopup( {
 			type: 'inline',
@@ -104,6 +94,7 @@ jQuery( function ( $ ) {
 			$.magnificPopup.close();
 		} );
 	}
+
 	function toggleAccount() {
 		$( '.menu-account a ' ).on( clickEvent, function ( e ) {
 			console.log( 'ádf' );
@@ -111,21 +102,13 @@ jQuery( function ( $ ) {
 			$( '.menu-account__wrapper' ).toggleClass( 'menu-account-open' );
 		} );
 	}
-	function scrollMenu() {
-		$( window ).scroll( function () {
-			if ( $( this ).scrollTop() > 50 ) {
-				$( '#masthead' ).addClass( 'mnfixed' );
 
-			} else {
-				$( '#masthead' ).removeClass( 'mnfixed' );
-			}
-		} );
-	}
 	function headerPage() {
-		if ( $( 'body' ).hasClass( 'page-template-home-page' ) ) {
+		if ( $body.hasClass( 'page-template-home-page' ) ) {
 			$( '.header ' ).addClass( 'white-header' );
 		}
 	}
+
 	function toggleMenu() {
 		const nav = document.querySelector( '.header__menu' );
 		const bg = document.querySelector( '.bgDart' );
@@ -150,8 +133,6 @@ jQuery( function ( $ ) {
 	toggleAccount();
 	popupLogout();
 	slickSlide();
-	counter_number();
-	scrollDown();
-	scrollMenu();
+	counterNumber();
 	headerPage();
 } );

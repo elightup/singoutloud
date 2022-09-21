@@ -1,27 +1,21 @@
 :root {
 	--font-Opensans: 'Open Sans', sans-serif;
 	--font-Barlow: 'Barlow', sans-serif;
-	--font-SimplonNorm: 'SimplonNorm';
+	--font-SimplonNorm: 'SimplonNorm', sans-serif;
 	--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
+	// Khai báo các màu trong theme.
 	--color-main: #E81F27;
-	--color-text: #191919;
-	--color-bg-white: #fff;
-	--color-bg-2: #eceff4;
-	--color-line: #eceff4;
-	--color-link: #bf616a;
-	--color-btn-bg: #242933;
 	--color-white: #fff;
 	--color-black: #191919;
-	--color-bg: rgba(0, 0, 0, 0.92);
-	// --color-focus: #88c0d0;
-}
+	--color-light: #eceff4;
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-txt: #eceff4;
-		--color-bg-1: #2e3440;
-		--color-bg-2: #3b4252;
-		--color-line: #3b4252;
-	}
+	// Màu cho các objects.
+	--color-text: var(--color-black);
+	--color-line: var(--color-light);
+	--color-link: #bf616a;
+	--color-btn-bg: #242933;
+
+	--color-bg: rgba(0, 0, 0, 0.92);
+	--color-bg-2: var(--color-light);
 }
