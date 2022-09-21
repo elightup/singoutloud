@@ -243,6 +243,20 @@
 	}
 }
 
+@media only screen and (max-width: 1023px) {
+	.register-page {
+		&__form {
+			width: 100%;
+			padding: 0;
+		}
+
+		&__image {
+			width: 100%;
+			margin-top: 15px;
+		}
+	}
+}
+
 @media only screen and (max-width: 767px) {
 	.register-page {
 		&__wrap {
