@@ -1,0 +1,113 @@
+.winner-home {
+	padding: 125px 0 135px;
+}
+
+.judges-home {
+	padding: 190px 0 59px;
+}
+
+.judges-home,
+.winner-home {
+	position: relative;
+	background: var(--color-bg);
+
+	&__wrap {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-bottom: 133px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__inner {
+		width: 62%;
+		position: relative;
+		display: grid;
+		gap: 31px 80px;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	&__image {
+		img {
+			width: 100%;
+			filter: grayscale(100%);
+			-webkit-filter: grayscale(100%);
+			-moz-filter: grayscale(100%);
+			-ms-filter: grayscale(100%);
+			-o-filter: grayscale(100%);
+			transition: all .2s linear;
+
+			&:hover {
+				filter: grayscale(0%);
+				-webkit-filter: grayscale(0%);
+				-moz-filter: grayscale(0%);
+				-ms-filter: grayscale(0%);
+				-o-filter: grayscale(0%);
+			}
+		}
+	}
+
+	&__title {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		.number {
+			font-family: var(--font-SimplonNorm);
+			font-weight: 500;
+			color: var(--color-main);
+			text-transform: uppercase;
+			font-size: 66px;
+		}
+
+		.title {
+			font-family: var(--font-Barlow);
+			text-transform: uppercase;
+			text-align: end;
+			color: var(--color-main);
+			font-size: 28px;
+			font-weight: 600;
+		}
+	}
+
+	&__content {
+		margin-top: 47px;
+
+		h3 {
+			font-family: var(--font-Barlow);
+			font-size: 29px;
+			color: var(--color-white);
+			margin: 0;
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+
+		h2 {
+			font-family: var(--font-Barlow);
+			font-size: 45px;
+			color: var(--color-white);
+			font-weight: 500;
+			margin: 0;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.judges-home {
+	&::before {
+		content: '';
+		display: block;
+		width: 264px;
+		height: 527px;
+		background-image: url('../images/bg_judges.png');
+		background-size: cover;
+		position: absolute;
+		top: 15%;
+		left: -37px;
+	}
+}

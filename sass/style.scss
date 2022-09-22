@@ -12,17 +12,16 @@
 
 @import "base/element";
 @import "base/accessibility";
-@import "base/bootstrap-grid"; // TODO
+@import "base/bootstrap-grid";
 
 @import "components/header";
 @import "components/footer";
-@import "components/archive";
 @import "components/single";
 
-@import "components/home";
+
 @import "components/about";
 @import "components/new";
-@import "components/moment2";
+
 @import "components/comments";
 
 

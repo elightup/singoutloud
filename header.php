@@ -13,10 +13,9 @@
 <body <?php body_class() ?>>
 	<?php wp_body_open(); ?>
 	<?php
+	$class = '';
 	if ( is_page_template( 'page-templates/home-page.php' ) ) {
 		$class = 'white-header';
-	} else {
-		$class = '';
 	}
 	?>
 		<!-- nội dung header -->

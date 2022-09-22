@@ -74,6 +74,7 @@ class Loader {
 
 		Assets::template_css( 'page-templates/contact-page.php', 'contact' );
 		Assets::template_css( 'page-templates/about-page.php', 'about' );
+		Assets::template_css( 'page-templates/home-page.php', 'home' );
 		Assets::template_css( 'page-templates/rules-page.php', 'rules' );
 		Assets::template_css( 'page-templates/prize-page.php', 'prize' );
 
