@@ -13,6 +13,8 @@ require __DIR__ . '/inc/template-hook.php';
 require __DIR__ . '/inc/customizer.php';
 require __DIR__ . '/inc/class-singoutloud-icons.php';
 require __DIR__ . '/functions-voted-zanchi.php';
+require __DIR__ . '/src/TemplateFunction.php';
+
 
 if ( ! function_exists( 'rwmb_meta' ) ) {
 	/**
