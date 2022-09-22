@@ -1,7 +1,7 @@
 <?php
+namespace Sol;
 
-class Custom_Field {
-
+class CustomField {
 
 	function __construct() {
 		add_filter( 'rwmb_meta_boxes', [ $this, 'register' ] );

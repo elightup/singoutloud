@@ -1,4 +1,5 @@
 <?php
+namespace Sol;
 
 class Fields {
 

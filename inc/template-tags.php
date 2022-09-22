@@ -73,28 +73,21 @@ if ( ! function_exists( 'singoutloud_comment_template' ) ) {
 					<div class="comment-content entry-content">
 
 						<?php
-
 						comment_text();
-
 						if ( '0' === $comment->comment_approved ) {
 							?>
 							<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'singoutloud' ); ?></p>
 							<?php
 						}
-
 						?>
 
 					</div><!-- .comment-content -->
 
 					<?php
-
 					$by_post_author = singoutloud_is_comment_by_post_author( $comment );
-
 					if ( $by_post_author ) {
 						?>
-
 						<footer class="comment-footer-meta">
-
 							<?php
 							if ( get_edit_comment_link() ) {
 								echo '<span class="comment-edit-link"><a href="' . esc_url( get_edit_comment_link() ) . '">' . esc_html__( 'Edit', 'singoutloud' ) . '</a></span>';
@@ -103,9 +96,7 @@ if ( ! function_exists( 'singoutloud_comment_template' ) ) {
 								echo '<span class="bypostauthor">' . esc_html__( 'By Post Author', 'singoutloud' ) . '</span>';
 							}
 							?>
-
 						</footer>
-
 						<?php
 					}
 					?>
@@ -130,9 +121,7 @@ function singoutloud_is_comment_by_post_author( $comment = null ) {
 		$post = get_post( $comment->comment_post_ID );
 
 		if ( ! empty( $user ) && ! empty( $post ) ) {
-
 			return $comment->user_id === $post->post_author;
-
 		}
 	}
 	return false;

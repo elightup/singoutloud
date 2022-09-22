@@ -64,12 +64,11 @@ class Loader {
 		wp_enqueue_style( 'sol', get_stylesheet_uri(), [], filemtime( get_template_directory() . '/style.css' ) );
 
 		// All pages: for login/logout popup.
-		wp_enqueue_style( 'magnific-popup', 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css', [], '1.1.0' );
-		wp_enqueue_script( 'magnific-popup', 'https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js', [ 'jquery' ], '1.1.0', true );
+		wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/css/magnific-popup.min.css', [], '1.1.0' );
+		wp_enqueue_script( 'magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', [ 'jquery' ], '1.1.0', true );
 
-		wp_enqueue_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.scss', [], '1.8.1' );
-		wp_enqueue_style( 'slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css', [], '1.8.1' );
-		wp_enqueue_script( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', [ 'jquery' ], '1.8.1', true );
+		wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css', [], '1.8.1' );
+		wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.js', [ 'jquery' ], '1.8.1', true );
 
 		Assets::js( 'script', [ 'jquery' ] );
 

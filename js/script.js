@@ -1,7 +1,7 @@
 jQuery( function ( $ ) {
 	var clickEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
-	let $window = $(window),
+	let $window = $( window ),
 		$body = $( 'body' );
 
 	function slickSlide() {
@@ -56,7 +56,7 @@ jQuery( function ( $ ) {
 
 	function counterNumber() {
 		var run = false;
-		if ( ! $body.hasClass( 'page-template-home-page' ) ) {
+		if ( !$body.hasClass( 'page-template-home-page' ) ) {
 			return;
 		}
 
@@ -103,12 +103,6 @@ jQuery( function ( $ ) {
 		} );
 	}
 
-	function headerPage() {
-		if ( $body.hasClass( 'page-template-home-page' ) ) {
-			$( '.header ' ).addClass( 'white-header' );
-		}
-	}
-
 	function toggleMenu() {
 		const nav = document.querySelector( '.header__menu' );
 		const bg = document.querySelector( '.bgDart' );
@@ -134,5 +128,4 @@ jQuery( function ( $ ) {
 	popupLogout();
 	slickSlide();
 	counterNumber();
-	headerPage();
 } );
