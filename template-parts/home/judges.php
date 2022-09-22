@@ -32,7 +32,7 @@ if ( strpos( $video, '=' ) ) {
 							<span class="title"><?= esc_html( $judges['title'] );?></span>
 						</div>
 						<div class="judges-home__image">
-							<img src="<?= esc_url( wp_get_attachment_url( $judges['image_judges'] ) );?>" alt="<?= esc_attr( $judges['name'] )?>">
+							<img src="<?= esc_url( wp_get_attachment_url( $judges['image_judges'] ) );?>" width="341" height="454" alt="<?= esc_attr( $judges['name'] )?>">
 						</div>
 						<div class="judges-home__content">
 							<h3><?= esc_html( $judges['sub_name'] );?></h3>

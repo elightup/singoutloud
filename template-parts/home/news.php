@@ -26,5 +26,5 @@ $query      = new WP_Query( $args );
 			</div>
 		</div>
 	</div>
-	<?php // Template_function::sol_get_image_path( 'img_news.png' ); ?>
+	<?php Template_function::sol_get_image_path( 'img_news.png' ); ?>
 </section>

@@ -14,7 +14,7 @@ $win_group    = rwmb_meta( 'win_group' );
 							<span class="title"><?= wp_kses_post( $value['title'] );?></span>
 						</div>
 						<div class="winner-home__image">
-							<img src="<?= esc_url( wp_get_attachment_url( $value['image'] ) );?>" alt="<?= esc_attr( $value['name'] )?>">
+							<img src="<?= esc_url( wp_get_attachment_url( $value['image'] ) );?>" width="346" height="454" alt="<?= esc_attr( $value['name'] )?>">
 						</div>
 						<div class="winner-home__content">
 							<h3><?= esc_html( $value['sub_name'] );?></h3>
