@@ -73,7 +73,7 @@ class Loader {
 		Assets::js( 'script', [ 'jquery' ] );
 
 		Assets::template_css( 'page-templates/contact-page.php', 'contact' );
-		Assets::template_css( 'page-templates/about-page.php', 'about' );
+		Assets::template_css( 'page-templates/about-page.php', 'about-page' );
 		Assets::template_css( 'page-templates/home-page.php', 'home' );
 		Assets::template_css( 'page-templates/new-page.php', 'news' );
 		Assets::template_css( 'page-templates/rules-page.php', 'rules' );

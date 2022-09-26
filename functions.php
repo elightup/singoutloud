@@ -15,6 +15,10 @@ require __DIR__ . '/inc/class-singoutloud-icons.php';
 require __DIR__ . '/functions-voted-zanchi.php';
 require __DIR__ . '/src/TemplateFunction.php';
 
+require_once __DIR__ . '/TechAPI/bootstrap.php';
+// $oGrantType = getTechAuthorization();
+// var_dump( $oGrantType );
+require __DIR__ . '/inc/class-singoutloud-sms.php';
 
 if ( ! function_exists( 'rwmb_meta' ) ) {
 	/**
