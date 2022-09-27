@@ -75,3 +75,25 @@
 
 	}
 }
+
+@media (max-width: 1023px) {
+	.number-home {
+		h2 {
+			font-size: 86px;
+		}
+
+		p {
+			font-size: 20px;
+		}
+	}
+}
+
+@media(max-width: 767px) {
+	.number-home {
+		flex-wrap: wrap;
+
+		&__item {
+			width: 100%;
+		}
+	}
+}

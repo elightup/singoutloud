@@ -138,7 +138,7 @@ class Fields {
 			],
 			'tabs'       => [
 				'left'  => [
-					'label' => 'Nội dung bên trái',
+					'label' => 'Nội dung bên trái ( màu đỏ )',
 				],
 				'right' => [
 					'label' => 'Nội dung bên phải',
@@ -150,7 +150,7 @@ class Fields {
 					'name'              => esc_html__( 'Ảnh', 'singoutloud' ),
 					'id'                => 'left-image',
 					'type'              => 'single_image',
-					'label_description' => __( '170*85', 'singoutloud' ),
+					'label_description' => __( '132*108', 'singoutloud' ),
 					'tab'               => 'left',
 				],
 				[

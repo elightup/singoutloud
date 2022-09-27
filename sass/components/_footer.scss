@@ -1,5 +1,6 @@
 .footer {
 	font-size: 15px;
+	font-weight: 300;
 	color: var(--color-white);
 	background: #000;
 
@@ -13,10 +14,16 @@
 	}
 
 	h2,
-	h3,
-	p {
+	h3 {
 		margin: 0;
 		font-size: 15px;
+		font-weight: 600;
+	}
+	p{
+		margin: 0;
+		strong{
+			font-weight: 600;
+		}
 	}
 
 	a {

@@ -111,3 +111,102 @@
 		left: -37px;
 	}
 }
+
+@media (max-width: 1023px) {
+	.judges-home {
+		padding-top: 100px;
+
+		&__inner {
+			width: 100%;
+		}
+	}
+
+	.winner-home {
+		padding-bottom: 50px;
+
+		&__inner {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.winner-home {
+		padding-top: 20px;
+
+		&__wrap {
+			h2.title {
+				font-size: 28px;
+
+				&::after {
+					margin-top: 15px;
+					width: 100%;
+				}
+			}
+		}
+
+		&__inner {
+			width: 100%;
+			gap: 15px;
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		&__title {
+			width: 100%;
+
+			.title {
+				font-size: 20px;
+			}
+		}
+
+		&__content {
+			h3 {
+				font-size: 18px;
+			}
+
+			h2 {
+				font-size: 26px;
+			}
+		}
+	}
+
+	.judges-home {
+		padding-top: 50px;
+		padding-bottom: 0;
+
+		&::before {
+			display: none;
+		}
+
+		&__title {
+			width: 100%;
+		}
+
+		&__content {
+			h3 {
+				font-size: 20px;
+			}
+
+			h2 {
+				font-size: 26px;
+			}
+		}
+
+		&__wrap {
+			margin-bottom: 0px;
+
+			h2.title {
+				&::after {
+					width: 100%;
+					margin-top: 15px;
+				}
+			}
+		}
+
+		&__inner {
+			width: 100%;
+			gap: 20px;
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+}
