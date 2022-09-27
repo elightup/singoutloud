@@ -353,6 +353,16 @@ class CustomField {
 			],
 			'fields'     => [
 				[
+					'id'   => 'binh-chon-title',
+					'name' => esc_html__( 'Tiêu đề', 'singoutloud' ),
+					'type' => 'text',
+				],
+				[
+					'id'   => 'binh-chon-desc',
+					'name' => esc_html__( 'Mô tả', 'singoutloud' ),
+					'type' => 'textảe',
+				],
+				[
 					'id'          => 'step_group',
 					'name'        => '',
 					'type'        => 'group',
