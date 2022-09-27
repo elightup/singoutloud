@@ -360,7 +360,7 @@ class CustomField {
 				[
 					'id'   => 'binh-chon-desc',
 					'name' => esc_html__( 'Mô tả', 'singoutloud' ),
-					'type' => 'textare',
+					'type' => 'textarea',
 				],
 				[
 					'id'          => 'step_group',
