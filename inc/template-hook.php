@@ -33,3 +33,16 @@ function singoutloud_comment_form_args( $defaults ) {
 	$args          = wp_parse_args( $args, $defaults );
 	return apply_filters( 'singoutloud_comment_form_args', $args, $user_identity, $id, $commenter, $req, $aria_req );
 }
+
+/**
+ *
+ * Thêm pattern cho form register.
+ */
+function gtt_add_pattern( $fields ) {
+	$fields['username']['attributes'] = [
+		'pattern' => '[0-9]{10}',
+	];
+	return $fields;
+}
+add_filter( 'rwmb_profile_register_fields', 'gtt_add_pattern' );
+

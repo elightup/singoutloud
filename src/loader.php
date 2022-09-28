@@ -70,7 +70,12 @@ class Loader {
 		wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css', [], '1.8.1' );
 		wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.js', [ 'jquery' ], '1.8.1', true );
 
-		Assets::js( 'script', [ 'jquery' ] );
+		wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', [ 'jquery' ], '1.0', true );
+		wp_localize_script( 'script', 'OTP', [
+			'ajaxURL' => admin_url( 'admin-ajax.php' ),
+			'user_id' => isset( $_GET['user_id'] ) ? $_GET['user_id'] : 0,
+		] );
+		// Assets::js( 'script', [ 'jquery' ] );
 
 		Assets::template_css( 'page-templates/contact-page.php', 'contact' );
 		Assets::template_css( 'page-templates/about-page.php', 'about-page' );

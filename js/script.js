@@ -123,9 +123,84 @@ jQuery( function ( $ ) {
 		} );
 	}
 
+	function translateValidateForm() {
+		if ( $body.hasClass( 'page-template-register' ) ) {
+			$.extend( $.validator.messages, {
+				required: "Trường này là bắt buộc. Bạn hãy nhập lại!",
+				pattern: "Hãy nhập đúng định dạng"
+			} );
+		}
+	}
+
+	function checkOtp() {
+		$( '.form-otp input' ).on( 'keydown', function ( e ) {
+			if ( e.keyCode == 13 ) {
+				//console.log( $( this ).val() );
+				var user_id = OTP.user_id;
+
+				$.post( OTP.ajaxUrl, {
+					action: 'sol_check_otp',
+					otp: $( this ).val(),
+					user_id: user_id,
+				}, function ( response ) {
+					if ( !response.success ) {
+						$( '.form-otp__message' ).html( response.data );
+						return;
+					}
+					$( '.form-otp__message' ).html( response.data.message );
+					setTimeout( () => {
+						location.href = response.data.url;
+					}, 5000 );
+				} );
+			}
+		} );
+		$( '.form-otp a.btn' ).on( 'click', function ( e ) {
+			e.preventDefault();
+			//console.log( $( this ).prev().val() );
+			var user_id = OTP.user_id;
+
+			$.post( OTP.ajaxUrl, {
+				action: 'sol_check_otp',
+				otp: $( this ).prev().val(),
+				user_id: user_id,
+			}, function ( response ) {
+				//console.log( response );
+				if ( !response.success ) {
+					$( '.form-otp__message' ).html( response.data );
+					return;
+				}
+				$( '.form-otp__message' ).html( response.data.message );
+				setTimeout( () => {
+					location.href = response.data.url;
+				}, 5000 );
+			} );
+		} );
+	}
+
+	function resend_otp() {
+		$( '.form-otp-resend a' ).on( 'click', function ( e ) {
+			e.preventDefault();
+			var user_id = OTP.user_id;
+
+			$.post( OTP.ajaxUrl, {
+				action: 'sol_resend_otp',
+				user_id: user_id,
+			}, function ( response ) {
+				if ( !response.success ) {
+					$( '.form-otp__message' ).html( response.data );
+					return;
+				}
+				$( '.form-otp__message' ).html( response.data );
+			} );
+		} );
+	}
+
 	toggleMenu();
 	toggleAccount();
 	popupLogout();
 	slickSlide();
 	counterNumber();
+	translateValidateForm();
+	checkOtp();
+	resend_otp();
 } );
