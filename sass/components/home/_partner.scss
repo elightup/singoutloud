@@ -3,9 +3,9 @@
 	background-color: var(--color-bg);
 	padding: 50px 0;
 
-	h2.title::after {
-		display: none;
-	}
+	// h2.title::after {
+	// 	display: none;
+	// }
 
 	&__image {
 		width: calc(100% - 520px);
@@ -13,7 +13,6 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
-		border-bottom: 1px solid var(--color-white);
 		padding-bottom: 150px;
 
 		img {

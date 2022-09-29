@@ -21,11 +21,6 @@ if ( empty( $images_newspaper ) || ! is_array( $images_newspaper ) ) {
 				<?php foreach ( $images_parter as $image ) : ?>
 					<img src="<?= esc_url( $image['full_url'] ) ?>" width="<?= esc_attr( $image['width'] )?>" height="<?= esc_attr( $image['height'] )?>" alt="">
 				<?php endforeach; ?>
-			</div>
-		</div>
-		<div class="partner-home__wrap">
-			<h2 class="title"><?= wp_kses_post( $title_newspapers ); ?></h2>
-			<div class="partner-home__image">
 				<?php foreach ( $images_newspaper as $image ) : ?>
 					<img src="<?= esc_url( $image['full_url'] ) ?>" width="<?= esc_attr( $image['width'] )?>" height="<?= esc_attr( $image['height'] )?>" alt="">
 				<?php endforeach; ?>

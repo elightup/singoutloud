@@ -1,7 +1,19 @@
 .top-ten {
 	position: relative;
 	background-color: var(--color-bg);
-	padding: 50px 0;
+	padding: 50px 0 250px;
+
+	&::after {
+		content: '';
+		display: block;
+		width: 253px;
+		height: 331px;
+		background-image: url('../images/bg_top_ten.png');
+		background-size: cover;
+		position: absolute;
+		right: 56px;
+		bottom: 0;
+	}
 
 	&__wrap {
 		position: relative;
@@ -26,7 +38,7 @@
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background-color: #808080;
+			background-color: var(--color-main);
 			padding: 0 10px;
 			margin: 0 10px;
 			border-radius: 25px;
@@ -50,7 +62,7 @@
 		summary {
 			font-family: var(--font-Barlow);
 			font-weight: 500;
-			font-size: 36px;
+			font-size: 28px;
 			text-transform: uppercase;
 			color: var(--color-white);
 			text-shadow: 2px 2px 8px rgba(255, 255, 255, 1);

@@ -2,7 +2,7 @@
 	font-size: 15px;
 	font-weight: 300;
 	color: var(--color-white);
-	background: #000;
+	background: #191919;
 
 	&__inner {
 		width: 64%;
@@ -19,9 +19,11 @@
 		font-size: 15px;
 		font-weight: 600;
 	}
-	p{
+
+	p {
 		margin: 0;
-		strong{
+
+		strong {
 			font-weight: 600;
 		}
 	}

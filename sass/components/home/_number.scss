@@ -15,9 +15,11 @@
 
 		h2 {
 			margin: 0;
-			font-size: 104.08px;
+			font-size: 104px;
 			color: var(--color-white);
 			line-height: 1.2;
+			font-family: var(--font-SimplonNorm);
+			font-weight: 500;
 
 			.unit {
 				font-size: 22px;
@@ -25,10 +27,10 @@
 		}
 
 		p {
-			font-size: 22px;
+			font-size: 21px;
 			color: var(--color-white);
 			margin: 0;
-			font-weight: 700;
+			font-weight: 600;
 		}
 
 		&:nth-child(2) {

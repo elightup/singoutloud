@@ -1,7 +1,6 @@
 .home-page {
 	position: relative;
-	background-image: url('../images/bg_home.png');
-	background-color: rgba(0, 0, 0, 0.96);
+	background-color: rgba(0, 0, 0, 1);
 }
 
 .moment {
@@ -97,7 +96,7 @@
 
 .moment-slider {
 	position: relative;
-	margin-top: 116px;
+	margin-top: 49px;
 
 	.item_slider {
 		img {
@@ -223,7 +222,7 @@
 			border-radius: 25px;
 
 			&.slick-active {
-				background-color: #808080;
+				background-color: var(--color-main);
 			}
 		}
 	}
@@ -279,6 +278,7 @@
 	}
 
 	.moment-slider {
+
 		&__col1,
 		&__col2,
 		&__col3 {

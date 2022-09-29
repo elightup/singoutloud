@@ -102,8 +102,9 @@ class CustomField {
 				],
 				// Ban giám khảo
 				[
-					'id'                => 'title_judges',
+					'id'                => 'content_judges',
 					'name'              => esc_html__( 'Title', 'singoutloud' ),
+					'type'              => 'textarea',
 					'tab'               => 'judges',
 					'sanitize_callback' => 'none',
 				],
@@ -111,6 +112,12 @@ class CustomField {
 					'id'   => 'video_judges',
 					'name' => esc_html__( 'Video', 'singoutloud' ),
 					'tab'  => 'judges',
+				],
+				[
+					'id'                => 'title_judges',
+					'name'              => esc_html__( 'Title', 'singoutloud' ),
+					'tab'               => 'judges',
+					'sanitize_callback' => 'none',
 				],
 				[
 					'id'          => 'judges_group',
@@ -121,10 +128,6 @@ class CustomField {
 					'group_title' => '{name}',
 					'tab'         => 'judges',
 					'fields'      => [
-						[
-							'id'   => 'title',
-							'name' => esc_html__( 'Title', 'singoutloud' ),
-						],
 						[
 							'id'   => 'sub_name',
 							'name' => esc_html__( 'Chức vụ', 'singoutloud' ),
@@ -142,12 +145,6 @@ class CustomField {
 					],
 				],
 				// Khoảng khắc
-				[
-					'id'                => 'title_moment',
-					'name'              => esc_html__( 'Title', 'singoutloud' ),
-					'tab'               => 'moment',
-					'sanitize_callback' => 'none',
-				],
 				[
 					'id'          => 'moment_group',
 					'name'        => '',

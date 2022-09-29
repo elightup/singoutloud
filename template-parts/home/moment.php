@@ -1,11 +1,7 @@
 <?php
-$title_moment  = rwmb_meta( 'title_moment' );
 $moment_groups = rwmb_meta( 'moment_group' );
 ?>
 <section class="moment-home">
-	<div class="container">
-		<h2 class="title"><?= wp_kses_post( $title_moment );?></h2>
-	</div>
 	<div class="moment-slider">
 	<?php
 	foreach ( $moment_groups as $moment_group ) :

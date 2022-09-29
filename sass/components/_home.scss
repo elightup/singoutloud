@@ -1,19 +1,23 @@
 h2.title {
 	font-family: var(--font-Barlow);
 	color: var(--color-white);
-	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 35px;
-	line-height: 1.6;
-	text-shadow: 2px 2px 8px rgba(255, 255, 255, 1);
-	letter-spacing: 3px;
+	font-weight: 300;
+	font-size: 48px;
+	position: relative;
+	z-index: 2;
+	text-shadow: 2px 2px 8px #fff;
+	margin: 0;
 
 	&::after {
-		content: '';
+		content: "";
 		display: block;
-		width: 375px;
-		height: 1px;
-		background-color: var(--color-white);
-		margin-top: 97px;
+		width: 70px;
+		height: 70px;
+		background-color: var(--color-main);
+		border-radius: 100%;
+		position: absolute;
+		z-index: -1;
+		top: -25px;
+		left: -32px;
 	}
 }
