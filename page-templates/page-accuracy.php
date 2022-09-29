@@ -14,7 +14,7 @@
 					<div class="form-otp">
 						<input style="width: 100%; padding: 20px 12px; font-size: 16px" type="text" placeholder="Nhập mã OTP và ấn ENTER để kiểm tra">
 						<a style="display: flex; justify-content: center" href="#" class="btn">Xác nhận</a>
-						<span style="display: block; font-size: 14px; margin-top: 10px;" class="form-otp__message"></span>
+						<span style="display: block; font-size: 14px; margin-top: 10px;width: 100%" class="form-otp__message"></span>
 						<div class="form-otp-resend">Chưa nhận được mã OTP? <a href="#">Gửi lại</a></div>
 					</div>
 				</div>

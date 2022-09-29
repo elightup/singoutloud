@@ -135,14 +135,46 @@ jQuery( function ( $ ) {
 	function checkOtp() {
 		$( '.form-otp input' ).on( 'keydown', function ( e ) {
 			if ( e.keyCode == 13 ) {
-				//console.log( $( this ).val() );
 				var user_id = OTP.user_id;
-
-				$.post( OTP.ajaxUrl, {
+				$.ajax( {
+					type: 'post',
+					dataType: 'json',
+					url: OTP.ajaxURL,
+					data: {
+						action: 'sol_check_otp',
+						user_id: user_id,
+						otp: $( this ).val(),
+					},
+					success: function ( response ) {
+						if ( !response.success ) {
+							$( '.form-otp__message' ).html( response.data );
+							return;
+						}
+						$( '.form-otp__message' ).html( response.data );
+						setTimeout( () => {
+							location.href = response.data.url;
+						}, 5000 );
+					},
+					error: function ( jqXHR, textStatus, errorThrown ) {
+						console.log( 'Lỗi' );
+					}
+				} );
+			}
+		} );
+		$( '.form-otp a.btn' ).on( 'click', function ( e ) {
+			e.preventDefault();
+			var user_id = OTP.user_id;
+			$.ajax( {
+				type: 'post',
+				dataType: 'json',
+				url: OTP.ajaxURL,
+				data: {
 					action: 'sol_check_otp',
-					otp: $( this ).val(),
 					user_id: user_id,
-				}, function ( response ) {
+					otp: $( this ).prev().val(),
+				},
+				success: function ( response ) {
+					//console.log( response );
 					if ( !response.success ) {
 						$( '.form-otp__message' ).html( response.data );
 						return;
@@ -151,28 +183,10 @@ jQuery( function ( $ ) {
 					setTimeout( () => {
 						location.href = response.data.url;
 					}, 5000 );
-				} );
-			}
-		} );
-		$( '.form-otp a.btn' ).on( 'click', function ( e ) {
-			e.preventDefault();
-			//console.log( $( this ).prev().val() );
-			var user_id = OTP.user_id;
-
-			$.post( OTP.ajaxUrl, {
-				action: 'sol_check_otp',
-				otp: $( this ).prev().val(),
-				user_id: user_id,
-			}, function ( response ) {
-				//console.log( response );
-				if ( !response.success ) {
-					$( '.form-otp__message' ).html( response.data );
-					return;
+				},
+				error: function ( jqXHR, textStatus, errorThrown ) {
+					console.log( 'Lỗi gửi otp' );
 				}
-				$( '.form-otp__message' ).html( response.data.message );
-				setTimeout( () => {
-					location.href = response.data.url;
-				}, 5000 );
 			} );
 		} );
 	}
@@ -181,16 +195,26 @@ jQuery( function ( $ ) {
 		$( '.form-otp-resend a' ).on( 'click', function ( e ) {
 			e.preventDefault();
 			var user_id = OTP.user_id;
-
-			$.post( OTP.ajaxUrl, {
-				action: 'sol_resend_otp',
-				user_id: user_id,
-			}, function ( response ) {
-				if ( !response.success ) {
+			console.log( 'user_id', user_id );
+			$.ajax( {
+				type: 'post',
+				dataType: 'json',
+				url: OTP.ajaxURL,
+				data: {
+					action: 'sol_resend_otp',
+					user_id: user_id,
+				},
+				success: function ( response ) {
+					console.log( response );
+					if ( !response.success ) {
+						$( '.form-otp__message' ).html( response.data );
+						return;
+					}
 					$( '.form-otp__message' ).html( response.data );
-					return;
+				},
+				error: function ( jqXHR, textStatus, errorThrown ) {
+					console.log( 'Lỗi' );
 				}
-				$( '.form-otp__message' ).html( response.data );
 			} );
 		} );
 	}

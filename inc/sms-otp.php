@@ -65,18 +65,18 @@ add_action( 'rwmb_profile_after_process', 'sol_redirect', 10, 2 );
 /**
  * Check mã xác thực before Login
  */
-// function sol_check_otp( $user ) {
-// if ( ! $user instanceof WP_User ) {
-// return;
-// }
-// $otp_code = get_user_meta( $user->ID, 'otp_code' );
-// if ( empty( $otp_code ) ) {
-// $text = 'Tài khoản của bạn chưa được xác thực! Bấm <a href="' . esc_url( home_url() ) . '/xac-thuc?user_id=' . $user->ID . '"> vào đây </a> rồi ấn gửi lại mã để nhập mã OTP để nhập mã OTP';
-// $user = new WP_Error( 'broke', $text );
-// }
-// return $user;
-// }
-// add_filter( 'wp_authenticate_user', 'sol_check_otp' );
+function sol_check_otp( $user ) {
+	if ( ! $user instanceof WP_User ) {
+		return;
+	}
+	$otp_code = get_user_meta( $user->ID, 'otp_code' );
+	if ( empty( $otp_code ) ) {
+		$text = 'Tài khoản của bạn chưa được xác thực! Bấm <a href="' . esc_url( home_url() ) . '/xac-thuc?user_id=' . $user->ID . '"> vào đây </a> rồi ấn gửi lại mã để nhập mã OTP để nhập mã OTP';
+		$user = new WP_Error( 'broke', $text );
+	}
+	return $user;
+}
+add_filter( 'wp_authenticate_user', 'sol_check_otp' );
 
 /**
  * Check nhập mã OTP
@@ -104,34 +104,36 @@ function sol_check_otp_message() {
 	if ( $otp === $random_otp_user ) {
 		update_user_meta( $user_id, 'otp_code', $random_otp_user );
 		$message = 'Tài khoản của bạn đã xác thực thành công! <br>
-		Website sẽ tự động chuyển hướng về trang chủ sau 5s <br>
-		Tài khoản đăng ký cộng tác viên của bạn đang được xem xét chờ duyệt (Thời gian duyệt từ 1-2 ngày ).<br>
-		Tài khoản được duyệt sẽ có thông báo qua mail đăng ký';
+	Website sẽ tự động chuyển hướng về trang chủ sau 5s <br>
+	Tài khoản đăng ký cộng tác viên của bạn đang được xem xét chờ duyệt (Thời gian duyệt từ 1-2 ngày ).<br>
+	Tài khoản được duyệt sẽ có thông báo qua mail đăng ký';
 
-		// Login after register.
+		// Login after register .
 		$meta_user = get_user_meta( $user_id );
 		$user      = new WP_User( $user_id );
 		wp_set_current_user( $user_id, $meta_user['nickname'] );
 		wp_set_auth_cookie( $user_id );
 		do_action( 'wp_login', $meta_user['nickname'], $user );
 
-		$return = [
+		$success = [
 			'message' => $message,
 			'url'     => home_url(),
 		];
-		wp_send_json_success( $return );
+		wp_send_json_success( $success );
 	} else {
 		$message = 'Mã OTP không đúng!';
 		wp_send_json_error( $message );
 	}
+
+	die();
 }
 
 /**
  * Gửi lại mã OTP
  */
-add_action( 'wp_ajax_sol_resend_otp', 'sol_resend_otp' );
-add_action( 'wp_ajax_nopriv_sol_resend_otp', 'sol_resend_otp' );
-function sol_resend_otp() {
+add_action( 'wp_ajax_sol_resend_otp', 'sol_resend_otp_sms' );
+add_action( 'wp_ajax_nopriv_sol_resend_otp', 'sol_resend_otp_sms' );
+function sol_resend_otp_sms() {
 	$random_otp = rand_string( 6 );
 	$user_id    = isset( $_POST['user_id'] ) ? $_POST['user_id'] : '';
 
@@ -149,4 +151,5 @@ function sol_resend_otp() {
 
 	$message = 'Đã gửi lại mã OTP';
 	wp_send_json_success( $message );
+	die();
 }
