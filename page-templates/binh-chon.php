@@ -16,7 +16,6 @@
 			<div class="vote-page__wrap">
 				<h2 class="vote-page__wrap-title"><?= $title; ?></h2>
 				<div class="vote-page__wrap-desc"><?= wp_kses_post(wpautop( $desc ));  ?></div>
-				<?php the_content(); ?>
 				<div class="vote-page__inner">
 					<?php
 					$steps = rwmb_meta( 'step_group' );
