@@ -20,7 +20,7 @@
 	?>
 		<!-- nội dung header -->
 	<div class="header <?= esc_attr( $class );?>">
-		<?php get_template_part( 'template-parts/header/login' ); ?>
+		<?php // get_template_part( 'template-parts/header/login' ); ?>
 		<div class="d-flex space-between">
 			<div class="header__inner space-between">
 				<?php get_template_part( 'template-parts/header/logo' ); ?>
