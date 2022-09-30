@@ -3,7 +3,7 @@ namespace Sol;
 
 class CustomField {
 
-	function __construct() {
+	public function __construct() {
 		add_filter( 'rwmb_meta_boxes', [ $this, 'register' ] );
 	}
 	function register( $meta_boxes ) {
@@ -17,7 +17,7 @@ class CustomField {
 		return $meta_boxes;
 	}
 
-	function home() {
+	public function home() {
 		return [
 			'title'      => esc_html__( 'Setting Home', 'singoutloud' ),
 			'id'         => 'home-setting',
@@ -279,7 +279,7 @@ class CustomField {
 		];
 	}
 
-	function regis() {
+	public function regis() {
 		return [
 			'title'      => esc_html__( 'Setting Resgister', 'singoutloud' ),
 			'id'         => 'resgister-setting',
@@ -300,7 +300,7 @@ class CustomField {
 		];
 	}
 
-	function regis_user() {
+	public function regis_user() {
 		 return [
 			 'title'  => __( 'Đăng ký', 'singoutloud' ),
 			 'id'     => 'dang-ky',
@@ -319,7 +319,7 @@ class CustomField {
 		 ];
 	}
 
-	function login_user() {
+	public function login_user() {
 		 return [
 			 'title'      => esc_html__( 'Setting Resgister', 'singoutloud' ),
 			 'id'         => 'resgister-setting',
@@ -339,7 +339,7 @@ class CustomField {
 		 ];
 	}
 
-	function binh_chon() {
+	public function binh_chon() {
 		return [
 			'title'      => esc_html__( 'Setting Bình chọn', 'singoutloud' ),
 			'id'         => 'binh-chon-setting',
@@ -389,7 +389,7 @@ class CustomField {
 		];
 	}
 
-	function vote() {
+	public function vote() {
 		return [
 			'title'      => __( 'Bình chọn', 'singoutloud' ),
 			'id'         => 'binh_chon',

@@ -4,10 +4,10 @@ namespace Sol;
 class Fields {
 
 
-	function __construct() {
+	public function __construct() {
 		add_filter( 'rwmb_meta_boxes', [ $this, 'register' ] );
 	}
-	function register( $meta_boxes ) {
+	public function register( $meta_boxes ) {
 		$meta_boxes[] = $this->contact();
 		$meta_boxes[] = $this->about();
 		$meta_boxes[] = $this->rules();
@@ -18,7 +18,7 @@ class Fields {
 	}
 
 	// Contact
-	function contact() {
+	public function contact() {
 		return [
 			'title'      => __( 'Cài đặt trang', 'singoutloud' ),
 			'post_types' => [ 'page' ],
@@ -127,7 +127,7 @@ class Fields {
 	}
 
 	// About
-	function about() {
+	public function about() {
 		return [
 			'title'      => __( 'Cài đặt trang', 'singoutloud' ),
 			'post_types' => [ 'page' ],
@@ -178,7 +178,7 @@ class Fields {
 	}
 
 	// Rule
-	function rules() {
+	public function rules() {
 		return [
 			'title'      => __( 'Cài đặt trang', 'singoutloud' ),
 			'post_types' => [ 'page' ],
@@ -229,7 +229,7 @@ class Fields {
 	}
 
 	// Prize
-	function prize() {
+	public function prize() {
 		return [
 			'title'      => __( 'Cài đặt trang', 'singoutloud' ),
 			'post_types' => [ 'page' ],
@@ -281,7 +281,7 @@ class Fields {
 	}
 
 	// News
-	function news() {
+	public function news() {
 		return [
 			'title'      => __( 'Cài Đặt Trang', 'singoutloud' ),
 			'post_types' => [ 'page' ],
