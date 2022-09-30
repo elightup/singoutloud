@@ -287,6 +287,7 @@ class CustomField {
 			'include'    => [
 				'template' => [
 					'page-templates/register.php',
+					'page-templates/page-accuracy.php',
 				],
 			],
 			'fields'     => [
