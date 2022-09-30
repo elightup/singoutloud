@@ -105,7 +105,7 @@ function sol_check_otp_message() {
 		update_user_meta( $user_id, 'otp_code', $random_otp_user );
 		$message = 'Tài khoản của bạn đã xác thực thành công! <br>
 	Website sẽ tự động chuyển hướng về trang chủ sau 5s <br>
-	Tài khoản đăng ký cộng tác viên của bạn đang được xem xét chờ duyệt (Thời gian duyệt từ 1-2 ngày ).<br>
+	Tài khoản đăng ký thành viên của bạn đang được xem xét chờ duyệt (Thời gian duyệt từ 1-2 ngày ).<br>
 	Tài khoản được duyệt sẽ có thông báo qua mail đăng ký';
 
 		// Login after register .

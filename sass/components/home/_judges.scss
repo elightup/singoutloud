@@ -238,7 +238,6 @@
 
 				&::after {
 					margin-top: 15px;
-					width: 100%;
 				}
 			}
 		}
@@ -276,6 +275,14 @@
 			display: none;
 		}
 
+		&__judges {
+			width: 100%;
+		}
+
+		&__video {
+			width: 100%;
+		}
+
 		&__title {
 			width: 100%;
 		}
@@ -295,7 +302,6 @@
 
 			h2.title {
 				&::after {
-					width: 100%;
 					margin-top: 15px;
 				}
 			}

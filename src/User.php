@@ -113,7 +113,6 @@ class User {
 			<div style="max-width: 700px; margin: 0 auto;">
 				<p>SingOutLoud rất vui mừng thông báo tài khoản bạn đăng ký đã trở thành thành viên của SingOutLoud. </p>
 				<p>Ngay bây giờ bạn đã có thể truy cập vào website và đăng nhập tài khoản đã đăng ký để xem được những quyền lợi , chính sách dành riêng cho bạn. </p>
-				<p>SingOutLoud cam kết chỉ bán hàng chính hãng , hàng mới 100% nói không với hàng thanh lý , trưng bày nếu sai đền 136% giá trị sản phẩm .</p>
 				<p style="text-align: center;">Hotline: 0383.951.847 | Email: singoutloud2022@gmail.com <br>
 				SingOutLoud : Cuộc thi hát tiếng anh - Dành riêng cho họ sinh THPT</p>
 			</div>
