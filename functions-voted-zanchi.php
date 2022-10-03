@@ -112,6 +112,7 @@ function vote_post() {
 	?>
 	<article id="voted-<?= get_the_ID() ?>" class="meta-voted ">
 		<div class="voted-inner">
+			<div class="entry-voted-number"><span><a href="<?php the_permalink() ?>">VOTE</a></span></div>
 			<div class="entry-thumb">
 				<a class="voted-item voted-<?= get_the_ID() ?>" href="<?php the_permalink() ?>">
 					<?php the_post_thumbnail( 'full' ) ?>
@@ -120,7 +121,8 @@ function vote_post() {
 			<div class="voted-content">
 				<div class="entry-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></div>
 
-				<div class="entry-voted-number"><span><a href="<?php the_permalink() ?>">VOTE</a></span><div class="number-voted"><?= $voted_number ?></div></div>
+
+				<div class="number-voted"><?= $voted_number ?></div>
 			</div>
 		</div>
 	</article>

@@ -1,18 +1,18 @@
 .competition {
 	position: relative;
 	background-color: var(--color-black);
-	padding: 50px 0;
+	padding: 143px 0;
 	color: var(--color-white);
 
 	&__inner {
 		position: relative;
 		display: grid;
-		gap: 30px;
+		//gap: 58px;
 		grid-template-columns: repeat(4, 1fr);
 	}
 
 	.voted-filter {
-		margin-bottom: 50px;
+		margin-bottom: 140px;
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
@@ -23,9 +23,20 @@
 
 	.meta-voted {
 		position: relative;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+		padding: 0 25px;
+		margin-bottom: 58px;
+
+		&:hover {
+			.entry-voted-number a {
+				color: var(--color-white);
+			}
+		}
 	}
 
 	.voted-inner {
+		position: relative;
+
 		.entry-thumb {
 			position: relative;
 
@@ -61,7 +72,10 @@
 
 	.voted-content {
 		position: relative;
-
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	.entry-title {
@@ -83,46 +97,53 @@
 .entry-voted-number {
 	position: absolute;
 	top: -25px;
-	right: 0;
+	right: -60px;
 	z-index: 1;
 	text-align: right;
 	width: 100px;
 	color: #fff;
 	font-size: 13px;
 	font-weight: 700;
+
+	a:hover {
+		color: var(--color-white);
+	}
 }
 
 .entry-voted-number span {
 	display: block;
-	background: #ffd014;
+	background: #E81F27;
 	color: #ec008c;
 	font-size: 21px;
-	font-weight: 700;
-	clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
-	padding: 5px 15px;
-	margin-bottom: 3px !important;
-	position: relative;
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
+	top: 0;
 }
 
 #searchform-voted {
 	position: relative;
 
 	input#s {
-		border: none;
 		width: 100%;
 		max-width: 500px;
 		min-width: 200px;
-		border-radius: 10px;
-		height: 50px;
-		color: var(--color-black);
+		//color: var(--color-black);
+		background: transparent;
+		border: 1px solid #fff;
+		border-radius: 25px;
 	}
 
 	.input-button input {
 		background: url('images/voted-search.png') center center no-repeat;
 		text-indent: -9999px;
 		position: absolute;
-		top: 10px;
-		right: 5px;
+		top: 0px;
+		right: 10px;
 		z-index: 9;
 		width: 30px;
 		border: none;
@@ -138,9 +159,9 @@
 	align-items: center;
 
 	.voted-most {
-		font-size: 20px;
+		font-size: 28px;
 		color: var(--color-main);
-		font-weight: 700;
+		font-weight: 600;
 		text-transform: uppercase;
 
 		&:hover {
@@ -150,11 +171,42 @@
 
 	.voted-new {
 		color: var(--color-white);
-		font-size: 20px;
-		font-weight: 700;
+		font-size: 28px;
+		font-weight: 600;
+		text-transform: uppercase;
 
 		&:hover {
 			color: var(--color-main);
+		}
+	}
+}
+
+@media only screen and(max-width: 991px) {
+	.competition {
+		&__inner {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+@media only screen and(max-width: 600px) {
+	.competition {
+		padding-top: 50px;
+
+		&__inner {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		.voted-filter {
+			margin-bottom: 50px;
+		}
+	}
+
+	.voted-filter__form {
+
+		.voted-most,
+		.voted-new {
+			font-size: 22px;
 		}
 	}
 }

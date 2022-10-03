@@ -1,11 +1,44 @@
 .comments-area {
-	width: 94%;
+	width: 100%;
 	margin-left: auto;
+	margin-top: 50px;
+
+	h3.comment-reply-title {
+		color: var(--color-white);
+	}
 }
 
 textarea#comment {
 	background-color: #fff;
 	border: 1px solid #ccc;
+	height: 130px;
+}
+
+.comment-form {
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px 30px;
+
+	input {
+		font-size: 20px;
+		padding: 10px 15px;
+		font-family: var(--font-Barlow);
+		font-weight: 400;
+		width: 100%;
+	}
+}
+
+.comment-form-comment {
+	width: 100%;
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.comment-form-phone {
+	width: calc(50% - 15px);
 }
 
 input.submit {

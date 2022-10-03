@@ -6,7 +6,7 @@
 	font-weight: 400;
 	font-size: 15px;
 	line-height: 1.2;
-	padding: 40px 0;
+	padding: 40px 0 0;
 
 	&.white-header {
 		position: absolute;
@@ -62,7 +62,7 @@
 
 		a {
 			text-decoration: none;
-			margin-left: 40px;
+			margin-left: 38px;
 			color: var(--color-black);
 		}
 
@@ -114,7 +114,10 @@
 		display: flex;
 		align-items: center;
 	}
+}
 
+.navbar-brand {
+	height: auto !important;
 }
 
 .menu {

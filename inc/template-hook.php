@@ -13,17 +13,22 @@ function singoutloud_comment_form_args( $defaults ) {
 			'<input id="email" name="email" required="true" type="text" class="email" placeholder="Email Address*" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" tabindex="2"' . $aria_req . ' />' .
 			'</p>';
 	$url       = '<p class="comment-form-url">' .
-		'<input id="url" name="url" type="text" required="true" class="url" placeholder="Website URL" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" tabindex="3" />' .
+		'<input id="url" name="url" type="text" class="url" placeholder="Website URL" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" tabindex="3" />' .
+		'</p>';
+	$phone = '<p class="comment-form-phone">' .
+		'<input id="phone" name="phone" type="text" class="phone" placeholder="Số điện thoại" value="" size="30" tabindex="1"/>' .
 		'</p>';
 
 	$comment_field = '<p class="comment-form-comment">' .
 					'<textarea id="comment" name="comment" required="true" placeholder="Viết bình luận ..." cols="45" rows="8" class="form" tabindex="4" required="true"></textarea>' .
 					'</p>';
+
 	$args          = array(
 		'fields'               => array(
 			'author' => $author,
 			'email'  => $email,
 			'url'    => $url,
+			'phone'	=> $phone,
 		),
 		'comment_field'        => $comment_field,
 		'title_reply'          => __( 'Bình luận', 'singoutloud' ),

@@ -1,3 +1,75 @@
+.post {
+	&__votes {
+		background-color: var(--color-bg);
+		padding: 223px 0 100px;
+
+		.container {
+			max-width: 800px;
+		}
+
+		.post__content {
+			width: 100%;
+		}
+
+		.post__head-title {
+			width: 100%;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			color: var(--color-white);
+			padding-bottom: 10px;
+			margin-bottom: 15px;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+
+			h1 {
+				font-size: 28px;
+				color: var(--color-white);
+				margin: 0;
+				display: inline-block;
+				position: relative;
+				z-index: 2;
+				text-transform: uppercase;
+				font-weight: 400;
+
+				&::after {
+					content: '';
+					display: block;
+					width: 70px;
+					height: 70px;
+					background-color: var(--color-main);
+					border-radius: 100%;
+					position: absolute;
+					top: -30px;
+					left: -35px;
+					z-index: -1;
+				}
+			}
+
+			svg {
+				fill: var(--color-white);
+				width: 25px;
+				height: 25px;
+			}
+		}
+
+		.post__desc {
+			color: var(--color-white);
+			font-size: 21px;
+			font-weight: 300;
+			font-family: var(--font-Barlow);
+
+			p.sbd {
+				font-family: var(--font-Barlow);
+				font-weight: 600;
+				color: var(--color-main);
+				font-size: 28px;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
 .post__content {
 	iframe {
 		width: 100%;
@@ -6,21 +78,37 @@
 }
 
 .number-voted {
-	font-size: 20px;
-	color: var(--color-main);
+	font-size: 22px;
+	color: var(--color-white);
+	font-family: var(--font-Barlow);
+	font-weight: 300;
 }
 
 .click-voted-post {
 	text-align: center;
-	padding-top: 40px;
+	padding-top: 18px;
 
 	.click-voted {
 		display: inline-block;
-		background: #333;
+		background: var(--color-main);
 		color: #fff !important;
 		padding: 20px 40px;
-		font-weight: 700;
+		font-weight: 600;
 		text-decoration: none;
+		text-transform: uppercase;
 		font-size: 22px;
+		border-radius: 50px;
+		font-family: var(--font-Barlow);
+
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.post__votes {
+		padding-top: 100px;
+	}
+
+	.post {
+		padding-bottom: 0;
 	}
 }

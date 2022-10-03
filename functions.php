@@ -18,8 +18,11 @@ require __DIR__ . '/inc/class-singoutloud-icons.php';
 require __DIR__ . '/functions-voted-zanchi.php';
 require __DIR__ . '/src/TemplateFunction.php';
 
-require_once __DIR__ . '/TechAPI/bootstrap.php';
-require __DIR__ . '/inc/sms-otp.php';
+/**
+ * Gọi API gửi sms
+*/
+// require_once __DIR__ . '/TechAPI/bootstrap.php';
+// require __DIR__ . '/inc/sms-otp.php';
 
 if ( ! function_exists( 'rwmb_meta' ) ) {
 	/**
