@@ -112,7 +112,7 @@ function vote_post() {
 	?>
 	<article id="voted-<?= get_the_ID() ?>" class="meta-voted ">
 		<div class="voted-inner">
-			<div class="entry-voted-number"><span><a href="<?php the_permalink() ?>">VOTE</a></span></div>
+			<div class="entry-voted-number"><span><a href="<?php the_permalink() ?>">Vote</a></span></div>
 			<div class="entry-thumb">
 				<a class="voted-item voted-<?= get_the_ID() ?>" href="<?php the_permalink() ?>">
 					<?php the_post_thumbnail( 'full' ) ?>
@@ -120,7 +120,6 @@ function vote_post() {
 			</div>
 			<div class="voted-content">
 				<div class="entry-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></div>
-
 
 				<div class="number-voted"><?= $voted_number ?></div>
 			</div>
@@ -220,7 +219,7 @@ if ( ! function_exists( 'general_voted_filter' ) ) {
 			<div class="box-search">
 				<form id="searchform-voted" method="get" action="<?php echo get_the_permalink(); ?>">
 					<div class="input-text-search">
-						<input type="text" name="voted-search" id="s" size="15"  placeholder="Tìm kiếm bài thi" />
+						<input type="text" name="voted-search" id="s" size="15"  placeholder="Tìm kiếm" />
 						<input type="hidden" name="tencuocthi"  value="<?= $tencuocthi ?>" />
 					</div>
 					<div class="input-button">
