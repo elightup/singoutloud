@@ -29,6 +29,13 @@
 		padding-bottom: 62px;
 		margin-bottom: 88px;
 
+		&:nth-child(9),
+		&:nth-child(10),
+		&:nth-child(11),
+		&:nth-child(12) {
+			border-bottom: 0;
+		}
+
 		&:hover {
 			.entry-voted-number a {
 				color: var(--color-white);

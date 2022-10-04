@@ -24,13 +24,13 @@
 				<?php endif; ?>
 				<p><?= $mo_ta;?></p>
 			</div>
-			<!-- <div class="comments">
+			<div class="comments">
 				<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="15"></div>
-			</div> -->
+			</div>
 			<?php
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			// if ( comments_open() || get_comments_number() ) :
+			// comments_template();
+			// endif;
 			?>
 
 		</div>

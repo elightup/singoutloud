@@ -42,7 +42,7 @@ if ( ! function_exists( 'general_voted_html' ) ) {  // start if function
 			$arg = [
 				'post_type'              => $post_type,
 				'paged'                  => max( 1, get_query_var( 'paged' ) ),
-				'posts_per_page'         => 15,
+				'posts_per_page'         => 12,
 				'meta_key'               => 'voted_number',
 				'orderby'                => 'meta_value_num',
 				'order'                  => 'DESC',
