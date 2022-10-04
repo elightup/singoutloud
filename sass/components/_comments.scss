@@ -2,16 +2,33 @@
 	width: 100%;
 	margin-left: auto;
 	margin-top: 50px;
+	color: #fff;
+	font-family: var(--font-Barlow);
+	font-weight: 300;
 
 	h3.comment-reply-title {
 		color: var(--color-white);
 	}
 }
 
-textarea#comment {
+.comments {
 	background-color: #fff;
+}
+
+p.logged-in-as {
+	color: #fff;
+}
+
+textarea#comment {
+	background-color: transparent;
 	border: 1px solid #ccc;
 	height: 130px;
+	color: #fff;
+}
+
+.UFIImageBlockContent,
+.fb-comments {
+	color: #fff !important;
 }
 
 .comment-form {
@@ -65,9 +82,9 @@ input.submit {
 	a {
 		display: flex;
 		flex-wrap: wrap;
-		color: var(--color-black);
+		color: var(--color-main);
 		font-weight: 500;
-		font-size: 18px;
+		font-size: 14px;
 		text-decoration: none;
 
 		&:hover {

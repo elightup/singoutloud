@@ -1,5 +1,5 @@
 .header {
-	width: 85%;
+	width: auto;
 	margin: 0 auto;
 	font-family: var(--font-Opensans);
 	color: black;
@@ -7,12 +7,19 @@
 	font-size: 15px;
 	line-height: 1.2;
 	padding: 40px 0;
+	display: flex;
+	justify-content: center;
 
 	&.white-header {
 		position: absolute;
-		left: 145px;
+		left: 0;
+		right: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
 		z-index: 2;
-		width: 85%;
+		width: auto;
 
 		span {
 			color: #fff;
@@ -106,7 +113,7 @@
 		flex-wrap: wrap;
 
 		a {
-			padding: 0 27.5px;
+			padding: 0 23.5px;
 		}
 	}
 

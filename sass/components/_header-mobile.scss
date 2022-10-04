@@ -1,3 +1,9 @@
+@media only screen and (max-width: 1280px) {
+	.header__menu a {
+		padding: 0 11px;
+	}
+}
+
 @media(max-width:1023px) {
 	.header {
 		width: 100%;
@@ -51,6 +57,10 @@
 			}
 		}
 
+		.space-between {
+			width: 100%;
+		}
+
 		&.white-header {
 			position: relative;
 			width: 100%;
@@ -58,6 +68,7 @@
 			top: 0;
 			background-color: var(--color-white);
 			z-index: auto;
+			justify-content: space-between;
 
 			.navbar-logo {
 				display: block;

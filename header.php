@@ -7,6 +7,11 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+	<meta property='fb:app_id' content='606172131214972'/>
+	<meta property='fb:admins' content='100004553382738'/>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=606172131214972&autoLogAppEvents=1" nonce="RFgo37Ki"></script>
 	<?php wp_head() ?>
 </head>
 

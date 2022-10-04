@@ -3,6 +3,7 @@
 	background-color: var(--color-black);
 	padding: 143px 0;
 	color: var(--color-white);
+	border-bottom: 5px solid var(--color-white);
 
 	&__inner {
 		position: relative;
@@ -25,7 +26,8 @@
 		position: relative;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 		padding: 0 25px;
-		margin-bottom: 58px;
+		padding-bottom: 62px;
+		margin-bottom: 88px;
 
 		&:hover {
 			.entry-voted-number a {
@@ -143,7 +145,8 @@
 	input#s {
 		width: 100%;
 		max-width: 500px;
-		min-width: 200px;
+		min-width: 305px;
+		padding: 10px 20px 11px;
 		//color: var(--color-black);
 		background: transparent;
 		border: 1px solid #fff;
