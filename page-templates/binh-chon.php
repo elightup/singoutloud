@@ -6,8 +6,8 @@
 <?php get_header(); ?>
 
 <?php
-	$title = rwmb_meta('binh-chon-title');
-	$desc  = rwmb_meta('binh-chon-desc');
+	$title = rwmb_meta( 'binh-chon-title' );
+	$desc  = rwmb_meta( 'binh-chon-desc' );
 ?>
 
 <main id="primary" class="site-main ">
@@ -15,7 +15,7 @@
 		<div class="container">
 			<div class="vote-page__wrap">
 				<h2 class="vote-page__wrap-title"><?= $title; ?></h2>
-				<div class="vote-page__wrap-desc"><?= wp_kses_post(wpautop( $desc ));  ?></div>
+				<div class="vote-page__wrap-desc"><?= wp_kses_post( wpautop( $desc ) );  ?></div>
 				<div class="vote-page__inner">
 					<?php
 					$steps = rwmb_meta( 'step_group' );
@@ -28,7 +28,7 @@
 					</div>
 					<?php endforeach; ?>
 				</div>
-				<a href="<?= esc_url( home_url() . '/dang-nhap' );?>" class="signin">Bình chọn ngay</a>
+				<a href="<?= esc_url( home_url() . '/cuoc-thi/' );?>" class="signin">Bình chọn ngay</a>
 			</div>
 		</div>
 	</section>

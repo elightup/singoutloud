@@ -20,7 +20,6 @@ $win_group    = rwmb_meta( 'win_group' );
 							<img src="<?= esc_url( wp_get_attachment_url( $value['image'] ) );?>" width="346" height="454" alt="<?= esc_attr( $value['name'] )?>">
 						</div>
 						<div class="winner-home__content">
-							<h3><?= esc_html( $value['sub_name'] );?></h3>
 							<h2><?= esc_html( $value['name'] );?></h2>
 						</div>
 					</div>

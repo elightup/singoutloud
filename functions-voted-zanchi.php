@@ -174,7 +174,7 @@ function query_search_vote_text() {
 		'update_post_term_cache' => false,
 	));
 	$html .= '<div  class="votes_event container" >';
-	$html .= '<div class="voted-candidates">';
+	$html .= '<div class="competition__inner">';
 	while ( $query->have_posts() ) :
 		$query->the_post();
 		$html .= vote_post();
@@ -201,7 +201,7 @@ function query_search_vote_text() {
 		wp_reset_postdata();
 		$html .= '</div>';
 		$html .= '</div>';
-		$html .= '<style>.voted-candidates{display: grid;grid-template-columns: repeat(3,1fr);grid-gap: 25px;}.meta-voted{border-radius: 10px;box-shadow: 1px 1px 10px  #333;padding: 30px 5px;padding-top: 0;}.voted-content{position: relative;}.entry-title{text-align: left;justify-content: left;width: 74%;margin: 0;padding: 0;}.entry-title a{color: #898989;font-size: 18px;font-weight: 700;}.entry-voted-number{position: absolute;top: -25px;right: 0;z-index: 1;text-align: right;width: 100px;color: #898989;font-size: 13px;font-weight: 700;}.entry-voted-number span{display: block;background:#ffd014;color: #ec008c;font-size: 21px;font-weight: 700;clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);padding: 5px 15px;margin-bottom: 3px !important;position: relative;}.entry-thumb{overflow: hidden;}.entry-thumb img{transition: .5s;}.meta-voted:hover img{transform: scale(1.3);} .nav-links {display: flex;justify-content: center;margin: 50px 0}.page-numbers.current {background: #f7df6b;}.page-numbers{min-width: 30px;padding: 5px;height: 30px;margin: 0 3px;border: 1px  solid   #f7df6b;display: flex;justify-content: center;align-items: center;font-weight: 600;}</style>';
+		$html .= '<style>.voted-candidates{display: grid;grid-template-columns: repeat(3,1fr);grid-gap: 25px;}.meta-voted{padding: 30px 5px;padding-top: 0;}.voted-content{position: relative;}.entry-title{text-align: left;justify-content: left;width: 74%;margin: 0;padding: 0;}.entry-title a{color: #898989;font-size: 18px;font-weight: 700;}.entry-voted-number{position: absolute;top: -25px;z-index: 1;text-align: right;width: 100px;color: #898989;font-size: 13px;font-weight: 700;}.entry-thumb{overflow: hidden;}.entry-thumb img{transition: .5s;}.meta-voted:hover img{transform: scale(1.3);} .nav-links {display: flex;justify-content: center;margin: 50px 0}.page-numbers.current {background: #f7df6b;}.page-numbers{min-width: 30px;padding: 5px;height: 30px;margin: 0 3px;border: 1px  solid   #f7df6b;display: flex;justify-content: center;align-items: center;font-weight: 600;}</style>';
 
 	return $html;
 }

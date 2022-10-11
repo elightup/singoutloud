@@ -194,10 +194,10 @@ class CustomField {
 							'name'              => esc_html__( 'Title', 'singoutloud' ),
 							'sanitize_callback' => 'none',
 						],
-						[
-							'id'   => 'sub_name',
-							'name' => esc_html__( 'Chức vụ', 'singoutloud' ),
-						],
+						// [
+						// 'id'   => 'sub_name',
+						// 'name' => esc_html__( 'Chức vụ', 'singoutloud' ),
+						// ],
 						[
 							'id'   => 'name',
 							'name' => esc_html__( 'Tên thí sinh', 'singoutloud' ),
