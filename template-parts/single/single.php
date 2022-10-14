@@ -4,39 +4,39 @@
 		<div class="post__top p-container">
 			<div class="post__detail">
 				<div class="post__social">
-					<a href="<?php echo esc_url( home_url() ); ?>">
-						<?php Template_function::sol_get_image_path( 'posthome.png' ) ?>
+					<a href="<?php echo esc_url(home_url()); ?>">
+						<?php Template_function::sol_get_image_path('posthome.png') ?>
 					</a>
 					<a href="#">
-						<?php Template_function::sol_get_image_path( 'postfb.png' ) ?>
+						<?php Template_function::sol_get_image_path('postfb.png') ?>
 					</a>
 				</div>
-				<div class="post__head">
-					<div class="post__head-title">
-						<?php the_title() ?>
+
+				<div class="post__head-title">
+					<?php the_title() ?>
+				</div>
+				<div class="post__head-view">
+					<div class="post__head-view-eye">
+						<?php Template_function::sol_get_image_path('view1.png') ?>
+						<span><?= do_shortcode('[post-views]') ?></span>
 					</div>
-					<div class="post__head-view">
-						<div class="post__head-view-eye">
-							<?php Template_function::sol_get_image_path( 'view1.png' ) ?>
-							<span><?= do_shortcode('[post-views]' ) ?></span>
-						</div>
-						<div class="post__head-view-share">
-							<a href="https://www.facebook.com/sharer/sharer.php?u=<?= the_permalink(); ?>"><?php Template_function::sol_get_image_path( 'share1.png' ) ?></a>
-							<span>14</span>
-						</div>
+					<div class="post__head-view-share">
+						<a href="https://www.facebook.com/sharer/sharer.php?u=<?= the_permalink(); ?>"><?php Template_function::sol_get_image_path('share1.png') ?></a>
+						<span>14</span>
 					</div>
+
 				</div>
 			</div>
 			<div class="post__info post__content">
 				<div class="post__info-author">
 					<?php
-					$author_id   = get_post_field( 'post_author', get_the_ID() );
-					$author_name = get_the_author_meta( 'display_name', $author_id );
+					$author_id   = get_post_field('post_author', get_the_ID());
+					$author_name = get_the_author_meta('display_name', $author_id);
 					echo 'Theo ' . $author_name;
 					?>
 				</div>
 				<div class="post__info-time">
-					<?= get_the_date( 'd/m/Y H:i' ); ?>
+					<?= get_the_date('d/m/Y H:i'); ?>
 				</div>
 			</div>
 

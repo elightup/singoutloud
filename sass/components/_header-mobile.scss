@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1280px) {
+@media (max-width: 1280px) {
 	.header__menu a {
 		padding: 0 11px;
 	}
@@ -66,15 +66,16 @@
 			width: 100%;
 			left: 0;
 			top: 0;
-			background-color: var(--color-white);
-			z-index: auto;
+			background-color: transparent;
+			z-index: 100;
 			justify-content: space-between;
+			padding: 15px 30px;
 
 			.navbar-logo {
-				display: block;
+				display: none;
 
 				&.white-logo {
-					display: none;
+					display: block;
 				}
 			}
 
@@ -100,10 +101,10 @@
 	}
 }
 
-@media only screen and(max-width: 767px) {
+@media (max-width: 767px) {
 
 	.header {
-
+		padding: 25px 35px;
 		&__logo {
 			width: 120px;
 		}

@@ -85,23 +85,36 @@
 @media (max-width:767px) {
 	.about {
 		font-size: 18px;
-
+		&__left{
+			div:empty{
+				display: none;
+			}
+		}
 		&__left-inner {
-			padding: 50px 20px;
+			padding: 50px 35px;
+
 		}
 
 		&__right {
-			background-size: contain;
+
+			padding-bottom: 80px;
+			&-bg {
+					display: none;
+				}
+				&-logo{
+					padding-bottom: 0 !important;
+				}
 		}
 
 		&__right-image {
 			width: 100%;
-			margin: 20px;
+			margin: 50px 35px;
+			align-items: flex-start;
 		}
 
 		&__right-content {
 			width: 100%;
-			padding: 20px;
+			padding: 50px 35px;
 		}
 	}
 }

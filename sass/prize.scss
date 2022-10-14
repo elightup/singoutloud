@@ -152,22 +152,50 @@
 @media(max-width: 767px) {
 	.prize {
 		padding-bottom: 0;
+		padding-top: 30px;
+		width: 100%;
 
 		&__title {
 			margin-bottom: 30px;
 			padding: 0;
-			text-align: center;
+			text-align: start;
+			padding: 0 35px;
 		}
+
+
 
 		&__item {
-			padding: 30px 15px;
+			padding: 45px 0px;
+			margin: 0 35px;
 		}
 
-		.item0::before,
+		.item0 {
+			margin: 0;
+			padding: 45px 35px;
+			padding-top: 105px;
+			overflow: hidden;
+			border: none;
+		}
+
+		.item0::before {
+			width: 138px;
+			height: 201px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			right: -7%;
+			bottom: -5%;
+
+		}
+
 		.item0 .prize__item-number::before {
+			top: -175%;
+			left: 0;
+			right: auto;
+		}
+
+		&__image {
 			display: none;
 		}
-
 		&__image-bg {
 			left: 25%;
 		}

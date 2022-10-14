@@ -136,12 +136,33 @@
 	.rule {
 		padding-bottom: 50px;
 
+		&__image {
+			display: none;
+		}
+
+		&__item-bg{
+			display: flex;
+			align-items: flex-start;
+			margin-top: 15px;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+
 		&__title {
 			margin-bottom: 50px;
+			text-align: start;
+			padding: 0 35px;
 		}
 
 		&__item-number {
 			font-size: 42px;
+			align-items: flex-start;
+			justify-content: flex-start;
+			width: 15%;
+		;
+
 		}
 
 		&__item-title,
@@ -150,7 +171,8 @@
 		}
 
 		&__item-content {
-			padding: 20px 0;
+			padding-top: 15px;
+			padding-bottom: 20px;
 		}
 	}
 }

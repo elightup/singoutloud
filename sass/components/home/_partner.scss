@@ -144,6 +144,7 @@
 
 		&__image {
 			width: 100%;
+
 		}
 
 		&__login {
@@ -164,6 +165,20 @@
 
 @media(max-width: 767px) {
 	.partner-home {
+		h2.title {
+			padding: 0 30px;
+			font-size: 40px;
+			padding: 0 40px;
+			margin-bottom: 100px;
+
+			&::after {
+				left: 5%;
+				top: -5%;
+				width: 43PX;
+				height: 43px;
+			}
+		}
+
 		&__wrap {
 			gap: 0;
 		}
@@ -173,10 +188,36 @@
 			padding-bottom: 50px;
 			justify-content: center;
 			gap: 20px;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
 		}
 
-		&__content ul {
-			justify-content: space-between;
+		&__content {
+			h2 {
+				margin-bottom: 20px;
+			}
+
+			ul {
+				width: 70%;
+				justify-content: flex-start;
+			}
+		}
+
+		&__login {
+			overflow: hidden;
+
+			&::after {
+				content: "";
+				display: block;
+				width: 100%;
+				height: 100%;
+				background: url('../images/bg_login.png') no-repeat;
+				position: absolute;
+				background-size: 190% 122%;
+				//mix-blend-mode: hard-light;
+				bottom: 0;
+				right: -69%;
+			}
 		}
 	}
 }

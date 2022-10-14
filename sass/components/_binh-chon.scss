@@ -109,9 +109,9 @@
 			text-align: center;
 			margin-bottom: 50px;
 
-			&::before {
-				display: none;
-			}
+			// &::before {
+			// 	display: none;
+			// }
 
 			h2 {
 				margin: 10px 0;
@@ -126,7 +126,22 @@
 
 @media only screen and (max-width:767px) {
 	.vote-page {
+		padding: 66px 40px;
+		&__inner{
+			margin: 0;
+		}
 		&__wrap {
+			&-title {
+				font-size: 37px;
+				text-align: start;
+				width: 80%;
+			}
+
+			&-desc p {
+				font-size: 21px;
+				text-align: start;
+			}
+
 			h1 {
 				font-size: 28px;
 			}
@@ -134,6 +149,43 @@
 			p {
 				font-size: 16px;
 			}
+		}
+
+		&__item {
+			display: grid;
+			grid-template-columns:30% 1fr;
+			column-gap: 50px;
+			position: relative;
+			margin: 0;
+			padding: 50px 0;
+
+
+			img {
+				grid-row: 1/4;
+			}
+
+			h2 {
+				text-align: start;
+			}
+
+			p:empty {
+				display: none;
+			}
+			p{
+				text-align: justify;
+			}
+			&::before {
+				position: absolute;
+				bottom: -25px;
+				top: auto;
+				right: auto;
+				left: 15%;
+				background-repeat: repeat;
+				height: calc(100%  - 155px);
+				width: 6px;
+
+			}
+
 		}
 	}
 }

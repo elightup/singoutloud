@@ -147,6 +147,19 @@
 
 @media (max-width: 1023px) {
 	.new-home {
+		h2.title {
+			padding: 0 30px;
+			font-size: 40px;
+			padding: 0 40px;
+
+			&::after {
+				left: 6%;
+				top: -50%;
+				width: 43PX;
+				height: 43px;
+			}
+		}
+
 		&__inner {
 			.slick-prev {
 				left: 20px;
@@ -163,7 +176,8 @@
 
 		&__title {
 			padding: 15px;
-
+			opacity: .85;
+			transform: translateY(0);
 			p.date {
 				font-size: 34px;
 			}

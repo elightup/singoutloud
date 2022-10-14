@@ -211,7 +211,7 @@
 	}
 }
 
-@media only screen and(max-width: 991px) {
+@media (max-width: 991px) {
 	.competition {
 		&__inner {
 			grid-template-columns: repeat(2, 1fr);
@@ -219,7 +219,7 @@
 	}
 }
 
-@media only screen and(max-width: 600px) {
+@media (max-width: 600px) {
 	.competition {
 		padding-top: 50px;
 
