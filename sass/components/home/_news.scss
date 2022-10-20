@@ -200,10 +200,27 @@
 
 @media(max-width: 767px) {
 	.new-home {
+		&__title{
+			padding: 35px;
+			a{
+				border-bottom: none !important;
+				padding-right: 30%;
+				position: relative;
+				&::after {
+					position: absolute;
+					height: 2px;
+					width:100%;
+					background: #fff;
+					content: '';
+					bottom: 0;left: 0;
+				}
+			}
+		}
 		h2.title {
 			&::after {
 				margin-top: 15px;
 			}
+
 		}
 
 		.img {
@@ -214,8 +231,14 @@
 
 			.slick-prev,
 			.slick-next {
+				top: 35%;
 				width: 20px;
 				height: 35px;
+				left: 35px;
+			}
+			.slick-next{
+				right: 35px;
+				left: auto;
 			}
 
 			.slick-dots li {

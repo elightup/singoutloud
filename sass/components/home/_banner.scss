@@ -20,7 +20,7 @@
 		margin: 0 auto;
 
 		@media (max-width:767px) {
-			margin-top: 100px;
+			margin-top: 120px;
 		}
 
 		&::before {
@@ -43,9 +43,7 @@
 			margin: 0;
 			font-weight: 500;
 
-			br:last-child {
-				display: none;
-			}
+
 		}
 
 		.entry-content {
@@ -76,10 +74,10 @@
 @media (max-width: 1023px) {
 	.home-banner {
 		background-repeat: no-repeat;
-		min-height: 999px;
+
 		margin-top: -100px;
 		background-position: 58% 0%;
-		background-size: 600% 155% !important;
+		background-size: 600% 160% !important;
 
 		&__wrap::before {
 			position: absolute;
@@ -90,8 +88,12 @@
 }
 
 @media(max-width: 767px) {
+	.home-banner {
+		min-height: 890px;
+	}
+
 	.home-banner__wrap::before {
-		bottom: -285%;
+		bottom: -253%;
 		top: auto;
 		right: -57%;
 	}
@@ -100,7 +102,11 @@
 		&__content {
 			h1 {
 				font-size: 55px;
+				br:last-child {
+						display: none;
+					}
 			}
+
 		}
 	}
 }

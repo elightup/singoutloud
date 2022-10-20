@@ -23,7 +23,8 @@ $group_ten = rwmb_meta( 'top_ten_group' );
 					?>
 					<details <?= esc_html( $open )?>>
 						<summary>
-						<?= esc_html( $value['name'] ); ?>
+							<span class="top-ten_lable">Thí sinh</span>
+							<?= esc_html( $value['name'] ); ?>
 						</summary>
 						<div class="panel">
 							<?php if ( ! empty( $video ) ) : ?>

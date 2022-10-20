@@ -44,7 +44,7 @@ $moment_groups = rwmb_meta('moment_group');
 </section>
 <section class="moment-homeMobi">
 	<div class="moment-homeMobi_warp">
-		<div class="moment-sliders">
+		<!-- <div class="moment-sliders"> -->
 			<?php
 			foreach ($moment_groups as $moment_group) :
 				$image_col1s = $moment_group['image_col1'];
@@ -82,7 +82,7 @@ $moment_groups = rwmb_meta('moment_group');
 			<?php
 			endforeach;
 			?>
-		</div>
+		<!-- </div> -->
 	</div>
 	<input type="range" id="vol" name="vol" min="0" max="100" value="0" />
 	<script defer>
@@ -90,7 +90,7 @@ $moment_groups = rwmb_meta('moment_group');
 			d.addEventListener('DOMContentLoaded', () => {
 				const boxView = d.querySelector('.moment-homeMobi_warp');
 				const boxViews = d.querySelector('.moment-homeMobi');
-				const widthBoxView = boxView.offsetWidth;
+				const widthBoxView = boxView.offsetWidth / 3;
 				let rang = d.querySelector('#vol');
 				rang.oninput = (e) => {
 					boxViews.scrollLeft = (widthBoxView / 100) * e.target.value
