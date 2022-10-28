@@ -113,6 +113,7 @@
 	.entry-title {
 		display: flex;
 		flex-direction: column;
+		align-items: flex-end;
 	}
 
 	&__title {
@@ -198,10 +199,11 @@
 		display: flex;
 		align-items: end;
 		font-size: 21px;
+		margin-bottom: 10px;
 	}
 
 	&__video {
-		width: 62%;
+		width: 50%;
 
 		iframe {
 			margin-bottom: 0;
@@ -306,7 +308,6 @@
 
 		&::after {
 			right: -14%;
-			bottom: -40px;
 		}
 
 		&__judges {

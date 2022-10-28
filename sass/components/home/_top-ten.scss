@@ -42,6 +42,9 @@
 			padding: 0 10px;
 			margin: 0 10px;
 			border-radius: 25px;
+			border: 1px solid #fefefe;
+			border-bottom: 1px solid var(--color-main);
+			border-top: 1px solid var(--color-main);
 			width: 80%;
 		}
 
@@ -69,9 +72,11 @@
 			list-style-type: none;
 			position: relative;
 			text-align: left;
+
 			&::-webkit-details-marker {
-					display: none;
-				}
+				display: none;
+			}
+
 			&::before {
 				content: '+';
 				display: block;
@@ -178,7 +183,8 @@
 
 			summary {
 				padding: 44px 0;
-				span{
+
+				span {
 					display: none;
 				}
 			}

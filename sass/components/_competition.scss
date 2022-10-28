@@ -230,6 +230,10 @@
 		.voted-filter {
 			margin-bottom: 50px;
 		}
+
+		.meta-voted {
+			padding: 0 50px;
+		}
 	}
 
 	.voted-filter__form {
@@ -238,5 +242,11 @@
 		.voted-new {
 			font-size: 22px;
 		}
+	}
+
+	.entry-voted-number span {
+		width: 55px;
+		height: 55px;
+		font-size: 18px;
 	}
 }

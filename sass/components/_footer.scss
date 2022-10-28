@@ -83,12 +83,11 @@
 	}
 }
 
-@media only screen and (max-width: 1366px) {
+@media only screen and (max-width: 1600px) {
 	.footer {
 		&__inner {
-			width: 100%;
+			width: 75%;
 			padding: 72px 15px 62px;
-			margin-left: 0;
 		}
 	}
 }
@@ -119,7 +118,8 @@
 		&__info {
 			margin-bottom: 30px;
 		}
-		&__social> p{
+
+		&__social>p {
 			margin-top: 60px;
 		}
 	}
