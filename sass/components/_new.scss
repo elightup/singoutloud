@@ -22,12 +22,15 @@
 }
 
 .list-post {
+	input {
+		display: none;
+	}
+
 	&_warp {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 10px;
 		padding-top: 148px;
-
 	}
 
 	&__image {
@@ -137,7 +140,8 @@
 		overflow-x: auto;
 		padding: 0 35px;
 
-	input[name="vol"] {
+		input[name="vol"] {
+			display: block;
 			position: sticky;
 			bottom: 0;
 			left: 0;
@@ -165,6 +169,7 @@
 
 
 		}
+
 		&_warp {
 			display: grid;
 			grid-template-rows: repeat(2, 1fr);
@@ -173,7 +178,7 @@
 			row-gap: 25px;
 			height: 100%;
 			margin-bottom: 25px;
-				padding-top: 50px;
+			padding-top: 50px;
 		}
 
 		&__item {

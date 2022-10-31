@@ -101,6 +101,12 @@
 	}
 }
 
+@media (max-width: 1440px) {
+	.rule__inner {
+		width: 100%;
+	}
+}
+
 @media (max-width: 1024px) {
 	.rule {
 		&__title {
@@ -156,7 +162,7 @@
 		}
 
 		&__item-desc {
-		padding-right: 35px;
+			padding-right: 35px;
 		}
 
 		&__title {

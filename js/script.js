@@ -46,7 +46,6 @@ jQuery( function ( $ ) {
 				{
 					breakpoint: 600,
 					settings: {
-						dots: true,
 						slidesToShow: 1
 					}
 				}

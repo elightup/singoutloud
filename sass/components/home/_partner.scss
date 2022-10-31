@@ -3,10 +3,6 @@
 	background-color: var(--color-bg);
 	padding: 50px 0;
 
-	// h2.title::after {
-	// 	display: none;
-	// }
-
 	&__image {
 		width: calc(100% - 520px);
 		display: flex;
@@ -88,7 +84,6 @@
 			flex-wrap: wrap;
 			padding: 0;
 			margin: 0;
-			gap: 28px;
 
 			li {
 				list-style: none;
@@ -113,6 +108,7 @@
 
 				&:first-child {
 					background-color: transparent;
+					margin-right: 28px;
 
 					a {
 						color: var(--color-white);
@@ -136,6 +132,15 @@
 	}
 }
 
+@media (max-width: 1440px) {
+	.partner-home {
+		&__login {
+			width: 100%;
+			transform: translateX(0px);
+		}
+	}
+}
+
 @media(max-width: 1023px) {
 	.partner-home {
 		&__wrap {
@@ -148,8 +153,6 @@
 		}
 
 		&__login {
-			width: 100%;
-			transform: translateX(0px);
 			background: none;
 			min-height: auto;
 		}
@@ -166,6 +169,7 @@
 @media(max-width: 767px) {
 	.partner-home {
 		padding-bottom: 115px;
+
 		h2.title {
 			padding: 0 30px;
 			font-size: 40px;
@@ -219,10 +223,11 @@
 				bottom: 0;
 				right: -69%;
 			}
+
 			&::before {
 				content: "";
 				display: block;
-				width:50%;
+				width: 50%;
 				height: 50%;
 				background: url('../images/bg_banner.png') no-repeat;
 				position: absolute;

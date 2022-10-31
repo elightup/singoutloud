@@ -20,10 +20,14 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+
+		h2.title {
+			width: 19%;
+		}
 	}
 
 	&__inner {
-		width: 60%;
+		width: 64%;
 		height: 828px;
 		direction: rtl;
 		padding-left: 50px;
@@ -89,10 +93,10 @@
 
 		.panel {
 			position: relative;
+			text-align: center;
 
 			iframe {
-				width: 100%;
-
+				width: 88%;
 			}
 		}
 	}
@@ -137,15 +141,10 @@
 			padding: 0 25px;
 
 			h2.title {
-				padding: 0 30px;
 				font-size: 40px;
 				padding: 35px;
-				width: 60%;
+				width: 65%;
 				margin: -130px 0 0px;
-
-				br {
-					display: none;
-				}
 
 				&::after {
 					left: 5%;

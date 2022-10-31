@@ -118,6 +118,30 @@
 	}
 }
 
+@media (max-width: 1440px) {
+	.prize {
+		width: 100%;
+
+		&__item {
+			padding: 30px;
+		}
+
+		.item0::before {
+			right: 0;
+		}
+
+		.item0 .prize__item-number::before {
+			right: 30%;
+		}
+
+		.item3 {
+			position: relative;
+			bottom: 0;
+			border-bottom: 3px solid var(--color-main);
+		}
+	}
+}
+
 @media (max-width: 1024px) {
 	.prize {
 		width: 97%;
@@ -196,6 +220,7 @@
 		&__image {
 			display: none;
 		}
+
 		&__image-bg {
 			left: 25%;
 		}

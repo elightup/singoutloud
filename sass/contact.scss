@@ -23,7 +23,6 @@
 
 	&__social-item {
 		display: flex;
-		align-items: center;
 
 		.entry-thumbnail {
 			height: 18px;
@@ -54,8 +53,17 @@
 	}
 
 	&__bg {
-		display: flex;
-		align-items: end;
+		margin-top: auto;
+	}
+}
+
+@media (max-width: 1440px) {
+	.contact {
+		padding-right: 0;
+	}
+
+	.contact__image {
+		width: 50%;
 	}
 }
 
@@ -66,9 +74,11 @@
 		padding: 50px 0;
 		width: 97%;
 		margin: auto;
-		&__image{
+
+		&__image {
 			display: none;
 		}
+
 		&__inner {
 			width: 90%;
 			margin: auto;
@@ -100,35 +110,43 @@
 		padding-left: 35px;
 		padding-right: 35px;
 		overflow: hidden;
+
 		&__bg {
-			right:0;
+			right: 0;
 			width: 45%;
 			height: 50%;
 			overflow: hidden;
 			bottom: 90px;
-			img{
+
+			img {
 				transform: translateX(-5%);
 				width: 200%;
 				max-width: inherit;
 			}
 		}
-		&__inner{
+
+		&__inner {
 			width: 100%;
 		}
-		&__title{
+
+		&__title {
 			margin-bottom: 40px;
 		}
-		&__social{
+
+		&__social {
 			margin-bottom: 51px;
 		}
-		&__tochuc{
-			.contact__title{
+
+		&__tochuc {
+			.contact__title {
 				margin-bottom: 20px;
 			}
-			&-item{
+
+			&-item {
 				position: relative;
-				padding: 5px 0 ;
-				&::before{
+				padding: 5px 0;
+
+				&::before {
 					position: absolute;
 					content: "";
 					width: 4px;
