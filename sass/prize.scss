@@ -60,6 +60,7 @@
 		background: var(--color-main);
 		color: var(--color-white);
 		position: relative;
+		border-bottom: none;
 
 		&::before {
 			content: '';
@@ -118,9 +119,19 @@
 	}
 }
 
-@media (max-width: 1440px) {
+@media(max-width: 1600px) {
 	.prize {
 		width: 100%;
+	}
+}
+
+@media (max-width: 1440px) {
+	.prize {
+		width: 95%;
+
+		&__title {
+			padding-left: 30px;
+		}
 
 		&__item {
 			padding: 30px;

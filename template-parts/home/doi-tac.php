@@ -27,8 +27,7 @@ if ( empty( $images_newspaper ) || ! is_array( $images_newspaper ) ) {
 			</div>
 		</div>
 	</div>
-
-	<div class="partner-home__login">
+	<div class="partner-home__login container">
 		<div class="partner-home__content">
 			<h3>Bình chọn ngay cho</h3>
 			<h2>Top 50</h2>
@@ -38,4 +37,5 @@ if ( empty( $images_newspaper ) || ! is_array( $images_newspaper ) ) {
 			</ul>
 		</div>
 	</div>
+
 </section>
