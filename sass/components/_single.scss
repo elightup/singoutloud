@@ -41,6 +41,7 @@
 	&__social {
 		margin-top: 10px;
 		width: 6%;
+
 		a img {
 			margin-bottom: 10px;
 			width: 30px;
@@ -56,7 +57,6 @@
 		width: 100%;
 
 		&-title {
-			width: 70%;
 			font-size: 38px;
 			font-weight: 700;
 			line-height: 1.3;
@@ -68,7 +68,7 @@
 			align-items: flex-start;
 			justify-content: flex-end;
 			margin-top: 17px;
-			width: 15%;
+			column-gap: 30px;
 		}
 
 		&-view-eye,
@@ -85,8 +85,6 @@
 		}
 
 		&-view-share {
-			margin-left: 35px;
-
 			span {
 				margin-bottom: 7px;
 			}
@@ -190,6 +188,19 @@
 	}
 }
 
+@media (max-width: 1440px) {
+	.post__nav-next {
+		transform: translateX(40px);
+		padding-top: 15px;
+	}
+}
+
+@media(max-width: 1280px) {
+	.post__nav-next {
+		transform: translateX(-15px);
+	}
+}
+
 @media (max-width: 1024px) {
 	.p-container {
 		width: 90%;
@@ -224,25 +235,28 @@
 		&__inner {
 			position: relative;
 			margin-top: -100px;
-			padding-left: 25px ;
+			padding-left: 25px;
 			padding-right: 25px;
 			margin-bottom: 0;
 		}
 
-		&__detail{
+		&__detail {
 			display: grid;
-			grid-template-columns: repeat(2,1fr);
+			grid-template-columns: repeat(2, 1fr);
 		}
 
 		&__wrap {
 			padding: 0 35px;
 		}
-		&__top{
+
+		&__top {
 			padding: 15px;
 		}
-		&__social{
+
+		&__social {
 			width: 100%;
 		}
+
 		&__head {
 			flex-direction: column;
 
@@ -252,20 +266,24 @@
 				order: 3;
 				grid-column: 1/3;
 			}
-			&-view{
+
+			&-view {
 				width: 100%;
 			}
 		}
 
 		&__info {
 			padding-top: 20px;
-			&-author{
+
+			&-author {
 				font-size: 19px;
 			}
 		}
-		&__nav{
+
+		&__nav {
 			margin-bottom: 80px;
 		}
+
 		&__nav-back {
 			transform: translateX(15px);
 		}
