@@ -211,6 +211,24 @@
 	}
 }
 
+@media(max-width: 1440px) {
+
+	.voted-filter__form .voted-most,
+	.voted-filter__form .voted-new {
+		font-size: 26px;
+	}
+
+	.competition .entry-title {
+		a {
+			font-size: 20px;
+		}
+	}
+
+	.number-voted {
+		font-size: 20px;
+	}
+}
+
 @media (max-width: 991px) {
 	.competition {
 		&__inner {

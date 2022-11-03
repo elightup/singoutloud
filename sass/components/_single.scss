@@ -189,15 +189,23 @@
 }
 
 @media (max-width: 1440px) {
-	.post__nav-next {
-		transform: translateX(40px);
-		padding-top: 15px;
+	.post {
+		font-size: 19px;
+
+		&__head-title {
+			font-size: 36px;
+		}
+
+		&__nav-next {
+			transform: translateX(40px);
+		}
 	}
 }
 
 @media(max-width: 1280px) {
 	.post__nav-next {
 		transform: translateX(-15px);
+		padding-top: 15px;
 	}
 }
 

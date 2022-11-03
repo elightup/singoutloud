@@ -22,3 +22,9 @@ h2.title {
 		left: -32px;
 	}
 }
+
+@media(max-width: 1440px) {
+	h2.title {
+		font-size: 46px;
+	}
+}
