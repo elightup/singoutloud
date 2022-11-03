@@ -135,6 +135,18 @@
 
 		&__item {
 			padding: 30px;
+
+			&-title {
+				font-size: 29px;
+			}
+
+			&-number {
+				font-size: 58px;
+			}
+
+			&-desc {
+				font-size: 19px;
+			}
 		}
 
 		.item0::before {

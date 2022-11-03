@@ -60,11 +60,32 @@
 @media (max-width: 1600px) {
 	.contact {
 		padding-right: 50px;
+
+		&__image {
+			width: 50%;
+		}
+
+		&__title {
+			font-size: 19px;
+		}
+
+		&__social-wrap {
+			font-size: 18px;
+		}
+
+		&__tochuc {
+			&-item {
+				font-size: 18px;
+			}
+
+			&-item-name,
+			&-item-location,
+			.contact__title {
+				font-size: 18px;
+			}
+		}
 	}
 
-	.contact__image {
-		width: 50%;
-	}
 }
 
 @media (max-width: 1024px) {
