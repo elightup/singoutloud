@@ -14,6 +14,7 @@
 	&__inner {
 		width: 82%;
 		display: flex;
+		height: 931px;
 	}
 
 	&__image {
@@ -21,7 +22,6 @@
 		display: flex;
 		align-items: center;
 		filter: grayscale(1);
-		width: 47%;
 
 		.entry-thumbnail,
 		img {
@@ -32,7 +32,6 @@
 	&__item {
 		display: flex;
 		justify-content: space-between;
-		transform: translateX(-40px);
 
 		&-number {
 			width: 11%;
@@ -78,12 +77,13 @@
 
 	&__item-bg {
 		width: 25px;
+		padding-top: 5px;
 
-		.bg1,
-		.bg2,
-		img {
-			height: 100%;
-		}
+		// .bg1,
+		// .bg2,
+		// img {
+		// 	height: 100%;
+		// }
 
 		.bg2 {
 			display: none;
@@ -105,10 +105,7 @@
 	.rule {
 		&__inner {
 			width: 100%;
-		}
-
-		&__item {
-			transform: translateX(-25px);
+			height: auto;
 		}
 	}
 }
@@ -135,7 +132,6 @@
 		}
 
 		&__item {
-			transform: translateX(0);
 
 			&-number {
 				width: 20%;

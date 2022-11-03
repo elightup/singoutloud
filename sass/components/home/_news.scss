@@ -142,6 +142,7 @@
 
 	.img {
 		margin-top: 82px;
+		width: 100%;
 	}
 }
 
@@ -178,6 +179,7 @@
 			padding: 15px;
 			opacity: .85;
 			transform: translateY(0);
+
 			p.date {
 				font-size: 34px;
 			}
@@ -200,22 +202,26 @@
 
 @media(max-width: 767px) {
 	.new-home {
-		&__title{
+		&__title {
 			padding: 35px;
-			a{
+
+			a {
 				border-bottom: none !important;
 				padding-right: 30%;
 				position: relative;
+
 				&::after {
 					position: absolute;
 					height: 2px;
-					width:100%;
+					width: 100%;
 					background: #fff;
 					content: '';
-					bottom: 0;left: 0;
+					bottom: 0;
+					left: 0;
 				}
 			}
 		}
+
 		h2.title {
 			&::after {
 				margin-top: 15px;
@@ -236,7 +242,8 @@
 				height: 35px;
 				left: 35px;
 			}
-			.slick-next{
+
+			.slick-next {
 				right: 35px;
 				left: auto;
 			}

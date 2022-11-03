@@ -60,6 +60,13 @@ html {
 	}
 }
 
+@media (min-width: 2561px) {
+	.container {
+		max-width: 1920px;
+		padding: 0;
+	}
+}
+
 @media (max-width: 1440px) {
 	.container {
 		max-width: 1100px;
