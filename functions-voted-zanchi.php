@@ -392,6 +392,8 @@ function check_repeat_vote() {
 		}
 	}
 
+	$option[ $uid ][] = $post_id;
+	update_option( 'vote_log_member', $option );
 }
 
 function check_timeout_vote() {
