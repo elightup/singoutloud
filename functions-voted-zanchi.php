@@ -378,36 +378,19 @@ function verify_vote() {
 
 function check_repeat_vote() {
 
-	$date_vote = get_option( 'date_vote' );
+	$post_id = get_the_ID();
+	$option  = get_option( 'vote_log_member', [] );
+	$uid     = filter_input( INPUT_POST, 'user_id', FILTER_SANITIZE_STRING );
 
-	if ( $uid == '400133594983721' ) {
-		return;
-	}
-
-	$date = (string) date( 'Y/m/d' );
-
-	if ( $date_vote !== $date ) {
-
-		update_option( 'vote_log_member', [] );
-		update_option( 'date_vote', $date );
-	}
-	$option = get_option( 'vote_log_member', [] );
-	$uid    = filter_input( INPUT_POST, 'user_id', FILTER_SANITIZE_STRING );
-
-	if ( ! isset( $option[ $uid ] ) ) {
-		$option[ $uid ] = array();
-	}
-	// var_dump($option[ $uid ]);
-
-	foreach ( $option[ $uid ] as $key => $id ) {
-		if ( $id === $date_vote && $key >= 4 ) {
-			wp_die( 'Bạn <strong>đã hết số lần bình chọn trong ngày </strong>. <a class="back-voted" href="' . $_SERVER['REQUEST_URI'] . '">Nhấn vào đây</a> để về trang trước.' );
-
+	foreach ( $option[ $uid ] as $key => $value ) {
+		$post_vote = $value;
+		if ( $post_vote !== $post_id ) {
+			$option[ $uid ][] = $post_id;
+			update_option( 'vote_log_member', $option );
+		} else {
+			wp_die( 'Bạn đã bình chọn cho thí sinh này rồi.<a class="back-voted" href="' . $_SERVER['REQUEST_URI'] . '">Nhấn vào đây</a> để về trang trước.' );
 		}
-	};
-
-	$option[ $uid ][] = $date;
-	update_option( 'vote_log_member', $option );
+	}
 
 }
 
